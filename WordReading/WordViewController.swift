@@ -11,9 +11,9 @@ import AVFoundation
 class WordViewController: UIViewController {
     
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var thirdWord: UILabel!
-    @IBOutlet weak var secondWord: UILabel!
-    @IBOutlet weak var firstWord: UILabel!
+    @IBOutlet weak var firstWord: UIButton!
+    @IBOutlet weak var secondWord: UIButton!
+    @IBOutlet weak var thirdWord: UIButton!
     
     var csvArray: [String] = []
     var characterArray: [String] = []
@@ -27,58 +27,55 @@ class WordViewController: UIViewController {
         
         csvArray = loadCSV(fileName: "\(selectedWord!)")
         characterArray = csvArray[0].components(separatedBy: ",")
-        firstWord.text = ""
-        secondWord.text = ""
-        thirdWord.text = ""
+        firstWord.setTitleColor(UIColor.black, for:.normal)
+        secondWord.setTitleColor(UIColor.black, for: .normal)
+        thirdWord.setTitleColor(UIColor.black, for: .normal)
+        firstWord.setTitle("⚫️", for: .normal)
+        secondWord.isHidden = true
+        thirdWord.isHidden = true
         
     }
     
-    @IBAction func nextButton(_ sender: UIButton) {
-        tapButton += 1
-        sender.isEnabled = false
-        
-        if tapButton == 1 {
-            firstWord.text = characterArray[0]
-            secondWord.text = " "
-            thirdWord.text = " "
-            soundFirst()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                sender.isEnabled = true
-            }
-        }else if tapButton == 2 {
-            firstWord.text = " "
-            secondWord.text = characterArray[1]
-            thirdWord.text = " "
-            soundSecond()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                sender.isEnabled = true
-            }
-        }else if tapButton == 3 {
-            firstWord.text = " "
-            secondWord.text = " "
-            thirdWord.text = characterArray[2]
-            soundThird()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                sender.isEnabled = true
-            }
-        }else if tapButton == 4 {
-            firstWord.text = characterArray[0]
-            secondWord.text = characterArray[1]
-            thirdWord.text = characterArray[2]
-            soundWord()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                sender.isEnabled = true
-            }
-        }else if tapButton == 5 {
-            firstWord.text = ""
-            secondWord.text = ""
-            thirdWord.text = ""
-            image.image = UIImage(named: "\(selectedWord!)")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                sender.isEnabled = true
-            }
-        }else {
-            self.performSegue(withIdentifier: "toLastVC", sender: self)
+    @IBAction func firstWordButton(_ sender: UIButton) {
+        firstWord.setTitle(characterArray[0], for: .normal)
+        secondWord.setTitle("", for: .normal)
+        thirdWord.setTitle("", for: .normal)
+        soundFirst()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+            self.firstWord.isHidden = true
+            self.secondWord.isHidden = false
+            self.secondWord.setTitle("⚫️", for: .normal)
+        }
+    }
+    @IBAction func secondWordButton(_ sender: UIButton) {
+        secondWord.setTitle(characterArray[1], for: .normal)
+        soundSecond()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+            self.secondWord.isHidden = true
+            self.thirdWord.isHidden = false
+            self.thirdWord.setTitle("⚫️", for: .normal)
+        }
+    }
+    @IBAction func thirdWordButton(_ sender: UIButton) {
+        thirdWord.setTitle(characterArray[2], for: .normal)
+        soundThird()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+            self.soundWord()
+            self.firstWord.isHidden = false
+            self.firstWord.setTitle(self.characterArray[0], for: .normal)
+            self.secondWord.isHidden = false
+            self.secondWord.setTitle(self.characterArray[1], for: .normal)
+            self.thirdWord.isHidden = false
+            self.thirdWord.setTitle(self.characterArray[2], for: .normal)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){ [self] in
+            self.firstWord.isHidden = true
+            self.secondWord.isHidden = true
+            self.thirdWord.isHidden = true
+            image.image = UIImage(named: "\(self.selectedWord!)")
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.presentingViewController?.dismiss(animated: true)
         }
     }
     
