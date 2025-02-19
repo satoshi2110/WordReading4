@@ -656,28 +656,25 @@
                                 <rect key="frame" x="205" y="340" width="400" height="400"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zw3-eP-eea">
-                                <rect key="frame" x="296" y="414.5" width="218" height="251"/>
+                                <rect key="frame" x="390" y="414.5" width="30" height="251"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="⚫️"/>
                                 <connections>
                                     <action selector="secondWordButton:" destination="B4D-b7-RlQ" eventType="touchUpInside" id="jxb-Eg-K68"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaP-C9-Vm1">
-                                <rect key="frame" x="296" y="668.5" width="218" height="251"/>
+                                <rect key="frame" x="390" y="668.5" width="30" height="251"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="⚫️"/>
                                 <connections>
                                     <action selector="thirdWordButton:" destination="B4D-b7-RlQ" eventType="touchUpInside" id="mEq-iC-e78"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKV-sF-XS1">
-                                <rect key="frame" x="296" y="160.5" width="218" height="251"/>
+                                <rect key="frame" x="390" y="160.5" width="30" height="251"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="⚫️"/>
                                 <connections>
                                     <action selector="firstWordButton:" destination="B4D-b7-RlQ" eventType="touchUpInside" id="PmA-BK-JXa"/>
                                 </connections>

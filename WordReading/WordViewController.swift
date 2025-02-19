@@ -30,34 +30,29 @@ class WordViewController: UIViewController {
         firstWord.setTitleColor(UIColor.black, for:.normal)
         secondWord.setTitleColor(UIColor.black, for: .normal)
         thirdWord.setTitleColor(UIColor.black, for: .normal)
-        firstWord.setTitle("⚫️", for: .normal)
+        firstWord.setTitle(characterArray[0], for: .normal)
         secondWord.isHidden = true
         thirdWord.isHidden = true
         
     }
     
     @IBAction func firstWordButton(_ sender: UIButton) {
-        firstWord.setTitle(characterArray[0], for: .normal)
-        secondWord.setTitle("", for: .normal)
-        thirdWord.setTitle("", for: .normal)
         soundFirst()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.firstWord.isHidden = true
             self.secondWord.isHidden = false
-            self.secondWord.setTitle("⚫️", for: .normal)
+            self.secondWord.setTitle(self.characterArray[1], for: .normal)
         }
     }
     @IBAction func secondWordButton(_ sender: UIButton) {
-        secondWord.setTitle(characterArray[1], for: .normal)
         soundSecond()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.secondWord.isHidden = true
             self.thirdWord.isHidden = false
-            self.thirdWord.setTitle("⚫️", for: .normal)
+            self.thirdWord.setTitle(self.characterArray[2], for: .normal)
         }
     }
     @IBAction func thirdWordButton(_ sender: UIButton) {
-        thirdWord.setTitle(characterArray[2], for: .normal)
         soundThird()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.soundWord()
