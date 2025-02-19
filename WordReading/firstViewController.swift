@@ -15,7 +15,7 @@ class firstViewController: UIViewController {
         
         titleLabal.text = ""
         var charIndex = 0.0
-        let titleText = "👀ひらがな　を　よもう👀"
+        let titleText = "ひらがな　を　よもう"
         for letter in titleText {
             print("_")
             print(0.1 * charIndex)
