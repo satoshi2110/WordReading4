@@ -120,6 +120,7 @@
 		4F25C08E2C91516D00939AF7 /* しんごう.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F25C0792C91516D00939AF7 /* しんごう.png */; };
 		4F25C08F2C91516D00939AF7 /* おみくじ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F25C07A2C91516D00939AF7 /* おみくじ.png */; };
 		4F25C0902C91516D00939AF7 /* にわとり.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F25C07B2C91516D00939AF7 /* にわとり.png */; };
+		4F39971E2D66A6BE00F7C305 /* うさぎe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F39971D2D66A6BE00F7C305 /* うさぎe.mp3 */; };
 		4F5E172F2C91A0E700597A03 /* こ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E172E2C91A0E700597A03 /* こ.mp3 */; };
 		4F5E173A2C91A10400597A03 /* ち.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E17302C91A10400597A03 /* ち.mp3 */; };
 		4F5E173B2C91A10400597A03 /* そ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E17312C91A10400597A03 /* そ.mp3 */; };
@@ -285,6 +286,7 @@
 		4F25C0792C91516D00939AF7 /* しんごう.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "しんごう.png"; sourceTree = "<group>"; };
 		4F25C07A2C91516D00939AF7 /* おみくじ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "おみくじ.png"; sourceTree = "<group>"; };
 		4F25C07B2C91516D00939AF7 /* にわとり.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "にわとり.png"; sourceTree = "<group>"; };
+		4F39971D2D66A6BE00F7C305 /* うさぎe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "うさぎe.mp3"; sourceTree = "<group>"; };
 		4F5E172E2C91A0E700597A03 /* こ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "こ.mp3"; sourceTree = "<group>"; };
 		4F5E17302C91A10400597A03 /* ち.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ち.mp3"; sourceTree = "<group>"; };
 		4F5E17312C91A10400597A03 /* そ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "そ.mp3"; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 				4F5E174A2C91A3B700597A03 /* や.mp3 */,
 				4F5E17522C91A5F500597A03 /* わ.mp3 */,
 				4F25C0212C905F9F00939AF7 /* ん.mp3 */,
+				4F39971D2D66A6BE00F7C305 /* うさぎe.mp3 */,
 				4F25BFE02C9036EA00939AF7 /* うさぎ.mp3 */,
 				4F25BFDF2C9036EA00939AF7 /* えのぐ.mp3 */,
 				4F25BFE12C9036EA00939AF7 /* おばけ.mp3 */,
@@ -735,6 +738,7 @@
 				4F25C0262C905F9F00939AF7 /* け.mp3 in Resources */,
 				4F25C08D2C91516D00939AF7 /* ろうそく.png in Resources */,
 				4F25C0302C905F9F00939AF7 /* す.mp3 in Resources */,
+				4F39971E2D66A6BE00F7C305 /* うさぎe.mp3 in Resources */,
 				4F25BFD62C90321200939AF7 /* めだか.mp3 in Resources */,
 				4F25BFE52C9036EA00939AF7 /* だんご.mp3 in Resources */,
 				4F777B342C915B1E009E3A7A /* にんじん.mp3 in Resources */,

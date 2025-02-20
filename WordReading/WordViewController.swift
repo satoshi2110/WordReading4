@@ -10,7 +10,7 @@ import AVFoundation
 
 class WordViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageB: UIButton!
     @IBOutlet weak var firstWord: UIButton!
     @IBOutlet weak var secondWord: UIButton!
     @IBOutlet weak var thirdWord: UIButton!
@@ -27,17 +27,27 @@ class WordViewController: UIViewController {
         
         csvArray = loadCSV(fileName: "\(selectedWord!)")
         characterArray = csvArray[0].components(separatedBy: ",")
+        
         firstWord.setTitleColor(UIColor.black, for:.normal)
         secondWord.setTitleColor(UIColor.black, for: .normal)
         thirdWord.setTitleColor(UIColor.black, for: .normal)
+        
+        if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
+            let resizedImage = originalImage.resize(to: CGSize(width: 500, height: 500))
+            imageB.setImage(resizedImage, for: .normal)
+        }
+
+        
         firstWord.setTitle(characterArray[0], for: .normal)
         secondWord.isHidden = true
         thirdWord.isHidden = true
         
+        imageB.isHidden = true
     }
     
     @IBAction func firstWordButton(_ sender: UIButton) {
         soundFirst()
+        firstWord.isEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.firstWord.isHidden = true
             self.secondWord.isHidden = false
@@ -46,6 +56,7 @@ class WordViewController: UIViewController {
     }
     @IBAction func secondWordButton(_ sender: UIButton) {
         soundSecond()
+        secondWord.isEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.secondWord.isHidden = true
             self.thirdWord.isHidden = false
@@ -54,6 +65,10 @@ class WordViewController: UIViewController {
     }
     @IBAction func thirdWordButton(_ sender: UIButton) {
         soundThird()
+        thirdWord.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8){
+            self.thirdWord.isHidden = true
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.soundWord()
             self.firstWord.isHidden = false
@@ -67,13 +82,16 @@ class WordViewController: UIViewController {
             self.firstWord.isHidden = true
             self.secondWord.isHidden = true
             self.thirdWord.isHidden = true
-            image.image = UIImage(named: "\(self.selectedWord!)")
+            imageB.isHidden = false
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.presentingViewController?.dismiss(animated: true)
         }
     }
     
+    @IBAction func imageButton(_ sender: UIButton) {
+        soundEffects()
+    }
     func loadCSV(fileName: String) -> [String] {
         let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")!
         do {
@@ -117,5 +135,27 @@ class WordViewController: UIViewController {
         audioPlayer = try! AVAudioPlayer(contentsOf: url!)
         audioPlayer.play()
     }
+    
+    func soundEffects() {
+        if let url = Bundle.main.url(forResource: "\(selectedWord!)e", withExtension: "mp3") {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.play()
+            } catch {
+                print("音声ファイルの再生に失敗しました: \(error.localizedDescription)")
+            }
+        } else {
+            print("音声ファイルが見つかりません: \(selectedWord!)e.mp3")
+        }
+    }
 }
 
+extension UIImage {
+    func resize(to size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        self.draw(in: CGRect(origin: .zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage ?? self
+    }
+}
