@@ -7,7 +7,7 @@
 
 import UIKit
 
-class firstViewController: UIViewController {
+class StartViewController: UIViewController {
 
     @IBOutlet weak var titleLabal: UILabel!
     override func viewWillAppear(_ animated: Bool) {

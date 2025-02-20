@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="firstViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="-1639" y="122"/>
         </scene>
-        <!--Select Characters Number View Controller-->
+        <!--Select View Controller-->
         <scene sceneID="jtK-KY-tWe">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="p3x-Cm-9EE" customClass="SelectCharactersNumberViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="p3x-Cm-9EE" customClass="SelectViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IFK-5F-WjT">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,10 +65,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="axU-aD-JRS">
-                                <rect key="frame" x="320.5" y="406" width="169" height="268"/>
+                                <rect key="frame" x="320.5" y="314" width="169" height="452"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRA-kO-bnB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziL-NH-6DX">
                                         <rect key="frame" x="0.0" y="0.0" width="169" height="84"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="２文字"/>
+                                        <connections>
+                                            <segue destination="JVt-iz-WO0" kind="presentation" id="iZW-cd-HJC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRA-kO-bnB">
+                                        <rect key="frame" x="0.0" y="184" width="169" height="84"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="３もじ"/>
@@ -77,7 +86,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfc-kF-LlA">
-                                        <rect key="frame" x="0.0" y="184" width="169" height="84"/>
+                                        <rect key="frame" x="0.0" y="368" width="169" height="84"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="４もじ"/>
@@ -101,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="-951" y="122"/>
         </scene>
-        <!--Select Word2 View Controller-->
+        <!--Select4 Word View Controller-->
         <scene sceneID="ZSg-oG-F7r">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="dhQ-gm-40A" customClass="SelectWord2ViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="dhQ-gm-40A" customClass="Select4WordViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m2Q-MO-pKY">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -378,10 +387,10 @@
             </objects>
             <point key="canvasLocation" x="-268" y="797"/>
         </scene>
-        <!--Word2 View Controller-->
+        <!--Ssp4 Word View Controller-->
         <scene sceneID="ovV-PZ-YZ9">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="7rx-YW-gGk" customClass="Word2ViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="7rx-YW-gGk" customClass="Ssp4WordViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sS5-c9-aAI">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -474,10 +483,283 @@
             </objects>
             <point key="canvasLocation" x="505.92592592592587" y="796.66666666666663"/>
         </scene>
-        <!--Select Word View Controller-->
+        <!--Select2 Word View Controller-->
+        <scene sceneID="huL-Ab-wpd">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="JVt-iz-WO0" customClass="Select2WordViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8qR-qy-e52">
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="e6d-4d-jUu">
+                                <rect key="frame" x="93" y="224" width="624" height="632"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="iUw-rE-mLd">
+                                        <rect key="frame" x="0.0" y="0.0" width="624" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpy-YG-h38">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="あめ"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="ZBi-Lf-yrF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1X-Gj-3pa">
+                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="いぬ"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="XXr-S0-8CS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2o-as-f3s">
+                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="うみ"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="2d1-1O-gjs"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="wWZ-Z5-Iz2">
+                                        <rect key="frame" x="0.0" y="143" width="624" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skN-aI-uA5">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="ええ"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="4Tx-hL-bXo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcX-E1-Khe">
+                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="jws-fz-hlJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qe-gv-V4q">
+                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="TxL-iv-80G"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-l8-Cre">
+                                        <rect key="frame" x="0.0" y="286" width="624" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FW-ut-xfU">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="Uop-4s-6gF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUx-aX-Yph">
+                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="ubF-fm-HjQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ue-Fn-9Qy">
+                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="TJu-jQ-iOA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="ppx-XY-gnk">
+                                        <rect key="frame" x="0.0" y="429" width="624" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTO-P5-OMb">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="KZz-zK-IiI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBP-VE-bg9">
+                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="6NL-bq-isf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-88-RCk">
+                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="mTH-hN-zuS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="auL-12-Ujm">
+                                        <rect key="frame" x="0.0" y="572" width="624" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIn-fv-Zge">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="ci2-h1-Xpc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCX-pf-sV3">
+                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="bWi-0o-dfL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwB-J2-kVZ">
+                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="Yhm-2K-nYd"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyk-56-vrV">
+                                <rect key="frame" x="284" y="964" width="242" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="2tb-2T-O8K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="トップに戻る"/>
+                                <connections>
+                                    <action selector="returenButton:" destination="JVt-iz-WO0" eventType="touchUpInside" id="ukv-0H-6po"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="もじをえらぼう" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snD-om-Kvf">
+                                <rect key="frame" x="241.5" y="30" width="327.5" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="She-xO-LYE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="snD-om-Kvf" firstAttribute="top" secondItem="She-xO-LYE" secondAttribute="top" constant="30" id="KTG-6a-Ldh"/>
+                            <constraint firstItem="e6d-4d-jUu" firstAttribute="centerX" secondItem="8qR-qy-e52" secondAttribute="centerX" id="Ods-rX-jb6"/>
+                            <constraint firstItem="e6d-4d-jUu" firstAttribute="centerY" secondItem="8qR-qy-e52" secondAttribute="centerY" id="Xwo-58-cDf"/>
+                            <constraint firstItem="snD-om-Kvf" firstAttribute="centerX" secondItem="Pyk-56-vrV" secondAttribute="centerX" id="c4S-DX-F0Z"/>
+                            <constraint firstItem="She-xO-LYE" firstAttribute="bottom" secondItem="Pyk-56-vrV" secondAttribute="bottom" constant="49" id="ci7-9h-W2X"/>
+                            <constraint firstItem="snD-om-Kvf" firstAttribute="centerX" secondItem="e6d-4d-jUu" secondAttribute="centerX" id="hhq-Ie-anz"/>
+                            <constraint firstItem="Pyk-56-vrV" firstAttribute="leading" secondItem="She-xO-LYE" secondAttribute="leading" constant="284" id="wN2-5u-RDd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="jFz-Nm-OGD" kind="presentation" identifier="toWordVC" id="bAw-el-jh3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ubo-2q-T7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-268.14814814814815" y="-571.11111111111109"/>
+        </scene>
+        <!--Ssp2 Word View Controller-->
+        <scene sceneID="K5p-v9-v2i">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="jFz-Nm-OGD" customClass="Ssp2WordViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mjH-sy-2fG">
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VF2-9i-YOW">
+                                <rect key="frame" x="270" y="292" width="270" height="496"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mQ-OS-ULS">
+                                        <rect key="frame" x="20" y="-36" width="230" height="280"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="firstWordButtton:" destination="jFz-Nm-OGD" eventType="touchUpInside" id="nfR-sF-sYr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOV-86-zyS">
+                                        <rect key="frame" x="20" y="217" width="230" height="280"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="secondWordButton:" destination="jFz-Nm-OGD" eventType="touchUpInside" id="XK7-9s-pz5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-e1-H1N">
+                                        <rect key="frame" x="60" y="173" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="imageButton:" destination="jFz-Nm-OGD" eventType="touchUpInside" id="pud-XF-VXi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CON-ns-XUA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VF2-9i-YOW" firstAttribute="centerX" secondItem="mjH-sy-2fG" secondAttribute="centerX" id="2gz-ZX-syS"/>
+                            <constraint firstItem="VF2-9i-YOW" firstAttribute="top" secondItem="CON-ns-XUA" secondAttribute="top" constant="292" id="Q4V-gd-QUJ"/>
+                            <constraint firstItem="VF2-9i-YOW" firstAttribute="leading" secondItem="CON-ns-XUA" secondAttribute="leading" constant="270" id="TVY-ug-3lS"/>
+                            <constraint firstItem="VF2-9i-YOW" firstAttribute="centerY" secondItem="mjH-sy-2fG" secondAttribute="centerY" id="e9g-Nt-7Tx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstWord" destination="8mQ-OS-ULS" id="VfG-bs-xKn"/>
+                        <outlet property="imageB" destination="2rc-e1-H1N" id="Jzi-4C-vn7"/>
+                        <outlet property="secondWord" destination="FOV-86-zyS" id="Sbe-UY-yVB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pGs-We-k9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="505.92592592592587" y="-571.11111111111109"/>
+        </scene>
+        <!--Select3 Word View Controller-->
         <scene sceneID="il6-2V-XlX">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="3ld-gQ-SBv" customClass="SelectWordViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="3ld-gQ-SBv" customClass="Select3WordViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xUG-D5-ajF">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -651,10 +933,10 @@
             </objects>
             <point key="canvasLocation" x="-268.14814814814815" y="121.66666666666666"/>
         </scene>
-        <!--Word View Controller-->
+        <!--Ssp3 Word View Controller-->
         <scene sceneID="ZAS-pD-E5i">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="B4D-b7-RlQ" customClass="WordViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="B4D-b7-RlQ" customClass="Ssp3WordViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rkO-qb-lDS">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -766,7 +1048,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qdk-0C-oKK"/>
+        <segue reference="Q9V-io-7b0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

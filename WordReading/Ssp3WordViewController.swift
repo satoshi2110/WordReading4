@@ -1,69 +1,62 @@
 //
-//  Word2ViewController.swift
+//  WordViewController.swift
 //  WordReading
 //
-//  Created by N S on 2024/09/11.
+//  Created by N S on 2024/09/10.
 //
 
 import UIKit
 import AVFoundation
 
-class Word2ViewController: UIViewController {
+class Ssp3WordViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
-    
+    @IBOutlet weak var imageB: UIButton!
     @IBOutlet weak var firstWord: UIButton!
     @IBOutlet weak var secondWord: UIButton!
     @IBOutlet weak var thirdWord: UIButton!
-    @IBOutlet weak var fourthWord: UIButton!
-    @IBOutlet weak var imageB: UIButton!
-    
     
     var csvArray: [String] = []
     var characterArray: [String] = []
-    var tapButton = 0
     var selectedWord: String?
     var selectedCharacter: String?
     var audioPlayer: AVAudioPlayer!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         csvArray = loadCSV(fileName: "\(selectedWord!)")
         characterArray = csvArray[0].components(separatedBy: ",")
         
         firstWord.setTitleColor(UIColor.black, for:.normal)
         secondWord.setTitleColor(UIColor.black, for: .normal)
         thirdWord.setTitleColor(UIColor.black, for: .normal)
-        fourthWord.setTitleColor(UIColor.black, for: .normal)
-        
-        firstWord.setTitle(characterArray[0], for: .normal)
-        secondWord.isHidden = true
-        thirdWord.isHidden = true
-        fourthWord.isHidden = true
         
         if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
             let resizedImage = originalImage.resize(to: CGSize(width: 500, height: 500))
             imageB.setImage(resizedImage, for: .normal)
         }
-        imageB.isHidden = true
+
         
+        firstWord.setTitle(characterArray[0], for: .normal)
+        secondWord.isHidden = true
+        thirdWord.isHidden = true
+        
+        imageB.isHidden = true
     }
+    
     @IBAction func firstWordButton(_ sender: UIButton) {
         soundFirst()
         firstWord.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.firstWord.isHidden = true
             self.secondWord.isHidden = false
             self.secondWord.setTitle(self.characterArray[1], for: .normal)
         }
     }
-    
     @IBAction func secondWordButton(_ sender: UIButton) {
         soundSecond()
         secondWord.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.secondWord.isHidden = true
             self.thirdWord.isHidden = false
             self.thirdWord.setTitle(self.characterArray[2], for: .normal)
@@ -72,18 +65,8 @@ class Word2ViewController: UIViewController {
     @IBAction func thirdWordButton(_ sender: UIButton) {
         soundThird()
         thirdWord.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8){
             self.thirdWord.isHidden = true
-            self.fourthWord.isHidden = false
-            self.fourthWord.setTitle(self.characterArray[3], for: .normal)
-        }
-    }
-    
-    @IBAction func forthWordButton(_ sender: UIButton) {
-        soundForth()
-        fourthWord.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-            self.fourthWord.isHidden = true
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
             self.soundWord()
@@ -93,25 +76,21 @@ class Word2ViewController: UIViewController {
             self.secondWord.setTitle(self.characterArray[1], for: .normal)
             self.thirdWord.isHidden = false
             self.thirdWord.setTitle(self.characterArray[2], for: .normal)
-            self.fourthWord.isHidden = false
-            self.fourthWord.setTitle(self.characterArray[3], for: .normal)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){ [self] in
-            firstWord.isHidden = true
-            secondWord.isHidden = true
-            thirdWord.isHidden = true
-            fourthWord.isHidden = true
+            self.firstWord.isHidden = true
+            self.secondWord.isHidden = true
+            self.thirdWord.isHidden = true
             imageB.isHidden = false
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.presentingViewController?.dismiss(animated: true)
         }
     }
-   
+    
     @IBAction func imageButton(_ sender: UIButton) {
         soundEffects()
     }
-    
     func loadCSV(fileName: String) -> [String] {
         let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")!
         do {
@@ -130,6 +109,8 @@ class Word2ViewController: UIViewController {
         let url = Bundle.main.url(forResource: "\(selectedCharacter)", withExtension: "mp3")
         audioPlayer = try! AVAudioPlayer(contentsOf: url!)
         audioPlayer.play()
+        print(selectedCharacter)
+        
     }
     
     func soundSecond() {
@@ -137,6 +118,7 @@ class Word2ViewController: UIViewController {
         let url = Bundle.main.url(forResource: "\(selectedCharacter)", withExtension: "mp3")
         audioPlayer = try! AVAudioPlayer(contentsOf: url!)
         audioPlayer.play()
+        print(selectedCharacter)
     }
     
     func soundThird() {
@@ -144,13 +126,7 @@ class Word2ViewController: UIViewController {
         let url = Bundle.main.url(forResource: "\(selectedCharacter)", withExtension: "mp3")
         audioPlayer = try! AVAudioPlayer(contentsOf: url!)
         audioPlayer.play()
-    }
-    
-    func soundForth() {
-        let selectedCharacter = characterArray[3]
-        let url = Bundle.main.url(forResource: "\(selectedCharacter)", withExtension: "mp3")
-        audioPlayer = try! AVAudioPlayer(contentsOf: url!)
-        audioPlayer.play()
+        print(selectedCharacter)
     }
     
     func soundWord() {
@@ -173,4 +149,12 @@ class Word2ViewController: UIViewController {
     }
 }
 
-
+extension UIImage {
+    func resize(to size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+        self.draw(in: CGRect(origin: .zero, size: size))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage ?? self
+    }
+}

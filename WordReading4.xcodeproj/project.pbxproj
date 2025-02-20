@@ -8,16 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4F1DBC9E2D66E18200F7DCE8 /* おにぎりe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBC9D2D66E18200F7DCE8 /* おにぎりe.mp3 */; };
+		4F1DBCA02D66E87C00F7DCE8 /* Select2WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBC9F2D66E87C00F7DCE8 /* Select2WordViewController.swift */; };
+		4F1DBCA22D66EAE500F7DCE8 /* Ssp2WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA12D66EAE500F7DCE8 /* Ssp2WordViewController.swift */; };
+		4F1DBCA42D670C1000F7DCE8 /* あめ.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA32D670C1000F7DCE8 /* あめ.csv */; };
+		4F1DBCA62D67139C00F7DCE8 /* あめ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA52D67139C00F7DCE8 /* あめ.mp3 */; };
+		4F1DBCA82D6713F300F7DCE8 /* あめ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA72D6713F300F7DCE8 /* あめ.png */; };
+		4F1DBCAA2D6716E700F7DCE8 /* あめe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA92D6716E700F7DCE8 /* あめe.mp3 */; };
 		4F25BFA22C8FD8FB00939AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA12C8FD8FB00939AF7 /* AppDelegate.swift */; };
 		4F25BFA42C8FD8FB00939AF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA32C8FD8FB00939AF7 /* SceneDelegate.swift */; };
-		4F25BFA62C8FD8FB00939AF7 /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA52C8FD8FB00939AF7 /* firstViewController.swift */; };
+		4F25BFA62C8FD8FB00939AF7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA52C8FD8FB00939AF7 /* StartViewController.swift */; };
 		4F25BFA92C8FD8FB00939AF7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFA82C8FD8FB00939AF7 /* Base */; };
 		4F25BFAB2C8FD8FD00939AF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFAA2C8FD8FD00939AF7 /* Assets.xcassets */; };
 		4F25BFAE2C8FD8FD00939AF7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFAD2C8FD8FD00939AF7 /* Base */; };
-		4F25BFB62C8FE2C900939AF7 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFB52C8FE2C900939AF7 /* WordViewController.swift */; };
+		4F25BFB62C8FE2C900939AF7 /* Ssp3WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFB52C8FE2C900939AF7 /* Ssp3WordViewController.swift */; };
 		4F25BFB82C8FE3BC00939AF7 /* LastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFB72C8FE3BC00939AF7 /* LastViewController.swift */; };
 		4F25BFBA2C8FE70B00939AF7 /* くじら.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFB92C8FE70B00939AF7 /* くじら.csv */; };
-		4F25BFBC2C90096000939AF7 /* SelectWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFBB2C90096000939AF7 /* SelectWordViewController.swift */; };
+		4F25BFBC2C90096000939AF7 /* Select3WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFBB2C90096000939AF7 /* Select3WordViewController.swift */; };
 		4F25BFBE2C90251500939AF7 /* めだか.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFBD2C9024DD00939AF7 /* めだか.csv */; };
 		4F25BFC72C90257F00939AF7 /* くるま.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFBF2C90254E00939AF7 /* くるま.csv */; };
 		4F25BFCC2C9027FF00939AF7 /* うさぎ.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFC02C90255200939AF7 /* うさぎ.csv */; };
@@ -76,9 +82,9 @@
 		4F25C0322C905F9F00939AF7 /* ん.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F25C0212C905F9F00939AF7 /* ん.mp3 */; };
 		4F25C0332C905F9F00939AF7 /* ず.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F25C0222C905F9F00939AF7 /* ず.mp3 */; };
 		4F25C0342C905F9F00939AF7 /* う.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F25C0232C905F9F00939AF7 /* う.mp3 */; };
-		4F25C0362C910FD800939AF7 /* SelectWord2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C0352C910FD800939AF7 /* SelectWord2ViewController.swift */; };
-		4F25C0382C91101000939AF7 /* Word2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C0372C91101000939AF7 /* Word2ViewController.swift */; };
-		4F25C03C2C912B8100939AF7 /* SelectCharactersNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C03B2C912B8100939AF7 /* SelectCharactersNumberViewController.swift */; };
+		4F25C0362C910FD800939AF7 /* Select4WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C0352C910FD800939AF7 /* Select4WordViewController.swift */; };
+		4F25C0382C91101000939AF7 /* Ssp4WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C0372C91101000939AF7 /* Ssp4WordViewController.swift */; };
+		4F25C03C2C912B8100939AF7 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C03B2C912B8100939AF7 /* SelectViewController.swift */; };
 		4F25C0522C913EAB00939AF7 /* たんぽぽ.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25C03E2C913B1F00939AF7 /* たんぽぽ.csv */; };
 		4F25C0532C913EAB00939AF7 /* てぶくろ.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25C0462C913B3000939AF7 /* てぶくろ.csv */; };
 		4F25C0542C913EAB00939AF7 /* はみがき.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25C0402C913B2400939AF7 /* はみがき.csv */; };
@@ -173,18 +179,24 @@
 
 /* Begin PBXFileReference section */
 		4F1DBC9D2D66E18200F7DCE8 /* おにぎりe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "おにぎりe.mp3"; sourceTree = "<group>"; };
+		4F1DBC9F2D66E87C00F7DCE8 /* Select2WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select2WordViewController.swift; sourceTree = "<group>"; };
+		4F1DBCA12D66EAE500F7DCE8 /* Ssp2WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ssp2WordViewController.swift; sourceTree = "<group>"; };
+		4F1DBCA32D670C1000F7DCE8 /* あめ.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "あめ.csv"; sourceTree = "<group>"; };
+		4F1DBCA52D67139C00F7DCE8 /* あめ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あめ.mp3"; sourceTree = "<group>"; };
+		4F1DBCA72D6713F300F7DCE8 /* あめ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "あめ.png"; sourceTree = "<group>"; };
+		4F1DBCA92D6716E700F7DCE8 /* あめe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あめe.mp3"; sourceTree = "<group>"; };
 		4F25BF9E2C8FD8FB00939AF7 /* WordReading4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordReading4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F25BFA12C8FD8FB00939AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F25BFA32C8FD8FB00939AF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4F25BFA52C8FD8FB00939AF7 /* firstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstViewController.swift; sourceTree = "<group>"; };
+		4F25BFA52C8FD8FB00939AF7 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		4F25BFA82C8FD8FB00939AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F25BFAA2C8FD8FD00939AF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F25BFAD2C8FD8FD00939AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F25BFAF2C8FD8FD00939AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F25BFB52C8FE2C900939AF7 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
+		4F25BFB52C8FE2C900939AF7 /* Ssp3WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ssp3WordViewController.swift; sourceTree = "<group>"; };
 		4F25BFB72C8FE3BC00939AF7 /* LastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
 		4F25BFB92C8FE70B00939AF7 /* くじら.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "くじら.csv"; sourceTree = "<group>"; };
-		4F25BFBB2C90096000939AF7 /* SelectWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWordViewController.swift; sourceTree = "<group>"; };
+		4F25BFBB2C90096000939AF7 /* Select3WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select3WordViewController.swift; sourceTree = "<group>"; };
 		4F25BFBD2C9024DD00939AF7 /* めだか.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "めだか.csv"; sourceTree = "<group>"; };
 		4F25BFBF2C90254E00939AF7 /* くるま.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "くるま.csv"; sourceTree = "<group>"; };
 		4F25BFC02C90255200939AF7 /* うさぎ.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "うさぎ.csv"; sourceTree = "<group>"; };
@@ -243,9 +255,9 @@
 		4F25C0212C905F9F00939AF7 /* ん.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ん.mp3"; sourceTree = "<group>"; };
 		4F25C0222C905F9F00939AF7 /* ず.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ず.mp3"; sourceTree = "<group>"; };
 		4F25C0232C905F9F00939AF7 /* う.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "う.mp3"; sourceTree = "<group>"; };
-		4F25C0352C910FD800939AF7 /* SelectWord2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectWord2ViewController.swift; sourceTree = "<group>"; };
-		4F25C0372C91101000939AF7 /* Word2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word2ViewController.swift; sourceTree = "<group>"; };
-		4F25C03B2C912B8100939AF7 /* SelectCharactersNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharactersNumberViewController.swift; sourceTree = "<group>"; };
+		4F25C0352C910FD800939AF7 /* Select4WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select4WordViewController.swift; sourceTree = "<group>"; };
+		4F25C0372C91101000939AF7 /* Ssp4WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ssp4WordViewController.swift; sourceTree = "<group>"; };
+		4F25C03B2C912B8100939AF7 /* SelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
 		4F25C03D2C913AE400939AF7 /* くつした.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "くつした.csv"; sourceTree = "<group>"; };
 		4F25C03E2C913B1F00939AF7 /* たんぽぽ.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "たんぽぽ.csv"; sourceTree = "<group>"; };
 		4F25C03F2C913B2200939AF7 /* たこやき.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "たこやき.csv"; sourceTree = "<group>"; };
@@ -371,12 +383,14 @@
 				4F25BFA12C8FD8FB00939AF7 /* AppDelegate.swift */,
 				4F25BFA32C8FD8FB00939AF7 /* SceneDelegate.swift */,
 				4F25BFA72C8FD8FB00939AF7 /* Main.storyboard */,
-				4F25C03B2C912B8100939AF7 /* SelectCharactersNumberViewController.swift */,
-				4F25BFA52C8FD8FB00939AF7 /* firstViewController.swift */,
-				4F25BFBB2C90096000939AF7 /* SelectWordViewController.swift */,
-				4F25BFB52C8FE2C900939AF7 /* WordViewController.swift */,
-				4F25C0352C910FD800939AF7 /* SelectWord2ViewController.swift */,
-				4F25C0372C91101000939AF7 /* Word2ViewController.swift */,
+				4F25BFA52C8FD8FB00939AF7 /* StartViewController.swift */,
+				4F25C03B2C912B8100939AF7 /* SelectViewController.swift */,
+				4F1DBC9F2D66E87C00F7DCE8 /* Select2WordViewController.swift */,
+				4F1DBCA12D66EAE500F7DCE8 /* Ssp2WordViewController.swift */,
+				4F25BFBB2C90096000939AF7 /* Select3WordViewController.swift */,
+				4F25BFB52C8FE2C900939AF7 /* Ssp3WordViewController.swift */,
+				4F25C0352C910FD800939AF7 /* Select4WordViewController.swift */,
+				4F25C0372C91101000939AF7 /* Ssp4WordViewController.swift */,
 				4F25BFB72C8FE3BC00939AF7 /* LastViewController.swift */,
 				4F25BFAA2C8FD8FD00939AF7 /* Assets.xcassets */,
 				4F25BFAC2C8FD8FD00939AF7 /* LaunchScreen.storyboard */,
@@ -391,6 +405,7 @@
 		4F25BFCB2C90272600939AF7 /* csv */ = {
 			isa = PBXGroup;
 			children = (
+				4F1DBCA32D670C1000F7DCE8 /* あめ.csv */,
 				4F25BFBD2C9024DD00939AF7 /* めだか.csv */,
 				4F25BFBF2C90254E00939AF7 /* くるま.csv */,
 				4F25BFC02C90255200939AF7 /* うさぎ.csv */,
@@ -432,6 +447,8 @@
 		4F25BFD72C90322E00939AF7 /* mp3 */ = {
 			isa = PBXGroup;
 			children = (
+				4F1DBCA92D6716E700F7DCE8 /* あめe.mp3 */,
+				4F1DBCA52D67139C00F7DCE8 /* あめ.mp3 */,
 				4F777B1E2C915B1E009E3A7A /* おにぎり.mp3 */,
 				4F1DBC9D2D66E18200F7DCE8 /* おにぎりe.mp3 */,
 				4F777B262C915B1E009E3A7A /* おみくじ.mp3 */,
@@ -522,6 +539,7 @@
 		4F25C0062C904BF400939AF7 /* png */ = {
 			isa = PBXGroup;
 			children = (
+				4F1DBCA72D6713F300F7DCE8 /* あめ.png */,
 				4F25C0722C91516D00939AF7 /* おにぎり.png */,
 				4F25C07A2C91516D00939AF7 /* おみくじ.png */,
 				4F25C0772C91516D00939AF7 /* くつした.png */,
@@ -679,6 +697,7 @@
 				4F777B432C915B1E009E3A7A /* たんぽぽ.mp3 in Resources */,
 				4F25C08F2C91516D00939AF7 /* おみくじ.png in Resources */,
 				4F25C00D2C90592F00939AF7 /* く.mp3 in Resources */,
+				4F1DBCA42D670C1000F7DCE8 /* あめ.csv in Resources */,
 				4F777B442C915B1E009E3A7A /* くつした.mp3 in Resources */,
 				4F25C07D2C91516D00939AF7 /* にくまん.png in Resources */,
 				4F25C00E2C90592F00939AF7 /* だ.mp3 in Resources */,
@@ -686,6 +705,7 @@
 				4F25BFCD2C90280100939AF7 /* ごはん.csv in Resources */,
 				4F5E17402C91A10400597A03 /* ぶ.mp3 in Resources */,
 				4F25C0322C905F9F00939AF7 /* ん.mp3 in Resources */,
+				4F1DBCAA2D6716E700F7DCE8 /* あめe.mp3 in Resources */,
 				4F777B3A2C915B1E009E3A7A /* てぶくろ.mp3 in Resources */,
 				4F777B402C915B1E009E3A7A /* わりばし.mp3 in Resources */,
 				4F25BFEA2C9036EA00939AF7 /* うさぎ.mp3 in Resources */,
@@ -720,6 +740,7 @@
 				4F25C08C2C91516D00939AF7 /* くつした.png in Resources */,
 				4F25C0342C905F9F00939AF7 /* う.mp3 in Resources */,
 				4F25BFAB2C8FD8FD00939AF7 /* Assets.xcassets in Resources */,
+				4F1DBCA82D6713F300F7DCE8 /* あめ.png in Resources */,
 				4F777B372C915B1E009E3A7A /* ぶらんこ.mp3 in Resources */,
 				4F777B4C2C915F12009E3A7A /* せ.mp3 in Resources */,
 				4F25BFAE2C8FD8FD00939AF7 /* Base in Resources */,
@@ -736,6 +757,7 @@
 				4F25C0052C904BEA00939AF7 /* くじら.png in Resources */,
 				4F777B452C915B1E009E3A7A /* ふうせん.mp3 in Resources */,
 				4F5E173E2C91A10400597A03 /* て.mp3 in Resources */,
+				4F1DBCA62D67139C00F7DCE8 /* あめ.mp3 in Resources */,
 				4F5E17452C91A12900597A03 /* に.mp3 in Resources */,
 				4F777B4F2C915F12009E3A7A /* あ.mp3 in Resources */,
 				4F777B322C915B1E009E3A7A /* すいとう.mp3 in Resources */,
@@ -780,14 +802,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F25BFA62C8FD8FB00939AF7 /* firstViewController.swift in Sources */,
-				4F25C0382C91101000939AF7 /* Word2ViewController.swift in Sources */,
+				4F25BFA62C8FD8FB00939AF7 /* StartViewController.swift in Sources */,
+				4F1DBCA22D66EAE500F7DCE8 /* Ssp2WordViewController.swift in Sources */,
+				4F25C0382C91101000939AF7 /* Ssp4WordViewController.swift in Sources */,
 				4F25BFB82C8FE3BC00939AF7 /* LastViewController.swift in Sources */,
 				4F25BFA22C8FD8FB00939AF7 /* AppDelegate.swift in Sources */,
-				4F25BFB62C8FE2C900939AF7 /* WordViewController.swift in Sources */,
-				4F25C03C2C912B8100939AF7 /* SelectCharactersNumberViewController.swift in Sources */,
-				4F25BFBC2C90096000939AF7 /* SelectWordViewController.swift in Sources */,
-				4F25C0362C910FD800939AF7 /* SelectWord2ViewController.swift in Sources */,
+				4F25BFB62C8FE2C900939AF7 /* Ssp3WordViewController.swift in Sources */,
+				4F1DBCA02D66E87C00F7DCE8 /* Select2WordViewController.swift in Sources */,
+				4F25C03C2C912B8100939AF7 /* SelectViewController.swift in Sources */,
+				4F25BFBC2C90096000939AF7 /* Select3WordViewController.swift in Sources */,
+				4F25C0362C910FD800939AF7 /* Select4WordViewController.swift in Sources */,
 				4F25BFA42C8FD8FB00939AF7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

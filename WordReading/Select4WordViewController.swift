@@ -1,13 +1,13 @@
 //
-//  SelectWordViewController.swift
+//  SelectWord2ViewController.swift
 //  WordReading
 //
-//  Created by N S on 2024/09/10.
+//  Created by N S on 2024/09/11.
 //
 
 import UIKit
 
-class SelectWordViewController: UIViewController {
+class Select4WordViewController: UIViewController {
     
     var word: String?
 
@@ -16,7 +16,7 @@ class SelectWordViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let wordVC = segue.destination as! WordViewController
+        let wordVC = segue.destination as! Ssp4WordViewController
         wordVC.selectedWord = word
     }
     
@@ -24,8 +24,9 @@ class SelectWordViewController: UIViewController {
         word = sender.title(for: .normal)
         performSegue(withIdentifier: "toWordVC", sender: nil)
     }
-
-    @IBAction func topRetuen(_ sender: UIButton) {
+    
+    @IBAction func returnToTop(_ sender: UIButton) {
         self.presentingViewController?.presentingViewController?.dismiss(animated: true)
     }
+    
 }
