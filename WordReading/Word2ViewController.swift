@@ -10,12 +10,12 @@ import AVFoundation
 
 class Word2ViewController: UIViewController {
     
-    @IBOutlet weak var firstWord: UILabel!
-    @IBOutlet weak var secondWord: UILabel!
-    @IBOutlet weak var thirdWord: UILabel!
-    @IBOutlet weak var fourthWord: UILabel!
     @IBOutlet weak var image: UIImageView!
     
+    @IBOutlet weak var firstWord: UIButton!
+    @IBOutlet weak var secondWord: UIButton!
+    @IBOutlet weak var thirdWord: UIButton!
+    @IBOutlet weak var fourthWord: UIButton!
     
     var csvArray: [String] = []
     var characterArray: [String] = []
@@ -29,77 +29,76 @@ class Word2ViewController: UIViewController {
         super.viewDidLoad()
         csvArray = loadCSV(fileName: "\(selectedWord!)")
         characterArray = csvArray[0].components(separatedBy: ",")
-        firstWord.text = " "
-        secondWord.text = " "
-        thirdWord.text = " "
-        fourthWord.text = " "
-    }
-    
-    @IBAction func nextStepButton(_ sender: UIButton) {
-        tapButton += 1
-        sender.isEnabled = false
-        print(tapButton)
         
-        if tapButton == 1 {
-            firstWord.text = characterArray[0]
-            secondWord.text = " "
-            thirdWord.text = " "
-            fourthWord.text = " "
-            soundFirst()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                sender.isEnabled = true
-            }
-            print(firstWord.text!)
-        }else if tapButton == 2 {
-            firstWord.text = " "
-            secondWord.text = characterArray[1]
-            thirdWord.text = " "
-            fourthWord.text = " "
-            soundSecond()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                sender.isEnabled = true
-            }
-            
-        }else if tapButton == 3 {
-            firstWord.text = " "
-            secondWord.text = " "
-            thirdWord.text = characterArray[2]
-            fourthWord.text = " "
-            soundThird()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                sender.isEnabled = true
-            }
-        }else if tapButton == 4 {
-            firstWord.text = " "
-            secondWord.text = " "
-            thirdWord.text = " "
-            fourthWord.text = characterArray[3]
-            soundForth()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                sender.isEnabled = true
-            }
-        }else if tapButton == 5 {
-            firstWord.text = characterArray[0]
-            secondWord.text = characterArray[1]
-            thirdWord.text = characterArray[2]
-            fourthWord.text = characterArray[3]
-            soundWord()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                sender.isEnabled = true
-            }
-        }else if tapButton == 6 {
-            firstWord.text = " "
-            secondWord.text = " "
-            thirdWord.text = " "
-            fourthWord.text = " "
-            image.image = UIImage(named: "\(selectedWord!)")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                sender.isEnabled = true
-            }
-        }else {
-            self.performSegue(withIdentifier: "toLastVC", sender: self)
+        firstWord.setTitleColor(UIColor.black, for:.normal)
+        secondWord.setTitleColor(UIColor.black, for: .normal)
+        thirdWord.setTitleColor(UIColor.black, for: .normal)
+        fourthWord.setTitleColor(UIColor.black, for: .normal)
+        
+        firstWord.setTitle(characterArray[0], for: .normal)
+        secondWord.isHidden = true
+        thirdWord.isHidden = true
+        fourthWord.isHidden = true
+        
+    }
+    @IBAction func firstWordButton(_ sender: UIButton) {
+        soundFirst()
+        firstWord.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            self.firstWord.isHidden = true
+            self.secondWord.isHidden = false
+            self.secondWord.setTitle(self.characterArray[1], for: .normal)
         }
     }
+    
+    @IBAction func secondWordButton(_ sender: UIButton) {
+        soundSecond()
+        secondWord.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            self.secondWord.isHidden = true
+            self.thirdWord.isHidden = false
+            self.thirdWord.setTitle(self.characterArray[2], for: .normal)
+        }
+    }
+    @IBAction func thirdWordButton(_ sender: UIButton) {
+        soundThird()
+        thirdWord.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            self.thirdWord.isHidden = true
+            self.fourthWord.isHidden = false
+            self.fourthWord.setTitle(self.characterArray[3], for: .normal)
+        }
+    }
+    
+    @IBAction func forthWordButton(_ sender: UIButton) {
+        soundForth()
+        fourthWord.isEnabled = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+            self.fourthWord.isHidden = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+            self.soundWord()
+            self.firstWord.isHidden = false
+            self.firstWord.setTitle(self.characterArray[0], for: .normal)
+            self.secondWord.isHidden = false
+            self.secondWord.setTitle(self.characterArray[1], for: .normal)
+            self.thirdWord.isHidden = false
+            self.thirdWord.setTitle(self.characterArray[2], for: .normal)
+            self.fourthWord.isHidden = false
+            self.fourthWord.setTitle(self.characterArray[3], for: .normal)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){ [self] in
+            image.image = UIImage(named: "\(self.selectedWord!)")
+            firstWord.isHidden = true
+            secondWord.isHidden = true
+            thirdWord.isHidden = true
+            fourthWord.isHidden = true
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
+            self.presentingViewController?.dismiss(animated: true)
+        }
+    }
+   
     
     func loadCSV(fileName: String) -> [String] {
         let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")!
