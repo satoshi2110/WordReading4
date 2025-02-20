@@ -16,6 +16,8 @@ class Word2ViewController: UIViewController {
     @IBOutlet weak var secondWord: UIButton!
     @IBOutlet weak var thirdWord: UIButton!
     @IBOutlet weak var fourthWord: UIButton!
+    @IBOutlet weak var imageB: UIButton!
+    
     
     var csvArray: [String] = []
     var characterArray: [String] = []
@@ -23,6 +25,7 @@ class Word2ViewController: UIViewController {
     var selectedWord: String?
     var selectedCharacter: String?
     var audioPlayer: AVAudioPlayer!
+    
     
     
     override func viewDidLoad() {
@@ -39,6 +42,12 @@ class Word2ViewController: UIViewController {
         secondWord.isHidden = true
         thirdWord.isHidden = true
         fourthWord.isHidden = true
+        
+        if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
+            let resizedImage = originalImage.resize(to: CGSize(width: 500, height: 500))
+            imageB.setImage(resizedImage, for: .normal)
+        }
+        imageB.isHidden = true
         
     }
     @IBAction func firstWordButton(_ sender: UIButton) {
@@ -88,17 +97,20 @@ class Word2ViewController: UIViewController {
             self.fourthWord.setTitle(self.characterArray[3], for: .normal)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){ [self] in
-            image.image = UIImage(named: "\(self.selectedWord!)")
             firstWord.isHidden = true
             secondWord.isHidden = true
             thirdWord.isHidden = true
             fourthWord.isHidden = true
+            imageB.isHidden = false
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
             self.presentingViewController?.dismiss(animated: true)
         }
     }
    
+    @IBAction func imageButton(_ sender: UIButton) {
+        soundEffects()
+    }
     
     func loadCSV(fileName: String) -> [String] {
         let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")!
@@ -146,4 +158,19 @@ class Word2ViewController: UIViewController {
         audioPlayer = try! AVAudioPlayer(contentsOf: url!)
         audioPlayer.play()
     }
+    
+    func soundEffects() {
+        if let url = Bundle.main.url(forResource: "\(selectedWord!)e", withExtension: "mp3") {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.play()
+            } catch {
+                print("音声ファイルの再生に失敗しました: \(error.localizedDescription)")
+            }
+        } else {
+            print("音声ファイルが見つかりません: \(selectedWord!)e.mp3")
+        }
+    }
 }
+
+

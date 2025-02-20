@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1DBC9E2D66E18200F7DCE8 /* おにぎりe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBC9D2D66E18200F7DCE8 /* おにぎりe.mp3 */; };
 		4F25BFA22C8FD8FB00939AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA12C8FD8FB00939AF7 /* AppDelegate.swift */; };
 		4F25BFA42C8FD8FB00939AF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA32C8FD8FB00939AF7 /* SceneDelegate.swift */; };
 		4F25BFA62C8FD8FB00939AF7 /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA52C8FD8FB00939AF7 /* firstViewController.swift */; };
@@ -171,6 +172,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F1DBC9D2D66E18200F7DCE8 /* おにぎりe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "おにぎりe.mp3"; sourceTree = "<group>"; };
 		4F25BF9E2C8FD8FB00939AF7 /* WordReading4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordReading4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F25BFA12C8FD8FB00939AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F25BFA32C8FD8FB00939AF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -431,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				4F777B1E2C915B1E009E3A7A /* おにぎり.mp3 */,
+				4F1DBC9D2D66E18200F7DCE8 /* おにぎりe.mp3 */,
 				4F777B262C915B1E009E3A7A /* おみくじ.mp3 */,
 				4F777B2F2C915B1E009E3A7A /* くつした.mp3 */,
 				4F777B2D2C915B1E009E3A7A /* しんごう.mp3 */,
@@ -725,6 +728,7 @@
 				4F25C0312C905F9F00939AF7 /* ば.mp3 in Resources */,
 				4F25C0272C905F9F00939AF7 /* ぐ.mp3 in Resources */,
 				4F25C0832C91516D00939AF7 /* なわとび.png in Resources */,
+				4F1DBC9E2D66E18200F7DCE8 /* おにぎりe.mp3 in Resources */,
 				4F25C02A2C905F9F00939AF7 /* つ.mp3 in Resources */,
 				4F25BFED2C9036EA00939AF7 /* ごはん.mp3 in Resources */,
 				4F25BFC72C90257F00939AF7 /* くるま.csv in Resources */,
