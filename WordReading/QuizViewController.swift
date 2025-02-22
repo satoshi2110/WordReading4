@@ -1,0 +1,81 @@
+//
+//  QuizViewController.swift
+//  WordReading4
+//
+//  Created by N S on 2025/02/22.
+//
+
+import UIKit
+
+class QuizViewController: UIViewController {
+    
+    @IBOutlet weak var quizImage: UIImageView!
+    
+    @IBOutlet weak var answerButton1: UIButton!
+    @IBOutlet weak var answerButton2: UIButton!
+    @IBOutlet weak var answerButton3: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    var csvArray: [String] = []
+    var quizArray: [String] = []
+    var quizCount = 0
+    
+    var selectLevel = 0
+    var selectLength = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        csvArray = loadCSV(fileName: "\(selectLevel)\(selectLength)")
+        print(csvArray)
+        
+        quizArray = csvArray[quizCount].components(separatedBy: ",")
+        print("選択したのは\(selectLevel)\(selectLength)")
+        
+        quizImage.image = UIImage(named: "\(quizArray[0])")
+        answerButton1.setTitle(quizArray[1], for: .normal)
+        answerButton2.setTitle(quizArray[2], for: .normal)
+        answerButton3.setTitle(quizArray[3], for: .normal)
+        
+        progressBar.progress = Float(quizCount) / Float(csvArray.count)
+    }
+    
+    @IBAction func buttonAction(_ sender: UIButton) {
+        if sender.tag == Int(quizArray[4]) {
+            print("正解")
+        } else {
+            print("不正解")
+        }
+        nextQuiz()
+    }
+    
+    func nextQuiz() {
+        quizCount += 1
+        if quizCount < csvArray.count {
+            quizArray = csvArray[quizCount].components(separatedBy: ",")
+            quizImage.image = UIImage(named: "\(quizArray[0])")
+            answerButton1.setTitle(quizArray[1], for: .normal)
+            answerButton2.setTitle(quizArray[2], for: .normal)
+            answerButton3.setTitle(quizArray[3], for: .normal)
+            
+            // プログレスバーの更新
+            progressBar.progress = Float(quizCount) / Float(csvArray.count)
+        } else {
+            progressBar.progress = 1.0 // プログレスバーを最大にする
+            
+        }
+    }
+    
+    func loadCSV(fileName: String) -> [String] {
+        let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")!
+        do {
+            let csvData = try String(contentsOfFile: csvBundle,encoding: String.Encoding.utf8)
+            let lineChange = csvData.replacingOccurrences(of: "\r", with: "\n")
+            csvArray = lineChange.components(separatedBy: "\n")
+            csvArray.removeLast()
+        } catch {
+            print("エラー")
+        }
+        return csvArray
+    }
+    
+}

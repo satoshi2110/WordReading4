@@ -8,6 +8,9 @@ xcuserdata/
 ## Obj-C/Swift specific
 *.hmap
 
+Pods/*
+
+
 ## App packaging
 *.ipa
 *.dSYM.zip

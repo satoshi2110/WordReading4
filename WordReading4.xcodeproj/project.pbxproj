@@ -14,6 +14,11 @@
 		4F1DBCA62D67139C00F7DCE8 /* あめ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA52D67139C00F7DCE8 /* あめ.mp3 */; };
 		4F1DBCA82D6713F300F7DCE8 /* あめ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA72D6713F300F7DCE8 /* あめ.png */; };
 		4F1DBCAA2D6716E700F7DCE8 /* あめe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA92D6716E700F7DCE8 /* あめe.mp3 */; };
+		4F1DBCAC2D683BC100F7DCE8 /* SelectQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCAB2D683BC100F7DCE8 /* SelectQuizViewController.swift */; };
+		4F1DBCAE2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCAD2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift */; };
+		4F1DBCB02D69C02800F7DCE8 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCAF2D69C02800F7DCE8 /* QuizViewController.swift */; };
+		4F1DBCB22D69CB8300F7DCE8 /* 14.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCB12D69CB8300F7DCE8 /* 14.csv */; };
+		4F1DBCB42D69DB4400F7DCE8 /* SelectCharacterLengthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCB32D69DB4300F7DCE8 /* SelectCharacterLengthViewController.swift */; };
 		4F25BFA22C8FD8FB00939AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA12C8FD8FB00939AF7 /* AppDelegate.swift */; };
 		4F25BFA42C8FD8FB00939AF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA32C8FD8FB00939AF7 /* SceneDelegate.swift */; };
 		4F25BFA62C8FD8FB00939AF7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25BFA52C8FD8FB00939AF7 /* StartViewController.swift */; };
@@ -149,6 +154,7 @@
 		4F5E17532C91A5F500597A03 /* わ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E17522C91A5F500597A03 /* わ.mp3 */; };
 		4F5E17552C91A65800597A03 /* び.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E17542C91A65800597A03 /* び.mp3 */; };
 		4F5E17572C91A73900597A03 /* にわとり.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F5E17562C91A71E00597A03 /* にわとり.csv */; };
+		4F75C0282D6A84D600534812 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F75C0272D6A84D600534812 /* ResultViewController.swift */; };
 		4F777B312C915B1E009E3A7A /* ふくろう.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F777B1C2C915B1E009E3A7A /* ふくろう.mp3 */; };
 		4F777B322C915B1E009E3A7A /* すいとう.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F777B1D2C915B1E009E3A7A /* すいとう.mp3 */; };
 		4F777B332C915B1E009E3A7A /* おにぎり.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F777B1E2C915B1E009E3A7A /* おにぎり.mp3 */; };
@@ -185,6 +191,11 @@
 		4F1DBCA52D67139C00F7DCE8 /* あめ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あめ.mp3"; sourceTree = "<group>"; };
 		4F1DBCA72D6713F300F7DCE8 /* あめ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "あめ.png"; sourceTree = "<group>"; };
 		4F1DBCA92D6716E700F7DCE8 /* あめe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あめe.mp3"; sourceTree = "<group>"; };
+		4F1DBCAB2D683BC100F7DCE8 /* SelectQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuizViewController.swift; sourceTree = "<group>"; };
+		4F1DBCAD2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHistoryViewController.swift; sourceTree = "<group>"; };
+		4F1DBCAF2D69C02800F7DCE8 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		4F1DBCB12D69CB8300F7DCE8 /* 14.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = 14.csv; sourceTree = "<group>"; };
+		4F1DBCB32D69DB4300F7DCE8 /* SelectCharacterLengthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacterLengthViewController.swift; sourceTree = "<group>"; };
 		4F25BF9E2C8FD8FB00939AF7 /* WordReading4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordReading4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F25BFA12C8FD8FB00939AF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F25BFA32C8FD8FB00939AF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -322,6 +333,7 @@
 		4F5E17522C91A5F500597A03 /* わ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "わ.mp3"; sourceTree = "<group>"; };
 		4F5E17542C91A65800597A03 /* び.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "び.mp3"; sourceTree = "<group>"; };
 		4F5E17562C91A71E00597A03 /* にわとり.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "にわとり.csv"; sourceTree = "<group>"; };
+		4F75C0272D6A84D600534812 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		4F777B1C2C915B1E009E3A7A /* ふくろう.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ふくろう.mp3"; sourceTree = "<group>"; };
 		4F777B1D2C915B1E009E3A7A /* すいとう.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "すいとう.mp3"; sourceTree = "<group>"; };
 		4F777B1E2C915B1E009E3A7A /* おにぎり.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "おにぎり.mp3"; sourceTree = "<group>"; };
@@ -392,7 +404,13 @@
 				4F25C0352C910FD800939AF7 /* Select4WordViewController.swift */,
 				4F25C0372C91101000939AF7 /* Ssp4WordViewController.swift */,
 				4F25BFB72C8FE3BC00939AF7 /* LastViewController.swift */,
+				4F1DBCAB2D683BC100F7DCE8 /* SelectQuizViewController.swift */,
+				4F1DBCB32D69DB4300F7DCE8 /* SelectCharacterLengthViewController.swift */,
+				4F1DBCAF2D69C02800F7DCE8 /* QuizViewController.swift */,
+				4F75C0272D6A84D600534812 /* ResultViewController.swift */,
+				4F1DBCAD2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift */,
 				4F25BFAA2C8FD8FD00939AF7 /* Assets.xcassets */,
+				4F1DBCB12D69CB8300F7DCE8 /* 14.csv */,
 				4F25BFAC2C8FD8FD00939AF7 /* LaunchScreen.storyboard */,
 				4F25C0062C904BF400939AF7 /* png */,
 				4F25BFD72C90322E00939AF7 /* mp3 */,
@@ -726,6 +744,7 @@
 				4F5E17512C91A4CB00597A03 /* り.mp3 in Resources */,
 				4F25C0112C90592F00939AF7 /* か.mp3 in Resources */,
 				4F25BFFC2C904BEA00939AF7 /* ごはん.png in Resources */,
+				4F1DBCB22D69CB8300F7DCE8 /* 14.csv in Resources */,
 				4F25BFCC2C9027FF00939AF7 /* うさぎ.csv in Resources */,
 				4F25C0852C91516D00939AF7 /* ふうせん.png in Resources */,
 				4F25C0882C91516D00939AF7 /* はみがき.png in Resources */,
@@ -803,12 +822,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F25BFA62C8FD8FB00939AF7 /* StartViewController.swift in Sources */,
+				4F1DBCB02D69C02800F7DCE8 /* QuizViewController.swift in Sources */,
 				4F1DBCA22D66EAE500F7DCE8 /* Ssp2WordViewController.swift in Sources */,
+				4F75C0282D6A84D600534812 /* ResultViewController.swift in Sources */,
 				4F25C0382C91101000939AF7 /* Ssp4WordViewController.swift in Sources */,
+				4F1DBCAE2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift in Sources */,
+				4F1DBCAC2D683BC100F7DCE8 /* SelectQuizViewController.swift in Sources */,
 				4F25BFB82C8FE3BC00939AF7 /* LastViewController.swift in Sources */,
 				4F25BFA22C8FD8FB00939AF7 /* AppDelegate.swift in Sources */,
 				4F25BFB62C8FE2C900939AF7 /* Ssp3WordViewController.swift in Sources */,
 				4F1DBCA02D66E87C00F7DCE8 /* Select2WordViewController.swift in Sources */,
+				4F1DBCB42D69DB4400F7DCE8 /* SelectCharacterLengthViewController.swift in Sources */,
 				4F25C03C2C912B8100939AF7 /* SelectViewController.swift in Sources */,
 				4F25BFBC2C90096000939AF7 /* Select3WordViewController.swift in Sources */,
 				4F25C0362C910FD800939AF7 /* Select4WordViewController.swift in Sources */,
