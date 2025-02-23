@@ -10,7 +10,7 @@ import UIKit
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var quizImage: UIImageView!
-    
+    @IBOutlet weak var judgeImage: UIImageView!
     @IBOutlet weak var answerButton1: UIButton!
     @IBOutlet weak var answerButton2: UIButton!
     @IBOutlet weak var answerButton3: UIButton!
@@ -19,6 +19,7 @@ class QuizViewController: UIViewController {
     var csvArray: [String] = []
     var quizArray: [String] = []
     var quizCount = 0
+    var correctCount = 0
     
     var selectLevel = 0
     var selectLength = 0
@@ -39,13 +40,29 @@ class QuizViewController: UIViewController {
         progressBar.progress = Float(quizCount) / Float(csvArray.count)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultVC = segue.destination as! ResultViewController
+        resultVC.correct = correctCount
+    }
+    
     @IBAction func buttonAction(_ sender: UIButton) {
         if sender.tag == Int(quizArray[4]) {
             print("正解")
+            judgeImage.image = UIImage(named: "まる")
+            correctCount += 1
         } else {
             print("不正解")
+            judgeImage.image = UIImage(named: "ばつ")
         }
-        nextQuiz()
+        judgeImage.isHidden = false
+        buttonDisablement()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.judgeImage.isHidden = true
+            self.buttonEnablement()
+            self.nextQuiz()
+        }
+        print("\(correctCount)")
+        
     }
     
     func nextQuiz() {
@@ -61,7 +78,11 @@ class QuizViewController: UIViewController {
             progressBar.progress = Float(quizCount) / Float(csvArray.count)
         } else {
             progressBar.progress = 1.0 // プログレスバーを最大にする
-            
+            self.buttonDisablement()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                
+                self.performSegue(withIdentifier: "toResultVC", sender: nil)
+            }
         }
     }
     
@@ -78,4 +99,15 @@ class QuizViewController: UIViewController {
         return csvArray
     }
     
+    func buttonDisablement() {
+        answerButton1.isEnabled = false
+        answerButton2.isEnabled = false
+        answerButton3.isEnabled = false
+    }
+    
+    func buttonEnablement() {
+        answerButton1.isEnabled = true
+        answerButton2.isEnabled = true
+        answerButton3.isEnabled = true
+    }
 }

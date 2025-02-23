@@ -588,6 +588,10 @@
                                     <action selector="buttonAction:" destination="49Z-bs-Ibo" eventType="touchUpInside" id="DnR-Ch-B5F"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhj-iZ-Cv8">
+                                <rect key="frame" x="183" y="388" width="444" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OXr-Be-nPa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -596,6 +600,7 @@
                         <outlet property="answerButton1" destination="ccn-rB-wYI" id="ek6-t6-nxp"/>
                         <outlet property="answerButton2" destination="SoQ-F8-WjJ" id="4e4-tu-qa1"/>
                         <outlet property="answerButton3" destination="uoD-at-sTn" id="sEC-1X-12c"/>
+                        <outlet property="judgeImage" destination="dhj-iZ-Cv8" id="7op-tw-93e"/>
                         <outlet property="progressBar" destination="FrX-lE-zwr" id="QzB-xQ-Dvu"/>
                         <outlet property="quizImage" destination="thK-7u-cBl" id="H9Y-5G-DaU"/>
                         <segue destination="rJ7-er-SbW" kind="presentation" identifier="toResultVC" id="V73-mQ-XmE"/>
@@ -603,12 +608,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKM-oF-Ij6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1206" y="1487"/>
+            <point key="canvasLocation" x="1205.9259259259259" y="1486.6666666666667"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="icE-aQ-GvT">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="rJ7-er-SbW" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="rJ7-er-SbW" customClass="ResultViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K5I-Xg-ldT">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -626,11 +631,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="returnButton:" destination="rJ7-er-SbW" eventType="touchUpInside" id="nJh-kt-5v2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DBo-sb-Sug"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="krd-pF-04l" id="QKe-Z3-0Ez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqa-mQ-LnJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
