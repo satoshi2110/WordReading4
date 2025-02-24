@@ -9,11 +9,13 @@ import Foundation
 import RealmSwift
 
 class QuizResult: Object {
-    @objc dynamic var quizImageName: String = ""
-    @objc dynamic var selectedAnswer: String = ""
-    @objc dynamic var isCorrect: Bool = false
-    @objc dynamic var timeTaken: Double = 0.0
-    @objc dynamic var date: Date = Date()
-    @objc dynamic var correctCount: Int = 0
+    @Persisted var id: String = UUID().uuidString
+    @Persisted var quizID: String = ""
+    @Persisted var quizImageName: String = ""
+    @Persisted var selectedAnswer: String = ""
+    @Persisted var isCorrect: Bool = false
+    @Persisted var timeTaken: Double = 0.0
+    @Persisted var date: Date = Date()
+    @Persisted var correctCount: Int = 0
 }
 
