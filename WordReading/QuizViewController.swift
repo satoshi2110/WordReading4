@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class QuizViewController: UIViewController {
     
@@ -24,6 +25,9 @@ class QuizViewController: UIViewController {
     var selectLevel = 0
     var selectLength = 0
     
+    var startTime: Date?
+    var quizID: String = UUID().uuidString // クイズごとに一意のIDを生成
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         csvArray = loadCSV(fileName: "\(selectLevel)\(selectLength)")
@@ -38,22 +42,55 @@ class QuizViewController: UIViewController {
         answerButton3.setTitle(quizArray[3], for: .normal)
         
         progressBar.progress = Float(quizCount) / Float(csvArray.count)
+        
+        startTime = Date() // 計測開始
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let resultVC = segue.destination as! ResultViewController
         resultVC.correct = correctCount
+        resultVC.quizID = quizID
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
-        if sender.tag == Int(quizArray[4]) {
-            print("正解")
+        let endTime = Date()
+        let timeTaken = endTime.timeIntervalSince(startTime ?? Date())
+        
+        let selectedAnswer: String
+        switch sender.tag {
+        case 1:
+            selectedAnswer = quizArray[1]
+        case 2:
+            selectedAnswer = quizArray[2]
+        case 3:
+            selectedAnswer = quizArray[3]
+        default:
+            selectedAnswer = ""
+        }
+        
+        let isCorrect = sender.tag == Int(quizArray[4])
+        if isCorrect {
             judgeImage.image = UIImage(named: "まる")
             correctCount += 1
         } else {
-            print("不正解")
             judgeImage.image = UIImage(named: "ばつ")
         }
+        
+        // Realmに結果を保存
+        let quizResult = QuizResult()
+        quizResult.quizID = quizID
+        quizResult.quizImageName = quizArray[0]
+        quizResult.selectedAnswer = selectedAnswer
+        quizResult.isCorrect = isCorrect
+        quizResult.timeTaken = timeTaken
+        quizResult.date = Date()
+        quizResult.correctCount = correctCount
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(quizResult)
+        }
+        
         judgeImage.isHidden = false
         buttonDisablement()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -76,6 +113,7 @@ class QuizViewController: UIViewController {
             
             // プログレスバーの更新
             progressBar.progress = Float(quizCount) / Float(csvArray.count)
+            startTime = Date() // 次の問題の計測開始
         } else {
             progressBar.progress = 1.0 // プログレスバーを最大にする
             self.buttonDisablement()
