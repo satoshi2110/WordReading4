@@ -30,13 +30,15 @@ class Ssp2WordViewController: UIViewController {
         secondWord.setTitleColor(UIColor.black, for: .normal)
         
         if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
-            let resizedImage = originalImage.resize(to: CGSize(width: 500, height: 500))
-            imageB.setImage(resizedImage, for: .normal)
+            imageB.setImage(originalImage, for: .normal)
+            imageB.imageView?.contentMode = .scaleAspectFit
+            
         }
         
         firstWord.setTitle(characterArray[0], for: .normal)
         secondWord.isHidden = true
         imageB.isHidden = true
+
     }
     
     func loadCSV(fileName: String) -> [String] {

@@ -51,6 +51,7 @@ class QuizViewController: UIViewController {
         progressBar.progress = Float(quizCount) / Float(csvArray.count)
         
         startTime = Date() // 計測開始
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

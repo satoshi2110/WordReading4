@@ -18,7 +18,7 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("selectLevel: \(selectLevel), selectLength: \(selectLength)") 
+        print("PersonalHistoryViewControllerのselectLevel: \(selectLevel), selectLength: \(selectLength)") 
         // Realmから全てのデータを取得
         let realm = try! Realm()
         quizResults = realm.objects(QuizResult.self)

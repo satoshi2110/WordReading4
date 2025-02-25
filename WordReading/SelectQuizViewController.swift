@@ -20,7 +20,7 @@ class SelectQuizViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("selectLevel: \(selectLevel), selectLength: \(selectLength)")
+        print("SelectQuizViewControllerのselectLevel: \(selectLevel), selectLength: \(selectLength)")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

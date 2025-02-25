@@ -165,8 +165,8 @@
                                     <action selector="returnToTop:" destination="dHc-Kd-e0k" eventType="touchUpInside" id="xPp-FF-zsb"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="E5c-sA-kg8">
-                                <rect key="frame" x="120" y="210" width="570" height="660"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="E5c-sA-kg8">
+                                <rect key="frame" x="120" y="230" width="570" height="620"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="1n7-XT-bfI">
                                         <rect key="frame" x="0.0" y="0.0" width="570" height="60"/>
@@ -175,7 +175,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="くつした"/>
+                                                <state key="normal" title="そうじき"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="OLd-Hp-Slg"/>
                                                 </connections>
@@ -184,7 +184,7 @@
                                                 <rect key="frame" x="210" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="すいとう"/>
+                                                <state key="normal" title="えんぴつ"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="PQg-51-RV8"/>
                                                 </connections>
@@ -193,7 +193,7 @@
                                                 <rect key="frame" x="420" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="ふうせん"/>
+                                                <state key="normal" title="ふうりん"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="bl9-9P-MNa"/>
                                                 </connections>
@@ -201,13 +201,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="hbL-Yi-xpT">
-                                        <rect key="frame" x="0.0" y="100" width="570" height="60"/>
+                                        <rect key="frame" x="0.0" y="140" width="570" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JrS-6d-9ld">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="たんぽぽ"/>
+                                                <state key="normal" title="のみもの"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="IRY-s9-MNy"/>
                                                 </connections>
@@ -216,7 +216,7 @@
                                                 <rect key="frame" x="210" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="ふくろう"/>
+                                                <state key="normal" title="かみなり"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="gNT-31-b3S"/>
                                                 </connections>
@@ -225,7 +225,7 @@
                                                 <rect key="frame" x="420" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="たこやき"/>
+                                                <state key="normal" title="にわとり"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="96U-GF-Tu6"/>
                                                 </connections>
@@ -233,13 +233,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="gDo-n7-Knu">
-                                        <rect key="frame" x="0.0" y="200" width="570" height="60"/>
+                                        <rect key="frame" x="0.0" y="280" width="570" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOa-Qi-AYf">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="にんじん"/>
+                                                <state key="normal" title="ほうせき"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="W7Z-DQ-Naa"/>
                                                 </connections>
@@ -248,7 +248,7 @@
                                                 <rect key="frame" x="210" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="てぶくろ"/>
+                                                <state key="normal" title="くつした"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="H5j-Cs-9Br"/>
                                                 </connections>
@@ -257,7 +257,7 @@
                                                 <rect key="frame" x="420" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="はみがき"/>
+                                                <state key="normal" title="ひまわり"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="CoS-TH-Tzy"/>
                                                 </connections>
@@ -265,13 +265,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="fTP-kt-RlO">
-                                        <rect key="frame" x="0.0" y="300" width="570" height="60"/>
+                                        <rect key="frame" x="0.0" y="420" width="570" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bX2-ny-yOE">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="やきそば"/>
+                                                <state key="normal" title="あおぞら"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="iOd-s6-HkF"/>
                                                 </connections>
@@ -280,7 +280,7 @@
                                                 <rect key="frame" x="210" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="しんごう"/>
+                                                <state key="normal" title="てぶくろ"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="Z3f-gL-o3h"/>
                                                 </connections>
@@ -289,79 +289,15 @@
                                                 <rect key="frame" x="420" y="0.0" width="150" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="ながぐつ"/>
+                                                <state key="normal" title="こうえん"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="sqa-eG-o2o"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="XFh-0I-zcL">
-                                        <rect key="frame" x="0.0" y="400" width="570" height="60"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXR-SM-dF5">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="ぶらんこ"/>
-                                                <connections>
-                                                    <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="Wks-PY-lgS"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbd-sh-L3n">
-                                                <rect key="frame" x="210" y="0.0" width="150" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="おにぎり"/>
-                                                <connections>
-                                                    <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="gRF-Z2-jHj"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fJh-BN-tOl">
-                                                <rect key="frame" x="420" y="0.0" width="150" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="わりばし"/>
-                                                <connections>
-                                                    <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="zGm-U7-Gzz"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="sSt-Bq-ThF">
-                                        <rect key="frame" x="0.0" y="500" width="570" height="60"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o8U-YX-il0">
-                                                <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="どんぐり"/>
-                                                <connections>
-                                                    <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="Nko-TS-ESp"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPZ-Sh-Soo">
-                                                <rect key="frame" x="210" y="0.0" width="150" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="にくまん"/>
-                                                <connections>
-                                                    <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="LFu-7O-IEs"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqg-7d-b41">
-                                                <rect key="frame" x="420" y="0.0" width="150" height="60"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="ろうそく"/>
-                                                <connections>
-                                                    <action selector="wordButtonActionWithSender:" destination="dhQ-gm-40A" eventType="touchUpInside" id="37c-YV-yIM"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="D6X-4x-Vfs">
-                                        <rect key="frame" x="0.0" y="600" width="570" height="60"/>
+                                        <rect key="frame" x="0.0" y="560" width="570" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-Wh-NJ7">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
@@ -802,13 +738,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="e6d-4d-jUu">
-                                <rect key="frame" x="93" y="224" width="624" height="632"/>
+                                <rect key="frame" x="151.5" y="224" width="507" height="632"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="iUw-rE-mLd">
-                                        <rect key="frame" x="0.0" y="0.0" width="624" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="507" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpy-YG-h38">
-                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="あめ"/>
@@ -817,7 +753,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1X-Gj-3pa">
-                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="216" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="いぬ"/>
@@ -826,10 +762,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2o-as-f3s">
-                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="432" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="うみ"/>
+                                                <state key="normal" title="すず"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="2d1-1O-gjs"/>
                                                 </connections>
@@ -837,31 +773,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="wWZ-Z5-Iz2">
-                                        <rect key="frame" x="0.0" y="143" width="624" height="60"/>
+                                        <rect key="frame" x="0.0" y="143" width="507" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skN-aI-uA5">
-                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="ええ"/>
+                                                <state key="normal" title="ねこ"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="4Tx-hL-bXo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcX-E1-Khe">
-                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="216" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="むし"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="jws-fz-hlJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qe-gv-V4q">
-                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="432" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="せみ"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="TxL-iv-80G"/>
                                                 </connections>
@@ -869,31 +805,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-l8-Cre">
-                                        <rect key="frame" x="0.0" y="286" width="624" height="60"/>
+                                        <rect key="frame" x="0.0" y="286" width="507" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1FW-ut-xfU">
-                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="へび"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="Uop-4s-6gF"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUx-aX-Yph">
-                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="216" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="さる"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="ubF-fm-HjQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ue-Fn-9Qy">
-                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="432" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="よる"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="TJu-jQ-iOA"/>
                                                 </connections>
@@ -901,31 +837,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="ppx-XY-gnk">
-                                        <rect key="frame" x="0.0" y="429" width="624" height="60"/>
+                                        <rect key="frame" x="0.0" y="429" width="507" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTO-P5-OMb">
-                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="やま"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="KZz-zK-IiI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBP-VE-bg9">
-                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="216" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="さる"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="6NL-bq-isf"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2S-88-RCk">
-                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="432" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="ほん"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="mTH-hN-zuS"/>
                                                 </connections>
@@ -933,31 +869,31 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="auL-12-Ujm">
-                                        <rect key="frame" x="0.0" y="572" width="624" height="60"/>
+                                        <rect key="frame" x="0.0" y="572" width="507" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIn-fv-Zge">
-                                                <rect key="frame" x="0.0" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="にく"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="ci2-h1-Xpc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCX-pf-sV3">
-                                                <rect key="frame" x="255" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="216" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="ふゆ"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="bWi-0o-dfL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwB-J2-kVZ">
-                                                <rect key="frame" x="510" y="0.0" width="114" height="60"/>
+                                                <rect key="frame" x="432" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="もも"/>
                                                 <connections>
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="Yhm-2K-nYd"/>
                                                 </connections>
@@ -1033,7 +969,7 @@
                                             <action selector="secondWordButton:" destination="jFz-Nm-OGD" eventType="touchUpInside" id="XK7-9s-pz5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-e1-H1N">
+                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-e1-H1N">
                                         <rect key="frame" x="60" y="173" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
@@ -1079,8 +1015,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="nJR-Fg-kIO">
-                                <rect key="frame" x="167.5" y="318" width="475" height="444"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="90" translatesAutoresizingMaskIntoConstraints="NO" id="nJR-Fg-kIO">
+                                <rect key="frame" x="167.5" y="285" width="475" height="510"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="ny6-Gm-Ie9">
                                         <rect key="frame" x="0.0" y="0.0" width="475" height="60"/>
@@ -1089,7 +1025,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="めだか"/>
+                                                <state key="normal" title="はなび"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="fdu-LE-ZNt"/>
                                                 </connections>
@@ -1098,7 +1034,7 @@
                                                 <rect key="frame" x="181" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="くるま"/>
+                                                <state key="normal" title="たきび"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="iKT-6h-mVp"/>
                                                 </connections>
@@ -1107,7 +1043,7 @@
                                                 <rect key="frame" x="362" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="うさぎ"/>
+                                                <state key="normal" title="とけい"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="h2R-OW-wr2"/>
                                                 </connections>
@@ -1115,13 +1051,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="iaT-sh-xSW">
-                                        <rect key="frame" x="0.0" y="128" width="475" height="60"/>
+                                        <rect key="frame" x="0.0" y="150" width="475" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aul-fP-Ykn">
                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="ごはん"/>
+                                                <state key="normal" title="おばけ"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="oze-Pe-xdp"/>
                                                 </connections>
@@ -1130,7 +1066,7 @@
                                                 <rect key="frame" x="181" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="だんご"/>
+                                                <state key="normal" title="からす"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="VP3-L7-VBF"/>
                                                 </connections>
@@ -1139,7 +1075,7 @@
                                                 <rect key="frame" x="362" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="おばけ"/>
+                                                <state key="normal" title="おかね"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="Dkm-Oh-DEk"/>
                                                 </connections>
@@ -1147,13 +1083,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="YMO-kL-oe8">
-                                        <rect key="frame" x="0.0" y="256" width="475" height="60"/>
+                                        <rect key="frame" x="0.0" y="300" width="475" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-xV-k8B">
                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="くじら"/>
+                                                <state key="normal" title="やさい"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="ZJc-1Y-5Ls"/>
                                                 </connections>
@@ -1162,7 +1098,7 @@
                                                 <rect key="frame" x="181" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="つばめ"/>
+                                                <state key="normal" title="うんち"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="NIQ-FM-Iap"/>
                                                 </connections>
@@ -1171,7 +1107,7 @@
                                                 <rect key="frame" x="362" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="すずめ"/>
+                                                <state key="normal" title="じしん"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="ory-dF-sOi"/>
                                                 </connections>
@@ -1179,13 +1115,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="68" translatesAutoresizingMaskIntoConstraints="NO" id="ISP-ng-2BG">
-                                        <rect key="frame" x="0.0" y="384" width="475" height="60"/>
+                                        <rect key="frame" x="0.0" y="450" width="475" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lp9-d0-eRt">
                                                 <rect key="frame" x="0.0" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="らくだ"/>
+                                                <state key="normal" title="おかし"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="YNz-6R-eeF"/>
                                                 </connections>
@@ -1194,7 +1130,7 @@
                                                 <rect key="frame" x="181" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="ひつじ"/>
+                                                <state key="normal" title="てれび"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="Xlp-8z-cgu"/>
                                                 </connections>
@@ -1203,7 +1139,7 @@
                                                 <rect key="frame" x="362" y="0.0" width="113" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="えのぐ"/>
+                                                <state key="normal" title="といれ"/>
                                                 <connections>
                                                     <action selector="wordButtonActionWithSender:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="Sc1-cL-l42"/>
                                                 </connections>

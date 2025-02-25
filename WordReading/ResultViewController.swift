@@ -32,7 +32,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "QuizResultCell")
-        print("selectLevel: \(selectLevel), selectLength: \(selectLength)")
+        print("ResultViewControllerのselectLevel: \(selectLevel), selectLength: \(selectLength)")
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quizResults.count
@@ -68,8 +68,17 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "QuizResultCell")
         let quizResult = quizResults[indexPath.row]
+        
+        // 所要時間を小数点第1位まで表示
+        let timeTakenString = String(format: "%.1f", quizResult.timeTaken)
+        
+        // 日付を「yyyy年MM月dd日 HH時mm分」の形式にフォーマット
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日 HH時mm分" // フォーマットを指定
+        let dateString = dateFormatter.string(from: quizResult.date)
+        
         cell.textLabel?.text = "問題: \(quizResult.quizImageName), 選択: \(quizResult.selectedAnswer), 正解: \(quizResult.isCorrect ? "○" : "×")"
-        cell.detailTextLabel?.text = "所要時間: \(quizResult.timeTaken), 日付: \(quizResult.date)"
+        cell.detailTextLabel?.text = "所要時間: \(timeTakenString)秒, 日付: \(dateString)"
         return cell
     }
     
