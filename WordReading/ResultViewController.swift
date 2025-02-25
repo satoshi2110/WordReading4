@@ -17,6 +17,9 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     var quizResults: Results<QuizResult>!
     var quizID: String!
     
+    var selectLevel = 0
+    var selectLength = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scoreLabel.text = "正解は\(correct)問です！"
@@ -29,9 +32,37 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "QuizResultCell")
+        print("selectLevel: \(selectLevel), selectLength: \(selectLength)")
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quizResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        // selectLevelとselectLengthに基づいて表示する文字列を生成
+        let levelText: String
+        switch selectLevel {
+        case 1:
+            levelText = "基礎"
+        case 2:
+            levelText = "応用"
+        default:
+            levelText = "未設定"
+        }
+        
+        let lengthText: String
+        switch selectLength {
+        case 2:
+            lengthText = "2文字"
+        case 3:
+            lengthText = "3文字"
+        case 4:
+            lengthText = "4文字"
+        default:
+            lengthText = "未設定"
+        }
+        
+        return "\(levelText) - \(lengthText)"
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,11 +72,11 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         cell.detailTextLabel?.text = "所要時間: \(quizResult.timeTaken), 日付: \(quizResult.date)"
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0 // 適切な高さに調整
     }
     @IBAction func returnButton(_ sender: UIButton) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+        self.presentingViewController?.presentingViewController?.presentingViewController?.dismiss(animated: true)
     }
 }

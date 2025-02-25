@@ -37,9 +37,16 @@ class QuizViewController: UIViewController {
         print("選択したのは\(selectLevel)\(selectLength)")
         
         quizImage.image = UIImage(named: "\(quizArray[0])")
-        answerButton1.setTitle(quizArray[1], for: .normal)
-        answerButton2.setTitle(quizArray[2], for: .normal)
-        answerButton3.setTitle(quizArray[3], for: .normal)
+        
+        // ボタンのタイトルを縦書きに設定
+        answerButton1.setVerticalTitle(quizArray[1])
+        answerButton2.setVerticalTitle(quizArray[2])
+        answerButton3.setVerticalTitle(quizArray[3])
+        
+        // ボタンのフォントサイズを調整
+        answerButton1.titleLabel?.font = UIFont.systemFont(ofSize: 80)
+        answerButton2.titleLabel?.font = UIFont.systemFont(ofSize: 80)
+        answerButton3.titleLabel?.font = UIFont.systemFont(ofSize: 80)
         
         progressBar.progress = Float(quizCount) / Float(csvArray.count)
         
@@ -50,6 +57,8 @@ class QuizViewController: UIViewController {
         let resultVC = segue.destination as! ResultViewController
         resultVC.correct = correctCount
         resultVC.quizID = quizID
+        resultVC.selectLevel = selectLevel
+        resultVC.selectLength = selectLength
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
@@ -85,6 +94,8 @@ class QuizViewController: UIViewController {
         quizResult.timeTaken = timeTaken
         quizResult.date = Date()
         quizResult.correctCount = correctCount
+        quizResult.selectLevel = selectLevel // selectLevelを設定
+        quizResult.selectLength = selectLength // selectLengthを設定
         
         let realm = try! Realm()
         try! realm.write {
@@ -107,9 +118,10 @@ class QuizViewController: UIViewController {
         if quizCount < csvArray.count {
             quizArray = csvArray[quizCount].components(separatedBy: ",")
             quizImage.image = UIImage(named: "\(quizArray[0])")
-            answerButton1.setTitle(quizArray[1], for: .normal)
-            answerButton2.setTitle(quizArray[2], for: .normal)
-            answerButton3.setTitle(quizArray[3], for: .normal)
+            // ボタンのタイトルを縦書きに設定
+            answerButton1.setVerticalTitle(quizArray[1])
+            answerButton2.setVerticalTitle(quizArray[2])
+            answerButton3.setVerticalTitle(quizArray[3])
             
             // プログレスバーの更新
             progressBar.progress = Float(quizCount) / Float(csvArray.count)
@@ -147,5 +159,13 @@ class QuizViewController: UIViewController {
         answerButton1.isEnabled = true
         answerButton2.isEnabled = true
         answerButton3.isEnabled = true
+    }
+}
+extension UIButton {
+    func setVerticalTitle(_ title: String) {
+        let verticalTitle = title.map { String($0) }.joined(separator: "\n")
+        self.setTitle(verticalTitle, for: .normal)
+        self.titleLabel?.numberOfLines = title.count // 行数を文字数に合わせる
+        self.titleLabel?.textAlignment = .center // 中央揃え
     }
 }

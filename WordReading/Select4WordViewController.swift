@@ -26,7 +26,7 @@ class Select4WordViewController: UIViewController {
     }
     
     @IBAction func returnToTop(_ sender: UIButton) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+        self.presentingViewController?.dismiss(animated: true)
     }
     
 }

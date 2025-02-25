@@ -23,7 +23,7 @@ class Select2WordViewController: UIViewController {
         performSegue(withIdentifier: "toWordVC", sender: nil)
     }
     @IBAction func returenButton(_ sender: UIButton) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+        self.presentingViewController?.dismiss(animated: true)
     }
     
 }

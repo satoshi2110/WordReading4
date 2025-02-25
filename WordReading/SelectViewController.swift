@@ -15,5 +15,8 @@ class SelectViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func returnButton(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true)
+    }
+    
 }

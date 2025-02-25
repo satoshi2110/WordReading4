@@ -10,10 +10,17 @@ import UIKit
 class SelectQuizViewController: UIViewController {
     
     var selectTag = 0
+    var selectLevel = 0
+    var selectLength = 0
     
     private enum SegueIdentifier {
         static let toSelectCharacterLengthVC = "toSelectCharacterLengthVC"
         static let toPersonalHistoryVC = "toPersonalHistoryVC"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("selectLevel: \(selectLevel), selectLength: \(selectLength)")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -23,7 +30,8 @@ class SelectQuizViewController: UIViewController {
         }
         else if segue.identifier == SegueIdentifier.toPersonalHistoryVC,
                 let personalHistoryVC = segue.destination as? PersonalHistoryViewController {
-            // 必要に応じてデータを渡す
+            personalHistoryVC.selectLevel = selectLevel
+            personalHistoryVC.selectLength = selectLength
         }
     }
     @IBAction func levelButtonAction(sender: UIButton) {

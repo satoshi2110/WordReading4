@@ -26,6 +26,6 @@ class Select3WordViewController: UIViewController {
     }
 
     @IBAction func topRetuen(_ sender: UIButton) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: true)
+        self.presentingViewController?.dismiss(animated: true)
     }
 }

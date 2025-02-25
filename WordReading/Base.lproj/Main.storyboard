@@ -108,8 +108,17 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qS-a0-dPj">
+                                <rect key="frame" x="346" y="1004" width="120" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="トップに戻る"/>
+                                <connections>
+                                    <action selector="returnButton:" destination="p3x-Cm-9EE" eventType="touchUpInside" id="grc-j8-XgV"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-QJ-kxC">
-                                <rect key="frame" x="221" y="934" width="368" height="35"/>
+                                <rect key="frame" x="221" y="879" width="368" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -150,7 +159,7 @@
                                 <rect key="frame" x="330" y="1002" width="200" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Topに戻る"/>
+                                <state key="normal" title="前の画面に戻る"/>
                                 <connections>
                                     <action selector="returnToTop:" destination="dhQ-gm-40A" eventType="touchUpInside" id="6wu-1r-9gh"/>
                                     <action selector="returnToTop:" destination="dHc-Kd-e0k" eventType="touchUpInside" id="xPp-FF-zsb"/>
@@ -412,18 +421,11 @@
         <!--Select Quiz View Controller-->
         <scene sceneID="7tp-oa-mqB">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="g3l-cX-fbM" customClass="SelectQuizViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectQuizViewController" modalPresentationStyle="fullScreen" id="g3l-cX-fbM" customClass="SelectQuizViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gXF-yR-f5B">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="選んでください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4i-n9-1PU">
-                                <rect key="frame" x="307" y="127" width="197" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8P-wC-Rir">
                                 <rect key="frame" x="333" y="223" width="145" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -456,15 +458,22 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXk-U1-3Jk">
-                                <rect key="frame" x="333" y="661" width="145" height="80"/>
+                                <rect key="frame" x="288" y="905" width="235" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="戻る"/>
+                                <state key="normal" title="前の画面に戻る"/>
                                 <connections>
                                     <action selector="returnButton:" destination="g3l-cX-fbM" eventType="touchUpInside" id="fMg-Ut-LhH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="テストトップ画面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k4i-n9-1PU">
+                                <rect key="frame" x="293" y="127" width="225" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IHk-ka-Tw4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -515,9 +524,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-Zh-wuH">
                                 <rect key="frame" x="296" y="885" width="219" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="戻る"/>
+                                <state key="normal" title="前の画面に戻る"/>
                                 <connections>
                                     <action selector="returnButton:" destination="9SY-WY-3z7" eventType="touchUpInside" id="9um-kC-1ux"/>
                                 </connections>
@@ -564,8 +573,8 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoQ-F8-WjJ">
                                 <rect key="frame" x="368" y="510" width="75" height="408"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="buttonAction:" destination="49Z-bs-Ibo" eventType="touchUpInside" id="oQK-yh-agJ"/>
                                 </connections>
@@ -573,8 +582,8 @@
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoD-at-sTn">
                                 <rect key="frame" x="625" y="510" width="75" height="408"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="buttonAction:" destination="49Z-bs-Ibo" eventType="touchUpInside" id="GLo-Rt-jsc"/>
                                 </connections>
@@ -582,8 +591,8 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccn-rB-wYI">
                                 <rect key="frame" x="111" y="510" width="75" height="408"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="buttonAction:" destination="49Z-bs-Ibo" eventType="touchUpInside" id="DnR-Ch-B5F"/>
                                 </connections>
@@ -625,21 +634,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by8-4P-CW6">
-                                <rect key="frame" x="324" y="942" width="162" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <action selector="returnButton:" destination="rJ7-er-SbW" eventType="touchUpInside" id="nJh-kt-5v2"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="QuizResultCell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ny5-Y2-RIS">
                                 <rect key="frame" x="71" y="182" width="669" height="716"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="by8-4P-CW6">
+                                <rect key="frame" x="239" y="945" width="333" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="テストトップ画面に戻る"/>
+                                <connections>
+                                    <action selector="returnButton:" destination="rJ7-er-SbW" eventType="touchUpInside" id="nJh-kt-5v2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DBo-sb-Sug"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -667,11 +676,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkQ-YC-qui">
-                                <rect key="frame" x="329" y="924" width="153" height="117"/>
+                                <rect key="frame" x="290" y="943" width="230" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="戻る"/>
+                                <state key="normal" title="前の画面に戻る"/>
                                 <connections>
                                     <action selector="returnButton:" destination="dYb-HI-hI7" eventType="touchUpInside" id="SZ1-Xv-cfD"/>
                                 </connections>
@@ -957,24 +966,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyk-56-vrV">
-                                <rect key="frame" x="284" y="964" width="242" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="2tb-2T-O8K"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="トップに戻る"/>
-                                <connections>
-                                    <action selector="returenButton:" destination="JVt-iz-WO0" eventType="touchUpInside" id="ukv-0H-6po"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="もじをえらぼう" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snD-om-Kvf">
                                 <rect key="frame" x="241.5" y="30" width="327.5" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyk-56-vrV">
+                                <rect key="frame" x="263" y="964" width="285" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="2tb-2T-O8K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="前の画面に戻る"/>
+                                <connections>
+                                    <action selector="returenButton:" destination="JVt-iz-WO0" eventType="touchUpInside" id="ukv-0H-6po"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="She-xO-LYE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -985,7 +994,6 @@
                             <constraint firstItem="snD-om-Kvf" firstAttribute="centerX" secondItem="Pyk-56-vrV" secondAttribute="centerX" id="c4S-DX-F0Z"/>
                             <constraint firstItem="She-xO-LYE" firstAttribute="bottom" secondItem="Pyk-56-vrV" secondAttribute="bottom" constant="49" id="ci7-9h-W2X"/>
                             <constraint firstItem="snD-om-Kvf" firstAttribute="centerX" secondItem="e6d-4d-jUu" secondAttribute="centerX" id="hhq-Ie-anz"/>
-                            <constraint firstItem="Pyk-56-vrV" firstAttribute="leading" secondItem="She-xO-LYE" secondAttribute="leading" constant="284" id="wN2-5u-RDd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1205,10 +1213,10 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgd-e5-afi">
-                                <rect key="frame" x="337" y="932" width="136" height="48"/>
+                                <rect key="frame" x="306.5" y="932" width="197" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Topに戻る"/>
+                                <state key="normal" title="前の画面に戻る"/>
                                 <connections>
                                     <action selector="topRetuen:" destination="3ld-gQ-SBv" eventType="touchUpInside" id="fg4-eo-XhF"/>
                                 </connections>

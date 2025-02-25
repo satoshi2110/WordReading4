@@ -12,10 +12,13 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var tableView: UITableView!
     
     var quizResults: Results<QuizResult>!
+    var selectLevel = 0 
+    var selectLength = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("selectLevel: \(selectLevel), selectLength: \(selectLength)") 
         // Realmから全てのデータを取得
         let realm = try! Realm()
         quizResults = realm.objects(QuizResult.self)
@@ -33,7 +36,35 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let uniqueQuizIDs = Array(Set(quizResults.value(forKeyPath: "quizID") as! [String]))
-        return "クイズID: \(uniqueQuizIDs[section])"
+            let quizID = uniqueQuizIDs[section]
+            let resultsForQuizID = quizResults.filter("quizID == %@", quizID)
+            if let quizResult = resultsForQuizID.first {
+                // selectLevelとselectLengthに基づいて表示する文字列を生成
+                let levelText: String
+                switch quizResult.selectLevel {
+                case 1:
+                    levelText = "基礎"
+                case 2:
+                    levelText = "応用"
+                default:
+                    levelText = "未設定"
+                }
+                
+                let lengthText: String
+                switch quizResult.selectLength {
+                case 2:
+                    lengthText = "2文字"
+                case 3:
+                    lengthText = "3文字"
+                case 4:
+                    lengthText = "4文字"
+                default:
+                    lengthText = "未設定"
+                }
+                
+                return "\(levelText) - \(lengthText)"
+            }
+            return nil
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -17,5 +17,7 @@ class QuizResult: Object {
     @Persisted var timeTaken: Double = 0.0
     @Persisted var date: Date = Date()
     @Persisted var correctCount: Int = 0
+    @Persisted var selectLevel: Int = 0 
+    @Persisted var selectLength: Int = 0
 }
 
