@@ -223,6 +223,7 @@
 		4FA2EE192D70ACF6003069CA /* にわとり.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE182D70ACF6003069CA /* にわとり.csv */; };
 		4FA2EE1B2D70AD33003069CA /* えんぴつ.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE1A2D70AD33003069CA /* えんぴつ.csv */; };
 		4FA2EE1D2D70AF7F003069CA /* あめe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE1C2D70AF7F003069CA /* あめe.mp3 */; };
+		4FA2EE1F2D70B237003069CA /* とけいe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE1E2D70B237003069CA /* とけいe.mp3 */; };
 		889E6CB5C8231E5AEE69CF98 /* Pods_WordReading4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E1DA2FDB33D5248F2A8B4B /* Pods_WordReading4.framework */; };
 /* End PBXBuildFile section */
 
@@ -446,6 +447,7 @@
 		4FA2EE182D70ACF6003069CA /* にわとり.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "にわとり.csv"; sourceTree = "<group>"; };
 		4FA2EE1A2D70AD33003069CA /* えんぴつ.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "えんぴつ.csv"; sourceTree = "<group>"; };
 		4FA2EE1C2D70AF7F003069CA /* あめe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あめe.mp3"; sourceTree = "<group>"; };
+		4FA2EE1E2D70B237003069CA /* とけいe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "とけいe.mp3"; sourceTree = "<group>"; };
 		57CD20213335CF6F3F670AE4 /* Pods-WordReading4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.release.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.release.xcconfig"; sourceTree = "<group>"; };
 		D04E762ADA905AFAB33395B6 /* Pods-WordReading4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.debug.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -565,6 +567,7 @@
 			children = (
 				4FA2EDE02D709EE3003069CA /* correct.mp3 */,
 				4FA2EDDE2D709B44003069CA /* fanfare.mp3 */,
+				4FA2EE1E2D70B237003069CA /* とけいe.mp3 */,
 				4FA2EE122D70AC67003069CA /* あおぞらe.mp3 */,
 				4FA2EE132D70AC67003069CA /* ほうせきe.mp3 */,
 				4FA2EE142D70AC67003069CA /* やまe.mp3 */,
@@ -877,6 +880,7 @@
 				4FA2EBCF2D6DEF03003069CA /* はなび.mp3 in Resources */,
 				4FA2EBD02D6DEF03003069CA /* えんぴつ.mp3 in Resources */,
 				4FA2EDFA2D70A9EC003069CA /* ふうりんe.mp3 in Resources */,
+				4FA2EE1F2D70B237003069CA /* とけいe.mp3 in Resources */,
 				4FA2EDFB2D70A9EC003069CA /* むしe.mp3 in Resources */,
 				4FA2EDFC2D70A9EC003069CA /* のみものe.mp3 in Resources */,
 				4FA2EDFD2D70A9EC003069CA /* ほんe.mp3 in Resources */,

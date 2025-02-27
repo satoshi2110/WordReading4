@@ -43,9 +43,10 @@ class Ssp4WordViewController: UIViewController {
         fourthWord.isHidden = true
         
         if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
-            let resizedImage = originalImage.resize(to: CGSize(width: 500, height: 500))
-            imageB.setImage(resizedImage, for: .normal)
+            imageB.setImage(originalImage, for: .normal)
+            imageB.imageView?.contentMode = .scaleAspectFit
         }
+
         imageB.isHidden = true
         
     }

@@ -92,7 +92,7 @@ class Ssp2WordViewController: UIViewController {
     @IBAction func firstWordButtton(_ sender: UIButton) {
         soundFirst()
         firstWord.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             self.firstWord.isHidden = true
             self.secondWord.isHidden = false
             self.secondWord.setTitle(self.characterArray[1], for: .normal)
@@ -101,7 +101,7 @@ class Ssp2WordViewController: UIViewController {
     @IBAction func secondWordButton(_ sender: UIButton) {
         soundSecond()
         secondWord.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             self.secondWord.isHidden = true
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){

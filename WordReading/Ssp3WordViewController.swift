@@ -32,8 +32,8 @@ class Ssp3WordViewController: UIViewController {
         thirdWord.setTitleColor(UIColor.black, for: .normal)
         
         if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
-            let resizedImage = originalImage.resize(to: CGSize(width: 500, height: 500))
-            imageB.setImage(resizedImage, for: .normal)
+            imageB.setImage(originalImage, for: .normal)
+            imageB.imageView?.contentMode = .scaleAspectFit
         }
 
         
@@ -47,7 +47,7 @@ class Ssp3WordViewController: UIViewController {
     @IBAction func firstWordButton(_ sender: UIButton) {
         soundFirst()
         firstWord.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             self.firstWord.isHidden = true
             self.secondWord.isHidden = false
             self.secondWord.setTitle(self.characterArray[1], for: .normal)
@@ -56,7 +56,7 @@ class Ssp3WordViewController: UIViewController {
     @IBAction func secondWordButton(_ sender: UIButton) {
         soundSecond()
         secondWord.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             self.secondWord.isHidden = true
             self.thirdWord.isHidden = false
             self.thirdWord.setTitle(self.characterArray[2], for: .normal)
@@ -65,7 +65,7 @@ class Ssp3WordViewController: UIViewController {
     @IBAction func thirdWordButton(_ sender: UIButton) {
         soundThird()
         thirdWord.isEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
             self.thirdWord.isHidden = true
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
