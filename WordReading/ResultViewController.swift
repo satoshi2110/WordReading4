@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
 
 class ResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -19,6 +20,8 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
     
     var selectLevel = 0
     var selectLength = 0
+    
+    var audioPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +41,30 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
             selectLevel = quizResult.selectLevel
             selectLength = quizResult.selectLength
         }
+        
+        // 全問正解かどうかを判定
+         if (selectLength == 3 || selectLength == 4) && correct == 12 {
+             scoreLabel.text = "おめでとう！！"
+             playSound(filename: "fanfare", filetype: "mp3")
+             
+         } else if selectLength == 2 && correct == 15 {
+             scoreLabel.text = "おめでとう！！"
+             playSound(filename: "fanfare", filetype: "mp3")
+         }
     }
+    
+    func playSound(filename: String, filetype: String) {
+        if let path = Bundle.main.path(forResource: filename, ofType: filetype) {
+            let url = URL(fileURLWithPath: path)
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            } catch {
+                print("音楽ファイルの再生に失敗しました")
+            }
+        }
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quizResults.count

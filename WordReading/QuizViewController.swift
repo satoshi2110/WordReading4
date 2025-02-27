@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
 
 class QuizViewController: UIViewController {
     
@@ -27,6 +28,8 @@ class QuizViewController: UIViewController {
     
     var startTime: Date?
     var quizID: String = UUID().uuidString // クイズごとに一意のIDを生成
+    
+    var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +84,7 @@ class QuizViewController: UIViewController {
         let isCorrect = sender.tag == Int(quizArray[4])
         if isCorrect {
             judgeImage.image = UIImage(named: "まる")
+            playSound(filename: "correct", filetype: "mp3")
             correctCount += 1
         } else {
             judgeImage.image = UIImage(named: "ばつ")
@@ -160,6 +164,18 @@ class QuizViewController: UIViewController {
         answerButton1.isEnabled = true
         answerButton2.isEnabled = true
         answerButton3.isEnabled = true
+    }
+    
+    func playSound(filename: String, filetype: String) {
+        if let path = Bundle.main.path(forResource: filename, ofType: filetype) {
+            let url = URL(fileURLWithPath: path)
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer?.play()
+            } catch {
+                print("音楽ファイルの再生に失敗しました")
+            }
+        }
     }
 }
 extension UIButton {
