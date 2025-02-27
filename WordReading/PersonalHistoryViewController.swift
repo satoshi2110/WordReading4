@@ -36,29 +36,65 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
         tableView.reloadData()
     }
     
-    // データを読み込む
     func loadData() {
         let realm = try! Realm()
+        
+        // 日付の降順でデータを取得
         quizResults = realm.objects(QuizResult.self).sorted(byKeyPath: "date", ascending: false)
         
         // Resultsを静的な配列に変換
         quizResultsArray = Array(quizResults)
         
-        // セクションごとの quizID を取得
-        uniqueQuizIDs = Array(Set(quizResultsArray.map { $0.quizID })).sorted()
+        // quizID ごとにデータをグループ化
+        quizResultsDict = Dictionary(grouping: quizResultsArray, by: { $0.quizID })
+        
+        // セクションごとの quizID を日付の降順でソート
+        uniqueQuizIDs = quizResultsDict.keys.sorted {
+            let firstDate = quizResultsDict[$0]?.first?.date ?? Date()
+            let secondDate = quizResultsDict[$1]?.first?.date ?? Date()
+            return firstDate > secondDate // 日付の降順でソート
+        }
         
         // デバッグ: uniqueQuizIDs の内容を確認
         for quizID in uniqueQuizIDs {
-            if let firstResult = quizResultsArray.first(where: { $0.quizID == quizID }) {
+            if let firstResult = quizResultsDict[quizID]?.first {
                 print("QuizID: \(quizID), Date: \(firstResult.date)")
             }
         }
-        
     }
-    
+
     // セクションの数
     func numberOfSections(in tableView: UITableView) -> Int {
         return uniqueQuizIDs.count
+    }
+
+    // セクションごとの行数
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let quizID = uniqueQuizIDs[section]
+        return quizResultsDict[quizID]?.count ?? 0
+    }
+
+    // セルの内容
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "QuizResultCell")
+        
+        let quizID = uniqueQuizIDs[indexPath.section]
+        guard let resultsForQuizID = quizResultsDict[quizID], indexPath.row < resultsForQuizID.count else {
+            return cell
+        }
+        
+        let quizResult = resultsForQuizID[indexPath.row]
+        
+        // 日付を「年 月 日 時 分」の形式にフォーマット
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy年MM月dd日 HH時mm分"
+        let dateString = dateFormatter.string(from: quizResult.date)
+        
+        let timeTakenString = String(format: "%.1f", quizResult.timeTaken)
+        
+        cell.textLabel?.text = "問題: \(quizResult.quizImageName), 選択: \(quizResult.selectedAnswer), 正解: \(quizResult.isCorrect ? "○" : "×")"
+        cell.detailTextLabel?.text = "所要時間: \(timeTakenString)秒, 日付: \(dateString)"
+        return cell
     }
     
     // セクションヘッダーのタイトル
@@ -93,39 +129,6 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
         }
         return nil
     }
-    
-    // セクションごとの行数
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let quizID = uniqueQuizIDs[section]
-        return quizResultsArray.filter { $0.quizID == quizID }.count
-    }
-    
-    // セルの内容
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "QuizResultCell")
-        
-        let quizID = uniqueQuizIDs[indexPath.section]
-        let resultsForQuizID = quizResultsArray.filter { $0.quizID == quizID }
-        
-        // インデックスが範囲内か確認
-        guard indexPath.row < resultsForQuizID.count else {
-            return cell
-        }
-        
-        let quizResult = resultsForQuizID[indexPath.row]
-        
-        // 日付を「年 月 日 時 分」の形式にフォーマット
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy年MM月dd日 HH時mm分"
-        let dateString = dateFormatter.string(from: quizResult.date)
-        
-        let timeTakenString = String(format: "%.1f", quizResult.timeTaken)
-        
-        cell.textLabel?.text = "問題: \(quizResult.quizImageName), 選択: \(quizResult.selectedAnswer), 正解: \(quizResult.isCorrect ? "○" : "×")"
-        cell.detailTextLabel?.text = "所要時間: \(timeTakenString)秒, 日付: \(dateString)"
-        return cell
-    }
-    
     // セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
