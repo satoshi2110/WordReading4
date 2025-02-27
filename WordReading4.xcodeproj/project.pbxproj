@@ -11,7 +11,7 @@
 		4F1DBCA22D66EAE500F7DCE8 /* Ssp2WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA12D66EAE500F7DCE8 /* Ssp2WordViewController.swift */; };
 		4F1DBCA42D670C1000F7DCE8 /* あめ.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA32D670C1000F7DCE8 /* あめ.csv */; };
 		4F1DBCA82D6713F300F7DCE8 /* あめ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCA72D6713F300F7DCE8 /* あめ.png */; };
-		4F1DBCAC2D683BC100F7DCE8 /* SelectQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCAB2D683BC100F7DCE8 /* SelectQuizViewController.swift */; };
+		4F1DBCAC2D683BC100F7DCE8 /* QuizTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCAB2D683BC100F7DCE8 /* QuizTopViewController.swift */; };
 		4F1DBCAE2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCAD2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift */; };
 		4F1DBCB02D69C02800F7DCE8 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1DBCAF2D69C02800F7DCE8 /* QuizViewController.swift */; };
 		4F1DBCB22D69CB8300F7DCE8 /* 14.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F1DBCB12D69CB8300F7DCE8 /* 14.csv */; };
@@ -201,7 +201,7 @@
 		4F1DBCA12D66EAE500F7DCE8 /* Ssp2WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ssp2WordViewController.swift; sourceTree = "<group>"; };
 		4F1DBCA32D670C1000F7DCE8 /* あめ.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "あめ.csv"; sourceTree = "<group>"; };
 		4F1DBCA72D6713F300F7DCE8 /* あめ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "あめ.png"; sourceTree = "<group>"; };
-		4F1DBCAB2D683BC100F7DCE8 /* SelectQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectQuizViewController.swift; sourceTree = "<group>"; };
+		4F1DBCAB2D683BC100F7DCE8 /* QuizTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTopViewController.swift; sourceTree = "<group>"; };
 		4F1DBCAD2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalHistoryViewController.swift; sourceTree = "<group>"; };
 		4F1DBCAF2D69C02800F7DCE8 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		4F1DBCB12D69CB8300F7DCE8 /* 14.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = 14.csv; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 				4F25C0352C910FD800939AF7 /* Select4WordViewController.swift */,
 				4F25C0372C91101000939AF7 /* Ssp4WordViewController.swift */,
 				4F25BFB72C8FE3BC00939AF7 /* LastViewController.swift */,
-				4F1DBCAB2D683BC100F7DCE8 /* SelectQuizViewController.swift */,
+				4F1DBCAB2D683BC100F7DCE8 /* QuizTopViewController.swift */,
 				4F1DBCB32D69DB4300F7DCE8 /* SelectCharacterLengthViewController.swift */,
 				4F1DBCAF2D69C02800F7DCE8 /* QuizViewController.swift */,
 				4F75C0272D6A84D600534812 /* ResultViewController.swift */,
@@ -938,7 +938,7 @@
 				4F75C0282D6A84D600534812 /* ResultViewController.swift in Sources */,
 				4F25C0382C91101000939AF7 /* Ssp4WordViewController.swift in Sources */,
 				4F1DBCAE2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift in Sources */,
-				4F1DBCAC2D683BC100F7DCE8 /* SelectQuizViewController.swift in Sources */,
+				4F1DBCAC2D683BC100F7DCE8 /* QuizTopViewController.swift in Sources */,
 				4F25BFB82C8FE3BC00939AF7 /* LastViewController.swift in Sources */,
 				4F25BFA22C8FD8FB00939AF7 /* AppDelegate.swift in Sources */,
 				4F25BFB62C8FE2C900939AF7 /* Ssp3WordViewController.swift in Sources */,

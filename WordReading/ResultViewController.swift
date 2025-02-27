@@ -32,8 +32,14 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "QuizResultCell")
-        print("ResultViewControllerのselectLevel: \(selectLevel), selectLength: \(selectLength)")
+        
+        // selectLevelとselectLengthをQuizResultから取得
+        if let quizResult = quizResults.first {
+            selectLevel = quizResult.selectLevel
+            selectLength = quizResult.selectLength
+        }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quizResults.count
     }

@@ -7,33 +7,25 @@
 
 import UIKit
 
-class SelectQuizViewController: UIViewController {
+class QuizTopViewController: UIViewController {
     
     var selectTag = 0
-    var selectLevel = 0
-    var selectLength = 0
     
     private enum SegueIdentifier {
         static let toSelectCharacterLengthVC = "toSelectCharacterLengthVC"
         static let toPersonalHistoryVC = "toPersonalHistoryVC"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("SelectQuizViewControllerのselectLevel: \(selectLevel), selectLength: \(selectLength)")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == SegueIdentifier.toSelectCharacterLengthVC {
+            let selectCharacterLengthVC = segue.destination as! SelectCharacterLengthViewController
+            selectCharacterLengthVC.selectedLevel = selectTag
+        } else if segue.identifier == SegueIdentifier.toPersonalHistoryVC {
+            let personalHistoryVC = segue.destination as! PersonalHistoryViewController
+        }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueIdentifier.toSelectCharacterLengthVC,
-           let selectCharacterLengthVC = segue.destination as? SelectCharacterLengthViewController {
-            selectCharacterLengthVC.selectLevel = selectTag
-        }
-        else if segue.identifier == SegueIdentifier.toPersonalHistoryVC,
-                let personalHistoryVC = segue.destination as? PersonalHistoryViewController {
-            personalHistoryVC.selectLevel = selectLevel
-            personalHistoryVC.selectLength = selectLength
-        }
-    }
     @IBAction func levelButtonAction(sender: UIButton) {
         selectTag = sender.tag
         performSegue(withIdentifier: SegueIdentifier.toSelectCharacterLengthVC, sender: nil)

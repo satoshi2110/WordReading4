@@ -22,19 +22,19 @@ class QuizViewController: UIViewController {
     var quizCount = 0
     var correctCount = 0
     
-    var selectLevel = 0
-    var selectLength = 0
+    var selectedLevel = 0
+    var selectedLength = 0
     
     var startTime: Date?
     var quizID: String = UUID().uuidString // クイズごとに一意のIDを生成
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        csvArray = loadCSV(fileName: "\(selectLevel)\(selectLength)")
+        csvArray = loadCSV(fileName: "\(selectedLevel)\(selectedLength)")
         print(csvArray)
         
         quizArray = csvArray[quizCount].components(separatedBy: ",")
-        print("選択したのは\(selectLevel)\(selectLength)")
+        print("選択したのは\(selectedLevel)\(selectedLength)")
         
         quizImage.image = UIImage(named: "\(quizArray[0])")
         
@@ -58,8 +58,8 @@ class QuizViewController: UIViewController {
         let resultVC = segue.destination as! ResultViewController
         resultVC.correct = correctCount
         resultVC.quizID = quizID
-        resultVC.selectLevel = selectLevel
-        resultVC.selectLength = selectLength
+        resultVC.selectLevel = selectedLevel
+        resultVC.selectLength = selectedLength
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
@@ -95,8 +95,8 @@ class QuizViewController: UIViewController {
         quizResult.timeTaken = timeTaken
         quizResult.date = Date()
         quizResult.correctCount = correctCount
-        quizResult.selectLevel = selectLevel // selectLevelを設定
-        quizResult.selectLength = selectLength // selectLengthを設定
+        quizResult.selectLevel = selectedLevel // selectLevelを設定
+        quizResult.selectLength = selectedLength // selectLengthを設定
         
         let realm = try! Realm()
         try! realm.write {

@@ -354,10 +354,10 @@
             </objects>
             <point key="canvasLocation" x="-268" y="797"/>
         </scene>
-        <!--Select Quiz View Controller-->
+        <!--Quiz Top View Controller-->
         <scene sceneID="7tp-oa-mqB">
             <objects>
-                <viewController storyboardIdentifier="SelectQuizViewController" modalPresentationStyle="fullScreen" id="g3l-cX-fbM" customClass="SelectQuizViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectQuizViewController" modalPresentationStyle="fullScreen" id="g3l-cX-fbM" customClass="QuizTopViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gXF-yR-f5B">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
