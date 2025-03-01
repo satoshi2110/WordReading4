@@ -80,6 +80,9 @@ class QuizViewController: UIViewController {
             button?.titleLabel?.font = UIFont.systemFont(ofSize: 80)
         }
         
+        // ボタンの位置をランダムに配置
+        arrangeButtonsRandomly()
+        
         progressBar.progress = Float(quizCount) / Float(csvArray.count)
         startTime = Date() // 計測開始
     }
@@ -134,6 +137,9 @@ class QuizViewController: UIViewController {
                 button?.setVerticalTitle(quizArray[index + 1])
             }
             
+            // ボタンの位置をランダムに配置
+            arrangeButtonsRandomly()
+            
             progressBar.progress = Float(quizCount) / Float(csvArray.count)
             startTime = Date() // 次の問題の計測開始
         } else {
@@ -185,7 +191,44 @@ class QuizViewController: UIViewController {
             print("音声ファイルの再生に失敗しました: \(error)")
         }
     }
+    
+    // ボタンをランダムに配置する関数
+    private func arrangeButtonsRandomly() {
+        let buttons = [answerButton1, answerButton2, answerButton3]
+        
+        // ボタンの幅と高さ
+        let buttonWidth = answerButton1.frame.width
+        let buttonHeight = answerButton1.frame.height
+        
+        // 配置可能な領域を計算
+        let minY = quizImage.frame.maxY + 20 // quizImage の下に配置
+        let maxY = progressBar.frame.minY - buttonHeight - 20 // progressBar の上に配置
+        let screenWidth = UIScreen.main.bounds.width
+        
+        // ボタンの位置をランダムに決定
+        var usedXPositions: [CGFloat] = []
+        for button in buttons {
+            guard let button = button else { continue }
+            
+            var x: CGFloat
+            var y: CGFloat
+            
+            // ボタンが重ならないように x 座標を決定
+            repeat {
+                x = CGFloat.random(in: 50...(screenWidth - buttonWidth - 50))
+            } while usedXPositions.contains { abs($0 - x) < buttonWidth + 20 } // ボタン同士が重ならないように余裕を持たせる
+            
+            usedXPositions.append(x)
+            
+            // y 座標をランダムに決定
+            y = CGFloat.random(in: minY...maxY)
+            
+            // ボタンの位置を設定
+            button.frame.origin = CGPoint(x: x, y: y)
+        }
+    }
 }
+    
 
 extension UIButton {
     func setVerticalTitle(_ title: String) {
