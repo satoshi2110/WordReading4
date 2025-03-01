@@ -89,7 +89,7 @@ class Ssp3WordViewController: UIViewController {
     }
     
     @IBAction func imageButton(_ sender: UIButton) {
-        soundEffects()
+        soundEffects(volume: 0.1)
     }
     func loadCSV(fileName: String) -> [String] {
         let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")!
@@ -135,10 +135,11 @@ class Ssp3WordViewController: UIViewController {
         audioPlayer.play()
     }
     
-    func soundEffects() {
+    func soundEffects(volume: Float) {
         if let url = Bundle.main.url(forResource: "\(selectedWord!)e", withExtension: "mp3") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.volume = volume // ボリュームを設定
                 audioPlayer.play()
             } catch {
                 print("音声ファイルの再生に失敗しました: \(error.localizedDescription)")

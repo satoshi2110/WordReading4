@@ -43,21 +43,24 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         // 全問正解かどうかを判定
-         if (selectLength == 3 || selectLength == 4) && correct == 12 {
-             scoreLabel.text = "おめでとう！！"
-             playSound(filename: "fanfare", filetype: "mp3")
-             
-         } else if selectLength == 2 && correct == 15 {
-             scoreLabel.text = "おめでとう！！"
-             playSound(filename: "fanfare", filetype: "mp3")
-         }
+        if (selectLength == 3 || selectLength == 4) && correct == 12 {
+            scoreLabel.text = "おめでとう！！"
+            playSound(filename: "fanfare", filetype: "mp3",volume: 0.1)
+        } else if selectLength == 2 && correct == 15 {
+            scoreLabel.text = "おめでとう！！"
+            playSound(filename: "fanfare", filetype: "mp3", volume: 0.1)
+        } else if selectLevel == 2 && correct >= 8 { // 応用の場合、8問以上正解でおめでとうを表示
+            scoreLabel.text = "おめでとう！！"
+            playSound(filename: "fanfare", filetype: "mp3", volume: 0.1)
+        }
     }
     
-    func playSound(filename: String, filetype: String) {
+    func playSound(filename: String, filetype: String, volume: Float ) {
         if let path = Bundle.main.path(forResource: filename, ofType: filetype) {
             let url = URL(fileURLWithPath: path)
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.volume = volume
                 audioPlayer?.play()
             } catch {
                 print("音楽ファイルの再生に失敗しました")

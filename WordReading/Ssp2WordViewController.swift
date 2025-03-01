@@ -76,10 +76,11 @@ class Ssp2WordViewController: UIViewController {
         audioPlayer.play()
     }
     
-    func soundEffects() {
+    func soundEffects(volume: Float) {
         if let url = Bundle.main.url(forResource: "\(selectedWord!)e", withExtension: "mp3") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: url)
+                audioPlayer.volume = volume // ボリュームを設定
                 audioPlayer.play()
             } catch {
                 print("音声ファイルの再生に失敗しました: \(error.localizedDescription)")
@@ -122,11 +123,9 @@ class Ssp2WordViewController: UIViewController {
     }
     @IBAction func imageButton(_ sender: UIButton) {
         tapButton += 1
-        soundEffects()
+        soundEffects(volume: 0.1)
         if tapButton >= 1 {
             imageB.isEnabled = false
         }
     }
-    
-    
 }

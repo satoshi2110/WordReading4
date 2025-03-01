@@ -90,7 +90,7 @@ class QuizViewController: UIViewController {
     private func handleAnswer(isCorrect: Bool, selectedAnswer: String, timeTaken: TimeInterval) {
         if isCorrect {
             judgeImage.image = UIImage(named: "まる")
-            playSound(filename: "correct", filetype: "mp3")
+            playSound(filename: "correct", filetype: "mp3", volume: 0.1)
             correctCount += 1
         } else {
             judgeImage.image = UIImage(named: "ばつ")
@@ -177,7 +177,7 @@ class QuizViewController: UIViewController {
         [answerButton1, answerButton2, answerButton3].forEach { $0?.isEnabled = true }
     }
     
-    private func playSound(filename: String, filetype: String) {
+    private func playSound(filename: String, filetype: String, volume: Float = 1.0) {
         guard let path = Bundle.main.path(forResource: filename, ofType: filetype) else {
             print("音声ファイルが見つかりません")
             return
@@ -186,6 +186,7 @@ class QuizViewController: UIViewController {
         let url = URL(fileURLWithPath: path)
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.volume = volume // ボリュームを設定
             audioPlayer?.play()
         } catch {
             print("音声ファイルの再生に失敗しました: \(error)")
@@ -216,7 +217,7 @@ class QuizViewController: UIViewController {
             // ボタンが重ならないように x 座標を決定
             repeat {
                 x = CGFloat.random(in: 50...(screenWidth - buttonWidth - 50))
-            } while usedXPositions.contains { abs($0 - x) < buttonWidth + 20 } // ボタン同士が重ならないように余裕を持たせる
+            } while usedXPositions.contains { abs($0 - x) < buttonWidth + 50 } // ボタン同士が重ならないように余裕を持たせる
             
             usedXPositions.append(x)
             
