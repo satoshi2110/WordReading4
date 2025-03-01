@@ -33,36 +33,16 @@ class QuizViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        csvArray = loadCSV(fileName: "\(selectedLevel)\(selectedLength)")
-        print(csvArray)
-        
-        quizArray = csvArray[quizCount].components(separatedBy: ",")
-        print("選択したのは\(selectedLevel)\(selectedLength)")
-        
-        quizImage.image = UIImage(named: "\(quizArray[0])")
-        
-        // ボタンのタイトルを縦書きに設定
-        answerButton1.setVerticalTitle(quizArray[1])
-        answerButton2.setVerticalTitle(quizArray[2])
-        answerButton3.setVerticalTitle(quizArray[3])
-        
-        // ボタンのフォントサイズを調整
-        answerButton1.titleLabel?.font = UIFont.systemFont(ofSize: 80)
-        answerButton2.titleLabel?.font = UIFont.systemFont(ofSize: 80)
-        answerButton3.titleLabel?.font = UIFont.systemFont(ofSize: 80)
-        
-        progressBar.progress = Float(quizCount) / Float(csvArray.count)
-        
-        startTime = Date() // 計測開始
-        
+        setupQuiz()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let resultVC = segue.destination as! ResultViewController
-        resultVC.correct = correctCount
-        resultVC.quizID = quizID
-        resultVC.selectLevel = selectedLevel
-        resultVC.selectLength = selectedLength
+        if let resultVC = segue.destination as? ResultViewController {
+            resultVC.correct = correctCount
+            resultVC.quizID = quizID
+            resultVC.selectLevel = selectedLevel
+            resultVC.selectLength = selectedLength
+        }
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
@@ -82,6 +62,29 @@ class QuizViewController: UIViewController {
         }
         
         let isCorrect = sender.tag == Int(quizArray[4])
+        handleAnswer(isCorrect: isCorrect, selectedAnswer: selectedAnswer, timeTaken: timeTaken)
+    }
+    
+    private func setupQuiz() {
+        csvArray = loadCSV(fileName: "\(selectedLevel)\(selectedLength)")
+        print(csvArray)
+        
+        quizArray = csvArray[quizCount].components(separatedBy: ",")
+        print("選択したのは\(selectedLevel)\(selectedLength)")
+        
+        quizImage.image = UIImage(named: quizArray[0])
+        
+        // ボタンのタイトルを縦書きに設定
+        [answerButton1, answerButton2, answerButton3].enumerated().forEach { index, button in
+            button?.setVerticalTitle(quizArray[index + 1])
+            button?.titleLabel?.font = UIFont.systemFont(ofSize: 80)
+        }
+        
+        progressBar.progress = Float(quizCount) / Float(csvArray.count)
+        startTime = Date() // 計測開始
+    }
+    
+    private func handleAnswer(isCorrect: Bool, selectedAnswer: String, timeTaken: TimeInterval) {
         if isCorrect {
             judgeImage.image = UIImage(named: "まる")
             playSound(filename: "correct", filetype: "mp3")
@@ -90,22 +93,7 @@ class QuizViewController: UIViewController {
             judgeImage.image = UIImage(named: "ばつ")
         }
         
-        // Realmに結果を保存
-        let quizResult = QuizResult()
-        quizResult.quizID = quizID
-        quizResult.quizImageName = quizArray[0]
-        quizResult.selectedAnswer = selectedAnswer
-        quizResult.isCorrect = isCorrect
-        quizResult.timeTaken = timeTaken
-        quizResult.date = Date()
-        quizResult.correctCount = correctCount
-        quizResult.selectLevel = selectedLevel // selectLevelを設定
-        quizResult.selectLength = selectedLength // selectLengthを設定
-        
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(quizResult)
-        }
+        saveQuizResult(isCorrect: isCorrect, selectedAnswer: selectedAnswer, timeTaken: timeTaken)
         
         judgeImage.isHidden = false
         buttonDisablement()
@@ -114,70 +102,91 @@ class QuizViewController: UIViewController {
             self.buttonEnablement()
             self.nextQuiz()
         }
-        print("\(correctCount)")
-        
+        print("正解数: \(correctCount)")
     }
     
-    func nextQuiz() {
+    private func saveQuizResult(isCorrect: Bool, selectedAnswer: String, timeTaken: TimeInterval) {
+        let quizResult = QuizResult()
+        quizResult.quizID = quizID
+        quizResult.quizImageName = quizArray[0]
+        quizResult.selectedAnswer = selectedAnswer
+        quizResult.isCorrect = isCorrect
+        quizResult.timeTaken = timeTaken
+        quizResult.date = Date()
+        quizResult.correctCount = correctCount
+        quizResult.selectLevel = selectedLevel
+        quizResult.selectLength = selectedLength
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(quizResult)
+        }
+    }
+    
+    private func nextQuiz() {
         quizCount += 1
         if quizCount < csvArray.count {
             quizArray = csvArray[quizCount].components(separatedBy: ",")
-            quizImage.image = UIImage(named: "\(quizArray[0])")
-            // ボタンのタイトルを縦書きに設定
-            answerButton1.setVerticalTitle(quizArray[1])
-            answerButton2.setVerticalTitle(quizArray[2])
-            answerButton3.setVerticalTitle(quizArray[3])
+            quizImage.image = UIImage(named: quizArray[0])
             
-            // プログレスバーの更新
+            // ボタンのタイトルを縦書きに設定
+            [answerButton1, answerButton2, answerButton3].enumerated().forEach { index, button in
+                button?.setVerticalTitle(quizArray[index + 1])
+            }
+            
             progressBar.progress = Float(quizCount) / Float(csvArray.count)
             startTime = Date() // 次の問題の計測開始
         } else {
             progressBar.progress = 1.0 // プログレスバーを最大にする
-            self.buttonDisablement()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                
+            buttonDisablement()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.performSegue(withIdentifier: "toResultVC", sender: nil)
             }
         }
     }
     
-    func loadCSV(fileName: String) -> [String] {
-        let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")!
-        do {
-            let csvData = try String(contentsOfFile: csvBundle,encoding: String.Encoding.utf8)
-            let lineChange = csvData.replacingOccurrences(of: "\r", with: "\n")
-            csvArray = lineChange.components(separatedBy: "\n")
-            csvArray.removeLast()
-        } catch {
-            print("エラー")
+    private func loadCSV(fileName: String) -> [String] {
+        guard let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv") else {
+            print("CSVファイルが見つかりません")
+            return []
         }
-        return csvArray
+        
+        do {
+            let csvData = try String(contentsOfFile: csvBundle, encoding: .utf8)
+            let lineChange = csvData.replacingOccurrences(of: "\r", with: "\n")
+            var csvArray = lineChange.components(separatedBy: "\n")
+            csvArray.removeLast()
+            return csvArray
+        } catch {
+            print("CSVファイルの読み込みに失敗しました: \(error)")
+            return []
+        }
     }
     
-    func buttonDisablement() {
-        answerButton1.isEnabled = false
-        answerButton2.isEnabled = false
-        answerButton3.isEnabled = false
+    private func buttonDisablement() {
+        [answerButton1, answerButton2, answerButton3].forEach { $0?.isEnabled = false }
     }
     
-    func buttonEnablement() {
-        answerButton1.isEnabled = true
-        answerButton2.isEnabled = true
-        answerButton3.isEnabled = true
+    private func buttonEnablement() {
+        [answerButton1, answerButton2, answerButton3].forEach { $0?.isEnabled = true }
     }
     
-    func playSound(filename: String, filetype: String) {
-        if let path = Bundle.main.path(forResource: filename, ofType: filetype) {
-            let url = URL(fileURLWithPath: path)
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: url)
-                audioPlayer?.play()
-            } catch {
-                print("音楽ファイルの再生に失敗しました")
-            }
+    private func playSound(filename: String, filetype: String) {
+        guard let path = Bundle.main.path(forResource: filename, ofType: filetype) else {
+            print("音声ファイルが見つかりません")
+            return
+        }
+        
+        let url = URL(fileURLWithPath: path)
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        } catch {
+            print("音声ファイルの再生に失敗しました: \(error)")
         }
     }
 }
+
 extension UIButton {
     func setVerticalTitle(_ title: String) {
         let verticalTitle = title.map { String($0) }.joined(separator: "\n")

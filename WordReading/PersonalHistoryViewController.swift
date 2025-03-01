@@ -12,99 +12,83 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var tableView: UITableView!
     
     var quizResults: Results<QuizResult>!
-    var quizResultsArray: [QuizResult] = [] // 静的な配列でデータを保持
-    var uniqueQuizIDs: [String] = [] // セクションごとの quizID を保持
-    var quizResultsDict: [String: [QuizResult]] = [:]// quizID ごとのデータを保持
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        var quizResultsArray: [QuizResult] = [] // 静的な配列でデータを保持
+        var uniqueQuizIDs: [String] = [] // セクションごとの quizID を保持
+        var quizResultsDict: [String: [QuizResult]] = [:] // quizID ごとのデータを保持
         
-        // TableViewの設定
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "QuizResultCell")
-        
-        // 初回データ読み込み
-        loadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // 画面が表示されるたびにデータを再読み込み
-        loadData()
-        tableView.reloadData()
-    }
-    
-    func loadData() {
-        let realm = try! Realm()
-        
-        // 日付の降順でデータを取得
-        quizResults = realm.objects(QuizResult.self).sorted(byKeyPath: "date", ascending: false)
-        
-        // Resultsを静的な配列に変換
-        quizResultsArray = Array(quizResults)
-        
-        // quizID ごとにデータをグループ化
-        quizResultsDict = Dictionary(grouping: quizResultsArray, by: { $0.quizID })
-        
-        // セクションごとの quizID を日付の降順でソート
-        uniqueQuizIDs = quizResultsDict.keys.sorted {
-            let firstDate = quizResultsDict[$0]?.first?.date ?? Date()
-            let secondDate = quizResultsDict[$1]?.first?.date ?? Date()
-            return firstDate > secondDate // 日付の降順でソート
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            // TableViewの設定
+            tableView.dataSource = self
+            tableView.delegate = self
+            tableView.register(UITableViewCell.self, forCellReuseIdentifier: "QuizResultCell")
+            
+            // 初回データ読み込み
+            loadData()
         }
         
-        // デバッグ: uniqueQuizIDs の内容を確認
-        for quizID in uniqueQuizIDs {
-            if let firstResult = quizResultsDict[quizID]?.first {
-                print("QuizID: \(quizID), Date: \(firstResult.date)")
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            
+            // 画面が表示されるたびにデータを再読み込み
+            loadData()
+            tableView.reloadData()
+        }
+        
+        func loadData() {
+            let realm = try! Realm()
+            
+            // 日付の降順でデータを取得
+            quizResults = realm.objects(QuizResult.self).sorted(byKeyPath: "date", ascending: false)
+            
+            // Resultsを静的な配列に変換
+            quizResultsArray = Array(quizResults)
+            
+            // quizID ごとにデータをグループ化
+            quizResultsDict = Dictionary(grouping: quizResultsArray, by: { $0.quizID })
+            
+            // セクションごとの quizID を日付の降順でソート
+            uniqueQuizIDs = quizResultsDict.keys.sorted {
+                let firstDate = quizResultsDict[$0]?.first?.date ?? Date()
+                let secondDate = quizResultsDict[$1]?.first?.date ?? Date()
+                return firstDate > secondDate // 日付の降順でソート
             }
         }
-    }
 
-    // セクションの数
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return uniqueQuizIDs.count
-    }
+        // セクションの数
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return 1 // セクションは1つだけ
+        }
 
-    // セクションごとの行数
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let quizID = uniqueQuizIDs[section]
-        return quizResultsDict[quizID]?.count ?? 0
-    }
+        // セクションごとの行数
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return uniqueQuizIDs.count // セッションの数だけ行を表示
+        }
 
     // セルの内容
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "QuizResultCell")
-        
-        let quizID = uniqueQuizIDs[indexPath.section]
-        guard let resultsForQuizID = quizResultsDict[quizID], indexPath.row < resultsForQuizID.count else {
-            return cell
-        }
-        
-        let quizResult = resultsForQuizID[indexPath.row]
-        
-        // 日付を「年 月 日 時 分」の形式にフォーマット
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy年MM月dd日 HH時mm分"
-        let dateString = dateFormatter.string(from: quizResult.date)
-        
-        let timeTakenString = String(format: "%.1f", quizResult.timeTaken)
-        
-        cell.textLabel?.text = "問題: \(quizResult.quizImageName), 選択: \(quizResult.selectedAnswer), 正解: \(quizResult.isCorrect ? "○" : "×")"
-        cell.detailTextLabel?.text = "所要時間: \(timeTakenString)秒, 日付: \(dateString)"
-        return cell
-    }
-    
-    // セクションヘッダーのタイトル
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let quizID = uniqueQuizIDs[section]
-        let resultsForQuizID = quizResultsArray.filter { $0.quizID == quizID }
-        if let quizResult = resultsForQuizID.first {
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "QuizResultCell")
+            
+            let quizID = uniqueQuizIDs[indexPath.row]
+            guard let resultsForQuizID = quizResultsDict[quizID] else {
+                return cell
+            }
+            
+            // セッションのトータル正答数を計算
+            let totalCorrect = resultsForQuizID.filter { $0.isCorrect }.count
+            
+            // セッションの最初の結果を取得
+            guard let firstResult = resultsForQuizID.first else {
+                return cell
+            }
+            
+            // 日付を「年 月 日 時 分」の形式にフォーマット
+            let dateString = firstResult.formattedDate()
+            
             // selectLevelとselectLengthに基づいて表示する文字列を生成
             let levelText: String
-            switch quizResult.selectLevel {
+            switch firstResult.selectLevel {
             case 1:
                 levelText = "基礎"
             case 2:
@@ -114,7 +98,7 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
             }
             
             let lengthText: String
-            switch quizResult.selectLength {
+            switch firstResult.selectLength {
             case 2:
                 lengthText = "2文字"
             case 3:
@@ -125,13 +109,36 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
                 lengthText = "未設定"
             }
             
-            return "\(levelText) - \(lengthText)"
+            // セルに表示する内容
+            cell.textLabel?.text = "日時: \(dateString)" // タイトルに日付を表示
+            cell.detailTextLabel?.text = "\(levelText) - \(lengthText), 正答数: \(totalCorrect)" // サブタイトルにレベルと正答数を表示
+            
+            return cell
         }
-        return nil
+        
+        // セルの高さ
+        func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 60.0
+        }
+        
+    // セルをタップしたときの処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let quizID = uniqueQuizIDs[indexPath.row]
+        
+        // セグエを実行して詳細画面に遷移
+        performSegue(withIdentifier: "showQuizIDDetail", sender: quizID)
+        
+        // セルの選択を解除
+        tableView.deselectRow(at: indexPath, animated: true)
     }
-    // セルの高さ
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
+
+    // セグエの準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showQuizIDDetail",
+           let detailVC = segue.destination as? QuizIDDetailViewController,
+           let quizID = sender as? String {
+            detailVC.quizID = quizID
+        }
     }
     
     @IBAction func returnButton(_ sender: UIButton) {

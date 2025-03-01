@@ -224,6 +224,7 @@
 		4FA2EE1B2D70AD33003069CA /* えんぴつ.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE1A2D70AD33003069CA /* えんぴつ.csv */; };
 		4FA2EE1D2D70AF7F003069CA /* あめe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE1C2D70AF7F003069CA /* あめe.mp3 */; };
 		4FA2EE1F2D70B237003069CA /* とけいe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE1E2D70B237003069CA /* とけいe.mp3 */; };
+		4FA2EE212D72936D003069CA /* QuizIDDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2EE202D72936D003069CA /* QuizIDDetailViewController.swift */; };
 		889E6CB5C8231E5AEE69CF98 /* Pods_WordReading4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E1DA2FDB33D5248F2A8B4B /* Pods_WordReading4.framework */; };
 /* End PBXBuildFile section */
 
@@ -448,6 +449,7 @@
 		4FA2EE1A2D70AD33003069CA /* えんぴつ.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "えんぴつ.csv"; sourceTree = "<group>"; };
 		4FA2EE1C2D70AF7F003069CA /* あめe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "あめe.mp3"; sourceTree = "<group>"; };
 		4FA2EE1E2D70B237003069CA /* とけいe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "とけいe.mp3"; sourceTree = "<group>"; };
+		4FA2EE202D72936D003069CA /* QuizIDDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizIDDetailViewController.swift; sourceTree = "<group>"; };
 		57CD20213335CF6F3F670AE4 /* Pods-WordReading4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.release.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.release.xcconfig"; sourceTree = "<group>"; };
 		D04E762ADA905AFAB33395B6 /* Pods-WordReading4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.debug.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -502,6 +504,7 @@
 				4F1DBCAF2D69C02800F7DCE8 /* QuizViewController.swift */,
 				4F75C0272D6A84D600534812 /* ResultViewController.swift */,
 				4F1DBCAD2D69AF2E00F7DCE8 /* PersonalHistoryViewController.swift */,
+				4FA2EE202D72936D003069CA /* QuizIDDetailViewController.swift */,
 				4F75C02D2D6AAB2F00534812 /* QuizResult.swift */,
 				4F25BFAA2C8FD8FD00939AF7 /* Assets.xcassets */,
 				4FA2EDDC2D6E86D3003069CA /* 12.csv */,
@@ -1074,6 +1077,7 @@
 				4F1DBCB42D69DB4400F7DCE8 /* SelectCharacterLengthViewController.swift in Sources */,
 				4F75C02E2D6AAB2F00534812 /* QuizResult.swift in Sources */,
 				4F25C03C2C912B8100939AF7 /* SelectViewController.swift in Sources */,
+				4FA2EE212D72936D003069CA /* QuizIDDetailViewController.swift in Sources */,
 				4F25BFBC2C90096000939AF7 /* Select3WordViewController.swift in Sources */,
 				4F25C0362C910FD800939AF7 /* Select4WordViewController.swift in Sources */,
 				4F25BFA42C8FD8FB00939AF7 /* SceneDelegate.swift in Sources */,
