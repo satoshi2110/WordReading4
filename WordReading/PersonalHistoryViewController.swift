@@ -78,6 +78,9 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
             // セッションのトータル正答数を計算
             let totalCorrect = resultsForQuizID.filter { $0.isCorrect }.count
             
+            // セッションのトータル時間を計算
+            let totalTime = resultsForQuizID.reduce(0.0) { $0 + $1.timeTaken }
+            
             // セッションの最初の結果を取得
             guard let firstResult = resultsForQuizID.first else {
                 return cell
@@ -111,7 +114,7 @@ class PersonalHistoryViewController: UIViewController, UITableViewDataSource, UI
             
             // セルに表示する内容
             cell.textLabel?.text = "日時: \(dateString)" // タイトルに日付を表示
-            cell.detailTextLabel?.text = "\(levelText) - \(lengthText), 正答数: \(totalCorrect)" // サブタイトルにレベルと正答数を表示
+            cell.detailTextLabel?.text = "\(levelText) - \(lengthText), 正答数: \(totalCorrect), トータル時間: \(String(format: "%.1f", totalTime))秒"
             
             return cell
         }

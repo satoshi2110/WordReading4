@@ -65,14 +65,13 @@ class QuizIDDetailViewController: UIViewController, UITableViewDataSource, UITab
         // 日付を「年 月 日 時 分」の形式にフォーマット
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy年MM月dd日 HH時mm分"
-        let dateString = dateFormatter.string(from: quizResult.date)
         
         // 所要時間をフォーマット
         let timeTakenString = String(format: "%.1f秒", quizResult.timeTaken)
         
         // セルに表示する内容
         cell.textLabel?.text = "問題: \(quizResult.quizImageName), 選択: \(quizResult.selectedAnswer), 正解: \(quizResult.isCorrect ? "○" : "×")"
-        cell.detailTextLabel?.text = "所要時間: \(timeTakenString), 日付: \(dateString)"
+        cell.detailTextLabel?.text = "所要時間: \(timeTakenString)"
         
         return cell
     }
@@ -80,6 +79,57 @@ class QuizIDDetailViewController: UIViewController, UITableViewDataSource, UITab
     // セルの高さ
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
+    }
+    
+    // セクションヘッダーの高さ
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0 // 適切な高さに調整
+    }
+    
+    // セクションヘッダーの内容
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let firstResult = quizResultsArray.first else {
+            return nil
+        }
+        
+        // selectLevelとselectLengthに基づいて表示する文字列を生成
+        let levelText: String
+        switch firstResult.selectLevel {
+        case 1:
+            levelText = "基礎"
+        case 2:
+            levelText = "応用"
+        default:
+            levelText = "未設定"
+        }
+        
+        let lengthText: String
+        switch firstResult.selectLength {
+        case 2:
+            lengthText = "2文字"
+        case 3:
+            lengthText = "3文字"
+        case 4:
+            lengthText = "4文字"
+        default:
+            lengthText = "未設定"
+        }
+        
+        // ヘッダービューを作成
+        let headerView = UIView()
+        headerView.backgroundColor = .orange
+        
+        // ラベルを作成
+        let label = UILabel()
+        label.text = "\(levelText) - \(lengthText)"
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.frame = CGRect(x: 16, y: 0, width: tableView.frame.width - 32, height: 40)
+        
+        // ラベルをヘッダービューに追加
+        headerView.addSubview(label)
+        
+        return headerView
     }
     
     

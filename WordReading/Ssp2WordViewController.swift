@@ -30,15 +30,18 @@ class Ssp2WordViewController: UIViewController {
         secondWord.setTitleColor(UIColor.black, for: .normal)
         
         if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
-            imageB.setImage(originalImage, for: .normal)
-            imageB.imageView?.contentMode = .scaleAspectFit
+            // 画像をリサイズ
+            let newSize = CGSize(width: originalImage.size.width * 0.7, height: originalImage.size.height * 0.7) // 50%のサイズにリサイズ
+            let resizedImage = originalImage.resize(to: newSize)
             
+            imageB.setImage(resizedImage, for: .normal)
+            imageB.imageView?.contentMode = .scaleAspectFit
         }
         
         firstWord.setTitle(characterArray[0], for: .normal)
         secondWord.isHidden = true
         imageB.isHidden = true
-
+        
     }
     
     func loadCSV(fileName: String) -> [String] {
@@ -129,3 +132,4 @@ class Ssp2WordViewController: UIViewController {
         }
     }
 }
+

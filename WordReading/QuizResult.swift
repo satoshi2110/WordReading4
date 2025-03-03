@@ -14,7 +14,8 @@ class QuizResult: Object {
     @Persisted var quizImageName: String = ""
     @Persisted var selectedAnswer: String = ""
     @Persisted var isCorrect: Bool = false
-    @Persisted var timeTaken: Double = 0.0
+    @Persisted var timeTaken: Double = 0.0 // 個々の問題にかかった時間
+    @Persisted var totalTime: Double = 0.0 // セッション全体のトータル時間
     @Persisted var date: Date = Date()
     @Persisted var correctCount: Int = 0
     @Persisted var selectLevel: Int = 1 // デフォルトで「基礎」レベル
@@ -50,5 +51,10 @@ class QuizResult: Object {
     // 所要時間をフォーマットするメソッド
     func formattedTimeTaken() -> String {
         return String(format: "%.1f秒", timeTaken)
+    }
+    
+    // トータル時間をフォーマットするメソッド
+    func formattedTotalTime() -> String {
+        return String(format: "%.1f秒", totalTime)
     }
 }

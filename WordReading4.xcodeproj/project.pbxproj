@@ -259,6 +259,7 @@
 		4FA2EE732D7337C5003069CA /* ぞ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE6A2D7337C5003069CA /* ぞ.mp3 */; };
 		4FA2EE742D7337C5003069CA /* じ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE682D7337C5003069CA /* じ.mp3 */; };
 		4FA2EE752D7337C5003069CA /* ぴ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE6D2D7337C5003069CA /* ぴ.mp3 */; };
+		4FA2EE772D754414003069CA /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE762D754414003069CA /* applause.mp3 */; };
 		889E6CB5C8231E5AEE69CF98 /* Pods_WordReading4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E1DA2FDB33D5248F2A8B4B /* Pods_WordReading4.framework */; };
 /* End PBXBuildFile section */
 
@@ -518,6 +519,7 @@
 		4FA2EE6C2D7337C5003069CA /* び.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "び.mp3"; sourceTree = "<group>"; };
 		4FA2EE6D2D7337C5003069CA /* ぴ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ぴ.mp3"; sourceTree = "<group>"; };
 		4FA2EE6E2D7337C5003069CA /* ぶ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ぶ.mp3"; sourceTree = "<group>"; };
+		4FA2EE762D754414003069CA /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
 		57CD20213335CF6F3F670AE4 /* Pods-WordReading4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.release.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.release.xcconfig"; sourceTree = "<group>"; };
 		D04E762ADA905AFAB33395B6 /* Pods-WordReading4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.debug.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -639,6 +641,7 @@
 		4F25BFD72C90322E00939AF7 /* mp3 */ = {
 			isa = PBXGroup;
 			children = (
+				4FA2EE762D754414003069CA /* applause.mp3 */,
 				4FA2EDE02D709EE3003069CA /* correct.mp3 */,
 				4FA2EDDE2D709B44003069CA /* fanfare.mp3 */,
 				4FA2EE1E2D70B237003069CA /* とけいe.mp3 */,
@@ -1000,6 +1003,7 @@
 				4FA2EE042D70A9EC003069CA /* おばけe.mp3 in Resources */,
 				4FA2EE052D70A9EC003069CA /* からすe.mp3 in Resources */,
 				4FA2EE062D70A9EC003069CA /* せみe.mp3 in Resources */,
+				4FA2EE772D754414003069CA /* applause.mp3 in Resources */,
 				4FA2EE072D70A9EC003069CA /* そうじきe.mp3 in Resources */,
 				4FA2EE082D70A9EC003069CA /* といれe.mp3 in Resources */,
 				4FA2EE092D70A9EC003069CA /* はなびe.mp3 in Resources */,

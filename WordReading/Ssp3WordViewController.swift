@@ -20,6 +20,7 @@ class Ssp3WordViewController: UIViewController {
     var selectedWord: String?
     var selectedCharacter: String?
     var audioPlayer: AVAudioPlayer!
+    var tapButton = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +33,14 @@ class Ssp3WordViewController: UIViewController {
         thirdWord.setTitleColor(UIColor.black, for: .normal)
         
         if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
-            imageB.setImage(originalImage, for: .normal)
+            // 画像をリサイズ
+            let newSize = CGSize(width: originalImage.size.width * 0.7, height: originalImage.size.height * 0.7) // 50%のサイズにリサイズ
+            let resizedImage = originalImage.resize(to: newSize)
+            
+            imageB.setImage(resizedImage, for: .normal)
             imageB.imageView?.contentMode = .scaleAspectFit
         }
-
+        
         
         firstWord.setTitle(characterArray[0], for: .normal)
         secondWord.isHidden = true
@@ -89,7 +94,11 @@ class Ssp3WordViewController: UIViewController {
     }
     
     @IBAction func imageButton(_ sender: UIButton) {
+        tapButton += 1
         soundEffects(volume: 0.1)
+        if tapButton >= 1 {
+            imageB.isEnabled = false
+        }
     }
     func loadCSV(fileName: String) -> [String] {
         let csvBundle = Bundle.main.path(forResource: fileName, ofType: "csv")!
@@ -136,10 +145,15 @@ class Ssp3WordViewController: UIViewController {
     }
     
     func soundEffects(volume: Float) {
+        var adjustedVolume = volume
+        if selectedWord == "たきび" {
+            adjustedVolume = 1.0
+        }
+        
         if let url = Bundle.main.url(forResource: "\(selectedWord!)e", withExtension: "mp3") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: url)
-                audioPlayer.volume = volume // ボリュームを設定
+                audioPlayer.volume = adjustedVolume // ボリュームを設定
                 audioPlayer.play()
             } catch {
                 print("音声ファイルの再生に失敗しました: \(error.localizedDescription)")

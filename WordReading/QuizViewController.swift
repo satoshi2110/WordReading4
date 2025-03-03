@@ -29,6 +29,8 @@ class QuizViewController: UIViewController {
     var startTime: Date?
     var quizID: String = UUID().uuidString // クイズごとに一意のIDを生成
     
+    var totalTime: Double = 0.0 // セッション全体のトータル時間
+    
     var audioPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
@@ -88,6 +90,8 @@ class QuizViewController: UIViewController {
     }
     
     private func handleAnswer(isCorrect: Bool, selectedAnswer: String, timeTaken: TimeInterval) {
+        totalTime += timeTaken // トータル時間を加算
+        
         if isCorrect {
             judgeImage.image = UIImage(named: "まる")
             playSound(filename: "correct", filetype: "mp3", volume: 0.1)
@@ -115,6 +119,7 @@ class QuizViewController: UIViewController {
         quizResult.selectedAnswer = selectedAnswer
         quizResult.isCorrect = isCorrect
         quizResult.timeTaken = timeTaken
+        quizResult.totalTime = totalTime // トータル時間を保存
         quizResult.date = Date()
         quizResult.correctCount = correctCount
         quizResult.selectLevel = selectedLevel
@@ -229,7 +234,6 @@ class QuizViewController: UIViewController {
         }
     }
 }
-    
 
 extension UIButton {
     func setVerticalTitle(_ title: String) {

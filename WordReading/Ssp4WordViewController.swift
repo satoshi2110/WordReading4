@@ -24,6 +24,7 @@ class Ssp4WordViewController: UIViewController {
     var selectedWord: String?
     var selectedCharacter: String?
     var audioPlayer: AVAudioPlayer!
+    var tapButton = 0
     
     
     
@@ -43,10 +44,14 @@ class Ssp4WordViewController: UIViewController {
         fourthWord.isHidden = true
         
         if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
-            imageB.setImage(originalImage, for: .normal)
+            // 画像をリサイズ
+            let newSize = CGSize(width: originalImage.size.width * 0.7, height: originalImage.size.height * 0.7)
+            let resizedImage = originalImage.resize(to: newSize)
+            
+            imageB.setImage(resizedImage, for: .normal)
             imageB.imageView?.contentMode = .scaleAspectFit
         }
-
+        
         imageB.isHidden = true
         
     }
@@ -107,9 +112,14 @@ class Ssp4WordViewController: UIViewController {
             self.presentingViewController?.dismiss(animated: true)
         }
     }
-   
+    
     @IBAction func imageButton(_ sender: UIButton) {
+        tapButton += 1
         soundEffects(volume: 0.1)
+        if tapButton >= 1 {
+            imageB.isEnabled = false
+        }
+        
     }
     
     func loadCSV(fileName: String) -> [String] {
