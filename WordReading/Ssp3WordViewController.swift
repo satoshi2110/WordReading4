@@ -146,7 +146,7 @@ class Ssp3WordViewController: UIViewController {
     
     func soundEffects(volume: Float) {
         var adjustedVolume = volume
-        if selectedWord == "たきび" {
+        if selectedWord == "たきび,じしん" {
             adjustedVolume = 1.0
         }
         
