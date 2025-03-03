@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="-1639" y="122"/>
         </scene>
-        <!--Messege-->
+        <!--Messege View Controller-->
         <scene sceneID="j4m-u1-y1K">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="tUq-VG-7dW" customClass="Messege" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="tUq-VG-7dW" customClass="MessegeViewController" customModule="WordReading4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zr2-UK-ncx">
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,7 +81,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wF-wJ-6nB">
                                 <rect key="frame" x="60" y="143" width="690" height="794"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <mutableString key="text">アプリについて
+                                <string key="text">アプリについて
 　このアプリは、お子さまが楽しくひらがなの読みを学べるように設計されています。
 
 　応用行動分析学の研究である「継次的刺激ペアリング」の手法を取り入れ、観察するだけでひらがなと絵の関係を自然に学習できる仕組みになっています。また、視線移動のスキル向上にも役立ちます。
@@ -106,7 +106,7 @@
 
 音声：VOICEVOX Nemo
 
-効果音：Springin’ Sound Stock</mutableString>
+効果音：Springin’ Sound Stock</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -141,6 +141,9 @@
                             <constraint firstItem="1wF-wJ-6nB" firstAttribute="top" secondItem="IdG-IO-5ei" secondAttribute="bottom" constant="82" id="wjS-m4-RbF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="text" destination="1wF-wJ-6nB" id="6OV-Pw-wQj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNV-Kg-3kC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -260,7 +260,7 @@
 		4FA2EE772D754414003069CA /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE762D754414003069CA /* applause.mp3 */; };
 		4FA2EE792D75614D003069CA /* そうじき.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE782D75614D003069CA /* そうじき.csv */; };
 		4FA2EE7B2D756162003069CA /* へび.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE7A2D756162003069CA /* へび.csv */; };
-		4FA2EE7D2D757945003069CA /* Messege.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2EE7C2D757945003069CA /* Messege.swift */; };
+		4FA2EE7D2D757945003069CA /* MessegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2EE7C2D757945003069CA /* MessegeViewController.swift */; };
 		889E6CB5C8231E5AEE69CF98 /* Pods_WordReading4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E1DA2FDB33D5248F2A8B4B /* Pods_WordReading4.framework */; };
 /* End PBXBuildFile section */
 
@@ -521,7 +521,7 @@
 		4FA2EE762D754414003069CA /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
 		4FA2EE782D75614D003069CA /* そうじき.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "そうじき.csv"; sourceTree = "<group>"; };
 		4FA2EE7A2D756162003069CA /* へび.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "へび.csv"; sourceTree = "<group>"; };
-		4FA2EE7C2D757945003069CA /* Messege.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messege.swift; sourceTree = "<group>"; };
+		4FA2EE7C2D757945003069CA /* MessegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessegeViewController.swift; sourceTree = "<group>"; };
 		57CD20213335CF6F3F670AE4 /* Pods-WordReading4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.release.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.release.xcconfig"; sourceTree = "<group>"; };
 		D04E762ADA905AFAB33395B6 /* Pods-WordReading4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.debug.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -560,10 +560,10 @@
 			isa = PBXGroup;
 			children = (
 				4F25BFA12C8FD8FB00939AF7 /* AppDelegate.swift */,
-				4FA2EE7C2D757945003069CA /* Messege.swift */,
 				4F25BFA32C8FD8FB00939AF7 /* SceneDelegate.swift */,
 				4F25BFA72C8FD8FB00939AF7 /* Main.storyboard */,
 				4F25BFA52C8FD8FB00939AF7 /* StartViewController.swift */,
+				4FA2EE7C2D757945003069CA /* MessegeViewController.swift */,
 				4F25C03B2C912B8100939AF7 /* SelectViewController.swift */,
 				4F1DBC9F2D66E87C00F7DCE8 /* Select2WordViewController.swift */,
 				4F1DBCA12D66EAE500F7DCE8 /* Ssp2WordViewController.swift */,
@@ -1207,7 +1207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F25BFA62C8FD8FB00939AF7 /* StartViewController.swift in Sources */,
-				4FA2EE7D2D757945003069CA /* Messege.swift in Sources */,
+				4FA2EE7D2D757945003069CA /* MessegeViewController.swift in Sources */,
 				4F1DBCB02D69C02800F7DCE8 /* QuizViewController.swift in Sources */,
 				4F1DBCA22D66EAE500F7DCE8 /* Ssp2WordViewController.swift in Sources */,
 				4F75C0282D6A84D600534812 /* ResultViewController.swift in Sources */,
