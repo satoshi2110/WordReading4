@@ -16,15 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ひらがなのよみ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddp-Du-cUr">
-                                <rect key="frame" x="257.5" y="220" width="295" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txq-3i-eIQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txq-3i-eIQ">
                                 <rect key="frame" x="593" y="985" width="184" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="先生、保護者の皆様へ">
                                     <backgroundConfiguration key="background">
@@ -45,14 +38,24 @@
                                     <segue destination="p3x-Cm-9EE" kind="show" id="La4-A7-bn1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="よめるかな？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ddp-Du-cUr">
+                                <rect key="frame" x="278.5" y="220" width="253" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Txq-3i-eIQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2t3-aM-6Vy"/>
                             <constraint firstItem="Ddp-Du-cUr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="Jki-4Z-fwj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Txq-3i-eIQ" secondAttribute="trailing" constant="33" id="N84-Nh-ueL"/>
                             <constraint firstItem="sMY-g2-JWi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R6K-ku-dvt"/>
-                            <constraint firstItem="Ddp-Du-cUr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dHn-w6-N1e"/>
+                            <constraint firstItem="Ddp-Du-cUr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZAu-zI-Uea"/>
+                            <constraint firstItem="Ddp-Du-cUr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aQx-vO-WjF"/>
                             <constraint firstItem="sMY-g2-JWi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fle-F0-611"/>
+                            <constraint firstItem="Txq-3i-eIQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="965" id="ljY-iv-TIs"/>
                             <constraint firstItem="sMY-g2-JWi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mdw-tp-wbR"/>
                         </constraints>
                     </view>
@@ -62,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1639" y="122"/>
+            <point key="canvasLocation" x="-1639.2592592592591" y="121.66666666666666"/>
         </scene>
         <!--Messege View Controller-->
         <scene sceneID="j4m-u1-y1K">
