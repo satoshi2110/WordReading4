@@ -170,10 +170,15 @@ class Ssp4WordViewController: UIViewController {
     }
     
     func soundEffects(volume: Float) {
+        var adjustedVolume = volume
+        if selectedWord == "にわとり,かみなり" {
+            adjustedVolume = 1.0
+        }
+        
         if let url = Bundle.main.url(forResource: "\(selectedWord!)e", withExtension: "mp3") {
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: url)
-                audioPlayer.volume = volume // ボリュームを設定
+                audioPlayer.volume = adjustedVolume // ボリュームを設定
                 audioPlayer.play()
             } catch {
                 print("音声ファイルの再生に失敗しました: \(error.localizedDescription)")

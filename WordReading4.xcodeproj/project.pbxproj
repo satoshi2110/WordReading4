@@ -35,7 +35,7 @@
 		4F25BFD02C90280A00939AF7 /* じしん.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFCA2C90265F00939AF7 /* じしん.csv */; };
 		4F25BFD12C90280D00939AF7 /* たきび.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFC32C90255500939AF7 /* たきび.csv */; };
 		4F25BFD22C90280F00939AF7 /* からす.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFC42C90255700939AF7 /* からす.csv */; };
-		4F25BFD32C90281200939AF7 /* うんち.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFC52C90255800939AF7 /* うんち.csv */; };
+		4F25BFD32C90281200939AF7 /* ちくわ.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFC52C90255800939AF7 /* ちくわ.csv */; };
 		4F25BFD42C90281500939AF7 /* やさい.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4F25BFC62C90255900939AF7 /* やさい.csv */; };
 		4F25C0362C910FD800939AF7 /* Select4WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C0352C910FD800939AF7 /* Select4WordViewController.swift */; };
 		4F25C0382C91101000939AF7 /* Ssp4WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25C0372C91101000939AF7 /* Ssp4WordViewController.swift */; };
@@ -67,7 +67,6 @@
 		4FA2E8612D6D6F50003069CA /* 13.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2E8602D6D6F50003069CA /* 13.csv */; };
 		4FA2E8882D6DA81C003069CA /* からす.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2E86A2D6DA81C003069CA /* からす.png */; };
 		4FA2E8892D6DA81C003069CA /* いぬ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2E8632D6DA81C003069CA /* いぬ.png */; };
-		4FA2E88A2D6DA81C003069CA /* にく.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2E8772D6DA81C003069CA /* にく.png */; };
 		4FA2E88B2D6DA81C003069CA /* すず.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2E86F2D6DA81C003069CA /* すず.png */; };
 		4FA2E88C2D6DA81C003069CA /* よむ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2E8862D6DA81C003069CA /* よむ.png */; };
 		4FA2E88D2D6DA81C003069CA /* ひまわり.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2E87C2D6DA81C003069CA /* ひまわり.png */; };
@@ -261,6 +260,11 @@
 		4FA2EE792D75614D003069CA /* そうじき.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE782D75614D003069CA /* そうじき.csv */; };
 		4FA2EE7B2D756162003069CA /* へび.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE7A2D756162003069CA /* へび.csv */; };
 		4FA2EE7D2D757945003069CA /* MessegeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA2EE7C2D757945003069CA /* MessegeViewController.swift */; };
+		4FA2EE7F2D75C71A003069CA /* にく.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE7E2D75C71A003069CA /* にく.png */; };
+		4FA2EE832D75C780003069CA /* にくe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE822D75C780003069CA /* にくe.mp3 */; };
+		4FA2EE852D767DD8003069CA /* ちくわ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE842D767DD8003069CA /* ちくわ.png */; };
+		4FA2EE872D767E92003069CA /* ちくわ.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE862D767E92003069CA /* ちくわ.mp3 */; };
+		4FA2EE892D768097003069CA /* よむe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE882D768097003069CA /* よむe.mp3 */; };
 		889E6CB5C8231E5AEE69CF98 /* Pods_WordReading4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E1DA2FDB33D5248F2A8B4B /* Pods_WordReading4.framework */; };
 /* End PBXBuildFile section */
 
@@ -293,7 +297,7 @@
 		4F25BFC12C90255300939AF7 /* てれび.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "てれび.csv"; sourceTree = "<group>"; };
 		4F25BFC32C90255500939AF7 /* たきび.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "たきび.csv"; sourceTree = "<group>"; };
 		4F25BFC42C90255700939AF7 /* からす.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "からす.csv"; sourceTree = "<group>"; };
-		4F25BFC52C90255800939AF7 /* うんち.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "うんち.csv"; sourceTree = "<group>"; };
+		4F25BFC52C90255800939AF7 /* ちくわ.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "ちくわ.csv"; sourceTree = "<group>"; };
 		4F25BFC62C90255900939AF7 /* やさい.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "やさい.csv"; sourceTree = "<group>"; };
 		4F25BFC82C90265B00939AF7 /* といれ.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "といれ.csv"; sourceTree = "<group>"; };
 		4F25BFC92C90265D00939AF7 /* おばけ.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "おばけ.csv"; sourceTree = "<group>"; };
@@ -344,7 +348,6 @@
 		4FA2E8742D6DA81C003069CA /* てれび.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "てれび.png"; sourceTree = "<group>"; };
 		4FA2E8752D6DA81C003069CA /* といれ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "といれ.png"; sourceTree = "<group>"; };
 		4FA2E8762D6DA81C003069CA /* とけい.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "とけい.png"; sourceTree = "<group>"; };
-		4FA2E8772D6DA81C003069CA /* にく.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "にく.png"; sourceTree = "<group>"; };
 		4FA2E8792D6DA81C003069CA /* ねこ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ねこ.png"; sourceTree = "<group>"; };
 		4FA2E87A2D6DA81C003069CA /* のみもの.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "のみもの.png"; sourceTree = "<group>"; };
 		4FA2E87B2D6DA81C003069CA /* はなび.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "はなび.png"; sourceTree = "<group>"; };
@@ -522,6 +525,11 @@
 		4FA2EE782D75614D003069CA /* そうじき.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "そうじき.csv"; sourceTree = "<group>"; };
 		4FA2EE7A2D756162003069CA /* へび.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "へび.csv"; sourceTree = "<group>"; };
 		4FA2EE7C2D757945003069CA /* MessegeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessegeViewController.swift; sourceTree = "<group>"; };
+		4FA2EE7E2D75C71A003069CA /* にく.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "にく.png"; sourceTree = "<group>"; };
+		4FA2EE822D75C780003069CA /* にくe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "にくe.mp3"; sourceTree = "<group>"; };
+		4FA2EE842D767DD8003069CA /* ちくわ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ちくわ.png"; sourceTree = "<group>"; };
+		4FA2EE862D767E92003069CA /* ちくわ.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ちくわ.mp3"; sourceTree = "<group>"; };
+		4FA2EE882D768097003069CA /* よむe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "よむe.mp3"; sourceTree = "<group>"; };
 		57CD20213335CF6F3F670AE4 /* Pods-WordReading4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.release.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.release.xcconfig"; sourceTree = "<group>"; };
 		D04E762ADA905AFAB33395B6 /* Pods-WordReading4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.debug.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -609,7 +617,7 @@
 				4F25BFCA2C90265F00939AF7 /* じしん.csv */,
 				4F25BFC32C90255500939AF7 /* たきび.csv */,
 				4F25BFC42C90255700939AF7 /* からす.csv */,
-				4F25BFC52C90255800939AF7 /* うんち.csv */,
+				4F25BFC52C90255800939AF7 /* ちくわ.csv */,
 				4F25BFC62C90255900939AF7 /* やさい.csv */,
 				4F25C03D2C913AE400939AF7 /* くつした.csv */,
 				4FA2EE782D75614D003069CA /* そうじき.csv */,
@@ -648,8 +656,10 @@
 				4FA2EDE02D709EE3003069CA /* correct.mp3 */,
 				4FA2EDDE2D709B44003069CA /* fanfare.mp3 */,
 				4FA2EE1E2D70B237003069CA /* とけいe.mp3 */,
+				4FA2EE882D768097003069CA /* よむe.mp3 */,
 				4FA2EE122D70AC67003069CA /* あおぞらe.mp3 */,
 				4FA2EE132D70AC67003069CA /* ほうせきe.mp3 */,
+				4FA2EE822D75C780003069CA /* にくe.mp3 */,
 				4FA2EE142D70AC67003069CA /* やまe.mp3 */,
 				4FA2EDE22D70A9EC003069CA /* いぬe.mp3 */,
 				4FA2EDE32D70A9EC003069CA /* うんちe.mp3 */,
@@ -675,6 +685,7 @@
 				4FA2EDF62D70A9EC003069CA /* ほんe.mp3 */,
 				4FA2EDF72D70A9EC003069CA /* むしe.mp3 */,
 				4FA2EDF82D70A9EC003069CA /* よるe.mp3 */,
+				4FA2EE862D767E92003069CA /* ちくわ.mp3 */,
 				4FA2EB1A2D6DE7A1003069CA /* あ.mp3 */,
 				4FA2EB1B2D6DE7A1003069CA /* い.mp3 */,
 				4FA2EB1C2D6DE7A1003069CA /* う.mp3 */,
@@ -785,12 +796,14 @@
 				4FA2EE332D73300A003069CA /* すし.png */,
 				4FA2EE342D73300A003069CA /* すなば.png */,
 				4FA2EE352D73300A003069CA /* たまご.png */,
+				4FA2EE842D767DD8003069CA /* ちくわ.png */,
 				4FA2EE362D73300A003069CA /* つる.png */,
 				4FA2EE372D73300A003069CA /* てんぷら.png */,
 				4FA2EE382D73300A003069CA /* ひこうき.png */,
 				4FA2EE392D73300A003069CA /* ひよこ.png */,
 				4FA2EE3A2D73300A003069CA /* ふうせん.png */,
 				4FA2EE3B2D73300A003069CA /* べんとう.png */,
+				4FA2EE7E2D75C71A003069CA /* にく.png */,
 				4FA2EE3C2D73300A003069CA /* ほね.png */,
 				4FA2EE3D2D73300A003069CA /* みそしる.png */,
 				4FA2EE3E2D73300A003069CA /* めろん.png */,
@@ -804,7 +817,6 @@
 				4FA2E8632D6DA81C003069CA /* いぬ.png */,
 				4FA2E86F2D6DA81C003069CA /* すず.png */,
 				4FA2E8702D6DA81C003069CA /* せみ.png */,
-				4FA2E8772D6DA81C003069CA /* にく.png */,
 				4FA2E8792D6DA81C003069CA /* ねこ.png */,
 				4FA2E8812D6DA81C003069CA /* ほん.png */,
 				4FA2E8822D6DA81C003069CA /* むし.png */,
@@ -923,7 +935,6 @@
 				4F75C02A2D6A96BC00534812 /* まる.png in Resources */,
 				4FA2E8882D6DA81C003069CA /* からす.png in Resources */,
 				4FA2E8892D6DA81C003069CA /* いぬ.png in Resources */,
-				4FA2E88A2D6DA81C003069CA /* にく.png in Resources */,
 				4FA2E88B2D6DA81C003069CA /* すず.png in Resources */,
 				4FA2E88C2D6DA81C003069CA /* よむ.png in Resources */,
 				4FA2E88D2D6DA81C003069CA /* ひまわり.png in Resources */,
@@ -980,6 +991,7 @@
 				4FA2EB582D6DE7A1003069CA /* い.mp3 in Resources */,
 				4FA2EB592D6DE7A1003069CA /* め.mp3 in Resources */,
 				4FA2EB5A2D6DE7A1003069CA /* む.mp3 in Resources */,
+				4FA2EE852D767DD8003069CA /* ちくわ.png in Resources */,
 				4FA2EB5B2D6DE7A1003069CA /* あ.mp3 in Resources */,
 				4FA2EB5C2D6DE7A1003069CA /* る.mp3 in Resources */,
 				4FA2EB5D2D6DE7A1003069CA /* ろ.mp3 in Resources */,
@@ -1050,6 +1062,7 @@
 				4FA2EE452D73300A003069CA /* れもん.png in Resources */,
 				4FA2EE462D73300A003069CA /* めろん.png in Resources */,
 				4FA2EE472D73300A003069CA /* あり.png in Resources */,
+				4FA2EE7F2D75C71A003069CA /* にく.png in Resources */,
 				4FA2EE482D73300A003069CA /* すし.png in Resources */,
 				4FA2EE492D73300A003069CA /* ゆき.png in Resources */,
 				4FA2EE4A2D73300A003069CA /* いわ.png in Resources */,
@@ -1063,6 +1076,7 @@
 				4FA2EE522D73300A003069CA /* ほね.png in Resources */,
 				4FA2EE532D73300A003069CA /* すなば.png in Resources */,
 				4FA2EE542D73300A003069CA /* みそしる.png in Resources */,
+				4FA2EE832D75C780003069CA /* にくe.mp3 in Resources */,
 				4FA2EE552D73300A003069CA /* やきそば.png in Resources */,
 				4FA2EE562D73300A003069CA /* てんぷら.png in Resources */,
 				4FA2EE572D73300A003069CA /* おにぎり.png in Resources */,
@@ -1109,6 +1123,7 @@
 				4FA2EBB02D6DEE57003069CA /* くつした.png in Resources */,
 				4FA2EBB12D6DEE57003069CA /* にわとり.png in Resources */,
 				4F25C05C2C913EAB00939AF7 /* むし.csv in Resources */,
+				4FA2EE872D767E92003069CA /* ちくわ.mp3 in Resources */,
 				4F25C05D2C913EAB00939AF7 /* ねこ.csv in Resources */,
 				4F25C05E2C913EAB00939AF7 /* くつした.csv in Resources */,
 				4F25C05F2C913EAB00939AF7 /* よむ.csv in Resources */,
@@ -1138,6 +1153,7 @@
 				4FA2EE712D7337C5003069CA /* び.mp3 in Resources */,
 				4FA2EE722D7337C5003069CA /* ぶ.mp3 in Resources */,
 				4FA2EE732D7337C5003069CA /* ぞ.mp3 in Resources */,
+				4FA2EE892D768097003069CA /* よむe.mp3 in Resources */,
 				4FA2EE742D7337C5003069CA /* じ.mp3 in Resources */,
 				4FA2EE752D7337C5003069CA /* ぴ.mp3 in Resources */,
 				4F75C02C2D6A99F400534812 /* ばつ.png in Resources */,
@@ -1150,7 +1166,7 @@
 				4F25BFAE2C8FD8FD00939AF7 /* Base in Resources */,
 				4F25BFC72C90257F00939AF7 /* おかし.csv in Resources */,
 				4F25BFBE2C90251500939AF7 /* おかね.csv in Resources */,
-				4F25BFD32C90281200939AF7 /* うんち.csv in Resources */,
+				4F25BFD32C90281200939AF7 /* ちくわ.csv in Resources */,
 				4F25BFA92C8FD8FB00939AF7 /* Base in Resources */,
 				4F25BFD12C90280D00939AF7 /* たきび.csv in Resources */,
 				4F25BFCF2C90280600939AF7 /* おばけ.csv in Resources */,

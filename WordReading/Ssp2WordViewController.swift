@@ -126,7 +126,11 @@ class Ssp2WordViewController: UIViewController {
     }
     @IBAction func imageButton(_ sender: UIButton) {
         tapButton += 1
-        soundEffects(volume: 0.1)
+        
+        // selectedWordが"にく"の場合、ボリュームを1.0に設定し、それ以外は0.1に設定
+        let volume: Float = (selectedWord == "にく") ? 1.0 : 0.1
+        soundEffects(volume: volume)
+
         if tapButton >= 1 {
             imageB.isEnabled = false
         }
