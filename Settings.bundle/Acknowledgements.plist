@@ -5,15 +5,12 @@
 	<key>StringsTable</key>
 	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
-	<array/>
-	<key>item</key>
-	<dict/>
-	<key>Type</key>
-	<string>PSGroupSpecifier</string>
-	<key>Title</key>
-	<string>Realm</string>
-	<key>FooterText</key>
-	<string>TABLE OF CONTENTS
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Realm</string>
+			<key>FooterText</key>
+			<string>TABLE OF CONTENTS
 
 1. Apache License version 2.0
 2. Realm Components
@@ -508,5 +505,9 @@ the United States or other applicable countries. You also agree not to transfer,
 or authorize the transfer of, directly or indirectly, of the Software to any
 Prohibited Jurisdiction, or otherwise in violation of any such restrictions or
 regulations.</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+	</array>
 </dict>
 </plist>

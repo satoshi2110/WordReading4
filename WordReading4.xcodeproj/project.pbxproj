@@ -265,6 +265,8 @@
 		4FA2EE892D768097003069CA /* よむe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE882D768097003069CA /* よむe.mp3 */; };
 		4FA2EE8B2D769EF8003069CA /* そうじき.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE8A2D769EF8003069CA /* そうじき.csv */; };
 		4FA2EE8D2D769F2D003069CA /* へび.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE8C2D769F2D003069CA /* へび.csv */; };
+		4FA2EE8F2D76A319003069CA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE8E2D76A319003069CA /* Settings.bundle */; };
+		4FA2EE952D76B3F9003069CA /* てぶくろe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2EE942D76B3F9003069CA /* てぶくろe.mp3 */; };
 		889E6CB5C8231E5AEE69CF98 /* Pods_WordReading4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E1DA2FDB33D5248F2A8B4B /* Pods_WordReading4.framework */; };
 /* End PBXBuildFile section */
 
@@ -530,6 +532,8 @@
 		4FA2EE882D768097003069CA /* よむe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "よむe.mp3"; sourceTree = "<group>"; };
 		4FA2EE8A2D769EF8003069CA /* そうじき.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "そうじき.csv"; sourceTree = "<group>"; };
 		4FA2EE8C2D769F2D003069CA /* へび.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "へび.csv"; sourceTree = "<group>"; };
+		4FA2EE8E2D76A319003069CA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		4FA2EE942D76B3F9003069CA /* てぶくろe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "てぶくろe.mp3"; sourceTree = "<group>"; };
 		57CD20213335CF6F3F670AE4 /* Pods-WordReading4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.release.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.release.xcconfig"; sourceTree = "<group>"; };
 		D04E762ADA905AFAB33395B6 /* Pods-WordReading4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordReading4.debug.xcconfig"; path = "Target Support Files/Pods-WordReading4/Pods-WordReading4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -549,6 +553,7 @@
 		4F25BF952C8FD8FB00939AF7 = {
 			isa = PBXGroup;
 			children = (
+				4FA2EE8E2D76A319003069CA /* Settings.bundle */,
 				4F25BFA02C8FD8FB00939AF7 /* WordReading */,
 				4F25BF9F2C8FD8FB00939AF7 /* Products */,
 				67BC5E918D986672FD0BD43B /* Pods */,
@@ -588,12 +593,6 @@
 				4FA2EE202D72936D003069CA /* QuizIDDetailViewController.swift */,
 				4F75C02D2D6AAB2F00534812 /* QuizResult.swift */,
 				4F25BFAA2C8FD8FD00939AF7 /* Assets.xcassets */,
-				4FA2EDDC2D6E86D3003069CA /* 12.csv */,
-				4FA2E8602D6D6F50003069CA /* 13.csv */,
-				4F1DBCB12D69CB8300F7DCE8 /* 14.csv */,
-				4FA2EE242D7328AD003069CA /* 22.csv */,
-				4FA2EE262D7328BA003069CA /* 23.csv */,
-				4FA2EE282D7328D1003069CA /* 24.csv */,
 				4F25BFAC2C8FD8FD00939AF7 /* LaunchScreen.storyboard */,
 				4F25C0062C904BF400939AF7 /* png */,
 				4F25BFD72C90322E00939AF7 /* mp3 */,
@@ -645,6 +644,12 @@
 				4FA2E8AE2D6DAAC5003069CA /* ふゆ.csv */,
 				4F25C0502C913D1900939AF7 /* ほん.csv */,
 				4F25C0512C913D1900939AF7 /* にく.csv */,
+				4FA2EDDC2D6E86D3003069CA /* 12.csv */,
+				4FA2E8602D6D6F50003069CA /* 13.csv */,
+				4F1DBCB12D69CB8300F7DCE8 /* 14.csv */,
+				4FA2EE242D7328AD003069CA /* 22.csv */,
+				4FA2EE262D7328BA003069CA /* 23.csv */,
+				4FA2EE282D7328D1003069CA /* 24.csv */,
 			);
 			path = csv;
 			sourceTree = "<group>";
@@ -664,6 +669,7 @@
 				4FA2EDE22D70A9EC003069CA /* いぬe.mp3 */,
 				4FA2EDE32D70A9EC003069CA /* うんちe.mp3 */,
 				4FA2EDE42D70A9EC003069CA /* えんぴつe.mp3 */,
+				4FA2EE942D76B3F9003069CA /* てぶくろe.mp3 */,
 				4FA2EDE52D70A9EC003069CA /* おかしe.mp3 */,
 				4FA2EE1C2D70AF7F003069CA /* あめe.mp3 */,
 				4FA2EDE62D70A9EC003069CA /* おかねe.mp3 */,
@@ -1162,7 +1168,9 @@
 				4FA2EBB82D6DEE9E003069CA /* おかし.mp3 in Resources */,
 				4FA2EBB92D6DEE9E003069CA /* てれび.mp3 in Resources */,
 				4F25BFAB2C8FD8FD00939AF7 /* Assets.xcassets in Resources */,
+				4FA2EE952D76B3F9003069CA /* てぶくろe.mp3 in Resources */,
 				4F1DBCA82D6713F300F7DCE8 /* あめ.png in Resources */,
+				4FA2EE8F2D76A319003069CA /* Settings.bundle in Resources */,
 				4F25BFAE2C8FD8FD00939AF7 /* Base in Resources */,
 				4F25BFC72C90257F00939AF7 /* おかし.csv in Resources */,
 				4F25BFBE2C90251500939AF7 /* おかね.csv in Resources */,
@@ -1400,8 +1408,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1430,8 +1438,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
