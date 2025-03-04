@@ -129,7 +129,7 @@ class Ssp2WordViewController: UIViewController {
         tapButton += 1
         
         // selectedWordが"にく"の場合、ボリュームを1.0に設定し、それ以外は0.1に設定
-        let volume: Float = (selectedWord == "にく") ? 1.0 : 0.1
+        let volume: Float = (selectedWord == "にく" || selectedWord == "よむ") ? 1.0 : 0.1
         soundEffects(volume: volume)
 
         if tapButton >= 1 {

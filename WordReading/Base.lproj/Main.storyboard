@@ -60,7 +60,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="titleLabal" destination="Ddp-Du-cUr" id="UFa-Qt-toD"/>
+                        <outlet property="titleLabel" destination="Ddp-Du-cUr" id="UFa-Qt-toD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
