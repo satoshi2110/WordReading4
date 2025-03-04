@@ -30,8 +30,9 @@ class Ssp2WordViewController: UIViewController {
         secondWord.setTitleColor(UIColor.black, for: .normal)
         
         if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
-            // 画像をリサイズ
-            let newSize = CGSize(width: originalImage.size.width * 0.7, height: originalImage.size.height * 0.7) // 50%のサイズにリサイズ
+            // selectedWordが"もも"の場合は50％、それ以外は70%にリサイズ
+            let scale: CGFloat = (imageName == "もも" || imageName == "へび" || imageName == "すず") ? 0.5 : 0.7
+            let newSize = CGSize(width: originalImage.size.width * scale, height: originalImage.size.height * scale)
             let resizedImage = originalImage.resize(to: newSize)
             
             imageB.setImage(resizedImage, for: .normal)
