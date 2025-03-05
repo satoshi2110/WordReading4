@@ -1082,30 +1082,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VF2-9i-YOW">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="VF2-9i-YOW">
                                 <rect key="frame" x="270" y="292" width="270" height="496"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mQ-OS-ULS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mQ-OS-ULS">
                                         <rect key="frame" x="20" y="-36" width="230" height="280"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="280" id="6Bt-bk-2Ob"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="firstWordButtton:" destination="jFz-Nm-OGD" eventType="touchUpInside" id="nfR-sF-sYr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOV-86-zyS">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOV-86-zyS">
                                         <rect key="frame" x="20" y="217" width="230" height="280"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="280" id="llC-Md-0eP"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="200"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
                                             <action selector="secondWordButton:" destination="jFz-Nm-OGD" eventType="touchUpInside" id="XK7-9s-pz5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-e1-H1N">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rc-e1-H1N">
                                         <rect key="frame" x="60" y="173" width="150" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Poa-rq-lnl"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
                                         <connections>
@@ -1114,15 +1120,28 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="2rc-e1-H1N" firstAttribute="centerX" secondItem="8mQ-OS-ULS" secondAttribute="centerX" id="7xl-fb-01W"/>
+                                    <constraint firstItem="FOV-86-zyS" firstAttribute="leading" secondItem="8mQ-OS-ULS" secondAttribute="leading" id="Lvr-pB-uLo"/>
+                                    <constraint firstItem="2rc-e1-H1N" firstAttribute="leading" secondItem="VF2-9i-YOW" secondAttribute="leading" constant="60" id="aIq-au-gtE"/>
+                                    <constraint firstItem="2rc-e1-H1N" firstAttribute="centerY" secondItem="VF2-9i-YOW" secondAttribute="centerY" id="bah-yh-MgW"/>
+                                    <constraint firstAttribute="bottom" secondItem="FOV-86-zyS" secondAttribute="bottom" constant="-1" id="cPF-0c-Chn"/>
+                                    <constraint firstItem="FOV-86-zyS" firstAttribute="leading" secondItem="VF2-9i-YOW" secondAttribute="leading" constant="20" id="duA-u7-YoA"/>
+                                    <constraint firstItem="2rc-e1-H1N" firstAttribute="centerX" secondItem="VF2-9i-YOW" secondAttribute="centerX" id="rxf-ag-iZZ"/>
+                                    <constraint firstItem="2rc-e1-H1N" firstAttribute="centerX" secondItem="FOV-86-zyS" secondAttribute="centerX" id="y0D-yV-c5v"/>
+                                    <constraint firstItem="8mQ-OS-ULS" firstAttribute="top" secondItem="VF2-9i-YOW" secondAttribute="top" constant="-36" id="yFf-7h-lHY"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CON-ns-XUA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="VF2-9i-YOW" firstAttribute="centerY" secondItem="mjH-sy-2fG" secondAttribute="centerY" id="2Y0-SO-Spm"/>
                             <constraint firstItem="VF2-9i-YOW" firstAttribute="centerX" secondItem="mjH-sy-2fG" secondAttribute="centerX" id="2gz-ZX-syS"/>
-                            <constraint firstItem="VF2-9i-YOW" firstAttribute="top" secondItem="CON-ns-XUA" secondAttribute="top" constant="292" id="Q4V-gd-QUJ"/>
-                            <constraint firstItem="VF2-9i-YOW" firstAttribute="leading" secondItem="CON-ns-XUA" secondAttribute="leading" constant="270" id="TVY-ug-3lS"/>
+                            <constraint firstItem="VF2-9i-YOW" firstAttribute="centerX" secondItem="mjH-sy-2fG" secondAttribute="centerX" id="6ap-jJ-CRi"/>
+                            <constraint firstItem="VF2-9i-YOW" firstAttribute="top" secondItem="CON-ns-XUA" secondAttribute="top" constant="292" id="VZ1-F5-Soa"/>
                             <constraint firstItem="VF2-9i-YOW" firstAttribute="centerY" secondItem="mjH-sy-2fG" secondAttribute="centerY" id="e9g-Nt-7Tx"/>
+                            <constraint firstItem="VF2-9i-YOW" firstAttribute="leading" secondItem="CON-ns-XUA" secondAttribute="leading" constant="270" id="pY1-I3-Z4A"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1425,7 +1444,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Q9V-io-7b0"/>
+        <segue reference="qdk-0C-oKK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
