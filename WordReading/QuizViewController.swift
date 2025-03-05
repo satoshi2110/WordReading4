@@ -36,6 +36,23 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupQuiz()
+        // quizImageを水平方向の中央に配置
+        quizImage.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            quizImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            quizImage.widthAnchor.constraint(equalToConstant: 500), // 幅を200に固定
+            quizImage.heightAnchor.constraint(equalToConstant: 500) // 高さを200に固定
+        ])
+        // 画像の表示モードを設定
+        quizImage.contentMode = .scaleAspectFit
+        
+        progressBar.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            progressBar.centerXAnchor.constraint(equalTo: view.centerXAnchor), // 水平方向の中央
+            progressBar.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80), // 下から50
+            progressBar.widthAnchor.constraint(equalToConstant: 300) // 幅を300に固定
+        ])
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
