@@ -16,19 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txq-3i-eIQ">
-                                <rect key="frame" x="593" y="985" width="184" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="先生、保護者の皆様へ">
-                                    <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                    </backgroundConfiguration>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="tUq-VG-7dW" kind="presentation" id="3zJ-mc-d62"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMY-g2-JWi">
                                 <rect key="frame" x="313" y="504.5" width="184" height="71"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="49"/>
@@ -44,18 +31,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txq-3i-eIQ">
+                                <rect key="frame" x="313" y="980" width="184" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="先生、保護者の皆様へ">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="tUq-VG-7dW" kind="presentation" id="3zJ-mc-d62"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Txq-3i-eIQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2t3-aM-6Vy"/>
                             <constraint firstItem="Ddp-Du-cUr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="Jki-4Z-fwj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Txq-3i-eIQ" secondAttribute="trailing" constant="33" id="N84-Nh-ueL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Txq-3i-eIQ" secondAttribute="bottom" constant="65" id="LdA-bz-GMo"/>
                             <constraint firstItem="sMY-g2-JWi" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R6K-ku-dvt"/>
                             <constraint firstItem="Ddp-Du-cUr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZAu-zI-Uea"/>
                             <constraint firstItem="Ddp-Du-cUr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aQx-vO-WjF"/>
+                            <constraint firstItem="Txq-3i-eIQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="akT-Vy-dQL"/>
                             <constraint firstItem="sMY-g2-JWi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fle-F0-611"/>
-                            <constraint firstItem="Txq-3i-eIQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="965" id="ljY-iv-TIs"/>
                             <constraint firstItem="sMY-g2-JWi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mdw-tp-wbR"/>
                         </constraints>
                     </view>
