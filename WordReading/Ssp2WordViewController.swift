@@ -18,7 +18,12 @@ class Ssp2WordViewController: UIViewController {
     var selectedTag = 0
     var selectedCharacter: String?
     var audioPlayer: AVAudioPlayer!
-    var tapButton = 0
+    var tapImageButton = 0
+    var selectedHiragana: String = "" // 選択されたひらがな
+    var selectedAudio: String = ""    // 選択された音声ファイル
+    var selectedImage: String = ""    // 選択された画像ファイル
+    var usedWords: [String] = []      // 使用済みの単語を記録
+    var currentIndex: Int = 0         // 現在の表示回数（最大5回）
     
     // データセット
     let hiraganaSets = [
@@ -39,29 +44,44 @@ class Ssp2WordViewController: UIViewController {
         ["よむ.png", "ほん.png", "にく.png", "ふゆ.png", "もも.png"]  // セット3
     ]
     
-    var selectedHiragana: String = "" // 選択されたひらがな
-    var selectedAudio: String = ""    // 選択された音声ファイル
-    var selectedImage: String = ""    // 選択された画像ファイル
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 選択されたタグに基づいてセットをランダムに選択
-        let setIndex = selectedTag - 1 // タグは1から始まるため、インデックスに変換
-        let randomIndex = Int.random(in: 0..<hiraganaSets[setIndex].count)
+        // 最初の単語を表示
+        showNextWord()
+    }
+    
+    func showNextWord() {
+        // 5回表示したら終了
+        if currentIndex >= 5 {
+            print("すべての単語を表示しました")
+            self.presentingViewController?.dismiss(animated: true)
+            return
+        }
         
-        // 選択されたひらがな、音声、画像を設定
-        selectedHiragana = hiraganaSets[setIndex][randomIndex]
-        selectedAudio = audioSets[setIndex][randomIndex]
-        selectedImage = imageSets[setIndex][randomIndex]
+        // 選択されたタグに基づいてセットを選択
+        let setIndex = selectedTag - 1 // タグは1から始まるため、インデックスに変換
+        let availableWords = hiraganaSets[setIndex].filter { !usedWords.contains($0) }
+        
+        // 使用可能な単語がなくなったら終了
+        guard !availableWords.isEmpty else {
+            print("使用可能な単語がありません")
+            return
+        }
+        
+        // ランダムに単語を選択
+        let randomIndex = Int.random(in: 0..<availableWords.count)
+        selectedHiragana = availableWords[randomIndex]
+        usedWords.append(selectedHiragana) // 使用済みとして記録
+        
+        // 対応する音声と画像を設定
+        let wordIndex = hiraganaSets[setIndex].firstIndex(of: selectedHiragana)!
+        selectedAudio = audioSets[setIndex][wordIndex]
+        selectedImage = imageSets[setIndex][wordIndex]
         
         // CSVを読み込む
         csvArray = loadCSV(fileName: selectedHiragana)
         characterArray = csvArray[0].components(separatedBy: ",")
-        
-        // ボタンの設定
-        firstWord.setTitleColor(UIColor.black, for:.normal)
-        secondWord.setTitleColor(UIColor.black, for: .normal)
         
         // 画像を設定
         if !selectedImage.isEmpty, let originalImage = UIImage(named: selectedImage) {
@@ -77,9 +97,23 @@ class Ssp2WordViewController: UIViewController {
         
         // 初期表示
         firstWord.setTitle(characterArray[0], for: .normal)
+        secondWord.setTitle(characterArray[1], for: .normal)
+        firstWord.isHidden = false
         secondWord.isHidden = true
         imageB.isHidden = true
+        firstWord.setTitleColor(UIColor.black, for: .normal)
+        secondWord.setTitleColor(UIColor.black, for: .normal)
+        firstWord.isEnabled = true 
+        secondWord.isEnabled = true
+        
+        // 表示回数を更新
+        currentIndex += 1
+        
+        print("currentIndex: \(currentIndex)")
+        print("selectedHiragana: \(selectedHiragana)")
+        print("usedWords: \(usedWords)")
     }
+        
     
     func loadCSV(fileName: String) -> [String] {
         // CSVファイルのパスを取得
@@ -165,6 +199,7 @@ class Ssp2WordViewController: UIViewController {
             print("音声ファイルの再生に失敗しました: \(error.localizedDescription)")
         }
     }
+    
     @IBAction func firstWordButtton(_ sender: UIButton) {
         soundFirst()
         firstWord.isEnabled = false
@@ -193,21 +228,20 @@ class Ssp2WordViewController: UIViewController {
             self.imageB.isHidden = false
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.8){
-            self.presentingViewController?.dismiss(animated: true)
+            // 次の単語を表示
+            self.showNextWord()
+            self.imageB.isEnabled = true
+            self.audioPlayer?.stop()
         }
     }
     @IBAction func imageButton(_ sender: UIButton) {
-        tapButton += 1
+        tapImageButton += 1
         
         // selectedHiraganaが"にく"の場合、ボリュームを1.0に設定し、それ以外は0.1に設定
-        let setIndex = selectedTag - 1
-        let randomIndex = Int.random(in: 0..<hiraganaSets[setIndex].count)
-        let selectedHiragana = hiraganaSets[setIndex][randomIndex]
-        
         let volume: Float = (selectedHiragana == "にく" || selectedHiragana == "よむ") ? 1.0 : 0.1
         soundEffects(volume: volume)
         
-        if tapButton >= 1 {
+        if tapImageButton >= 1 {
             imageB.isEnabled = false
         }
     }
