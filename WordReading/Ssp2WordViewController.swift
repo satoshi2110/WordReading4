@@ -59,6 +59,9 @@ class Ssp2WordViewController: UIViewController {
             return
         }
         
+        // 表示回数を更新
+        currentIndex += 1
+        
         // 選択されたタグに基づいてセットを選択
         let setIndex = selectedTag - 1 // タグは1から始まるため、インデックスに変換
         let availableWords = hiraganaSets[setIndex].filter { !usedWords.contains($0) }
@@ -96,24 +99,26 @@ class Ssp2WordViewController: UIViewController {
         }
         
         // 初期表示
-        firstWord.setTitle(characterArray[0], for: .normal)
-        secondWord.setTitle(characterArray[1], for: .normal)
-        firstWord.isHidden = false
-        secondWord.isHidden = true
-        imageB.isHidden = true
-        firstWord.setTitleColor(UIColor.black, for: .normal)
-        secondWord.setTitleColor(UIColor.black, for: .normal)
-        firstWord.isEnabled = true 
-        secondWord.isEnabled = true
-        
-        // 表示回数を更新
-        currentIndex += 1
+        DispatchQueue.main.async {
+            // ボタンのタイトルをリセット
+
+            self.firstWord.isHidden = true
+            self.secondWord.isHidden = true
+            self.imageB.isHidden = true
+            self.firstWord.setTitleColor(UIColor.black, for: .normal)
+            self.secondWord.setTitleColor(UIColor.black, for: .normal)
+            self.firstWord.isEnabled = true
+            self.secondWord.isEnabled = true
+            
+            self.firstWord.setTitle(self.characterArray[0], for: .normal)
+            self.secondWord.setTitle(self.characterArray[1], for: .normal)
+            self.firstWord.isHidden = false
+        }
         
         print("currentIndex: \(currentIndex)")
         print("selectedHiragana: \(selectedHiragana)")
         print("usedWords: \(usedWords)")
     }
-        
     
     func loadCSV(fileName: String) -> [String] {
         // CSVファイルのパスを取得
@@ -223,6 +228,8 @@ class Ssp2WordViewController: UIViewController {
             self.secondWord.setTitle(self.characterArray[1], for: .normal)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+            self.firstWord.setTitle("", for: .normal)
+            self.secondWord.setTitle("", for: .normal)
             self.firstWord.isHidden = true
             self.secondWord.isHidden = true
             self.imageB.isHidden = false
