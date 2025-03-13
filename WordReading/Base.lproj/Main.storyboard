@@ -877,7 +877,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="141" translatesAutoresizingMaskIntoConstraints="NO" id="iUw-rE-mLd">
                                         <rect key="frame" x="0.0" y="0.0" width="507" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpy-YG-h38">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bpy-YG-h38">
                                                 <rect key="frame" x="0.0" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -886,7 +886,7 @@
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="ZBi-Lf-yrF"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1X-Gj-3pa">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1X-Gj-3pa">
                                                 <rect key="frame" x="216" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -895,7 +895,7 @@
                                                     <action selector="wordButtonAction:" destination="JVt-iz-WO0" eventType="touchUpInside" id="XXr-S0-8CS"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2o-as-f3s">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2o-as-f3s">
                                                 <rect key="frame" x="432" y="0.0" width="75" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>

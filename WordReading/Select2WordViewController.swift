@@ -9,6 +9,7 @@ import UIKit
 
 class Select2WordViewController: UIViewController {
     var word: String?
+    var tag: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,14 +17,13 @@ class Select2WordViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let wordVC = segue.destination as! Ssp2WordViewController
-        wordVC.selectedWord = word
+        wordVC.selectedTag = tag!
     }
     @IBAction func wordButtonAction(_ sender: UIButton) {
-        word = sender.title(for: .normal)
+        tag = sender.tag
         performSegue(withIdentifier: "toWordVC", sender: nil)
     }
     @IBAction func returenButton(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true)
     }
-    
 }
