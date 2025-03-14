@@ -21,16 +21,68 @@ class Ssp4WordViewController: UIViewController {
     
     var csvArray: [String] = []
     var characterArray: [String] = []
-    var selectedWord: String?
+    
     var selectedCharacter: String?
     var audioPlayer: AVAudioPlayer!
-    var tapButton = 0
+    var tapImageButton = 0
+    var selectedTag = 0
+    var selectedWord: String? // オプショナル型に変更
+    var usedWords: [String] = [] // 使用済みの単語を記録
+    var currentIndex: Int = 0 // 現在の表示回数（最大4回）
     
+    // データセット
+    let hiraganaSets = [
+        ["そうじき", "くつした", "のみもの", "ほうせき"], // セット1
+        ["えんぴつ", "てぶくろ", "かみなり", "あおぞら"], // セット2
+        ["ふうりん", "にわとり", "ひまわり", "こうえん"]  // セット3
+    ]
     
+    let audioSets = [
+        ["そうじき.mp3", "くつした.mp3", "のみもの.mp3", "ほうせき.mp3"], // セット1
+        ["えんぴつ.mp3", "てぶくろ.mp3", "かみなり.mp3", "あおぞら.mp3"], // セット2
+        ["ふうりん.mp3", "にわとり.mp3", "ひまわり.mp3", "こうえん.mp3"]  // セット3
+    ]
+    
+    let imageSets = [
+        ["そうじき.png", "くつした.png", "のみもの.png", "ほうせき.png"], // セット1
+        ["えんぴつ.png", "てぶくろ.png", "かみなり.png", "あおぞら.png"], // セット2
+        ["ふうりん.png", "にわとり.png", "ひまわり.png", "こうえん.png"]  // セット3
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        csvArray = loadCSV(fileName: "\(selectedWord!)")
+        
+        // 最初の単語を表示
+        showNextWord()
+    }
+    func showNextWord() {
+        
+        // 4回表示したら終了
+        if currentIndex >= 4 {
+            print("すべての単語を表示しました")
+            self.presentingViewController?.dismiss(animated: true)
+            return
+        }
+        
+        // 選択されたタグに基づいてセットを選択
+        let setIndex = selectedTag - 1 // タグは1から始まるため、インデックスに変換
+        
+        // 使用可能な単語をフィルタリング
+        let availableWords = hiraganaSets[setIndex].filter { !usedWords.contains($0) }
+        
+        // 使用可能な単語がなくなったら終了
+        guard !availableWords.isEmpty else {
+            print("使用可能な単語がありません")
+            return
+        }
+        
+        // ランダムに単語を選択
+        let randomIndex = Int.random(in: 0..<availableWords.count)
+        selectedWord = availableWords[randomIndex]
+        usedWords.append(selectedWord!) // 使用済みとして記録
+        
+        // CSVを読み込む
+        csvArray = loadCSV(fileName: selectedWord!)
         characterArray = csvArray[0].components(separatedBy: ",")
         
         firstWord.setTitleColor(UIColor.black, for:.normal)
@@ -43,6 +95,7 @@ class Ssp4WordViewController: UIViewController {
         thirdWord.isHidden = true
         fourthWord.isHidden = true
         
+        // 画像を設定
         if let imageName = selectedWord, let originalImage = UIImage(named: imageName) {
             // 画像をリサイズ
             let newSize = CGSize(width: originalImage.size.width * 0.7, height: originalImage.size.height * 0.7)
@@ -51,9 +104,21 @@ class Ssp4WordViewController: UIViewController {
             imageB.setImage(resizedImage, for: .normal)
             imageB.imageView?.contentMode = .scaleAspectFit
         }
-        
+        // 初期表示
+        firstWord.setTitle(characterArray[0], for: .normal)
+        firstWord.isHidden = false
+        secondWord.isHidden = true
+        thirdWord.isHidden = true
+        fourthWord.isHidden = true
         imageB.isHidden = true
+        firstWord.isEnabled = true
+        secondWord.isEnabled = true
+        thirdWord.isEnabled = true
+        fourthWord.isEnabled = true
+        imageB.isEnabled = true
         
+        // 表示回数を更新
+        currentIndex += 1
     }
     @IBAction func firstWordButton(_ sender: UIButton) {
         soundFirst()
@@ -102,6 +167,10 @@ class Ssp4WordViewController: UIViewController {
             self.fourthWord.setTitle(self.characterArray[3], for: .normal)
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){ [self] in
+            firstWord.setTitle("", for: .normal)
+            secondWord.setTitle("", for: .normal)
+            thirdWord.setTitle("", for: .normal)
+            fourthWord.setTitle("", for: .normal)
             firstWord.isHidden = true
             secondWord.isHidden = true
             thirdWord.isHidden = true
@@ -109,14 +178,14 @@ class Ssp4WordViewController: UIViewController {
             imageB.isHidden = false
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
-            self.presentingViewController?.dismiss(animated: true)
+            self.showNextWord()
         }
     }
     
     @IBAction func imageButton(_ sender: UIButton) {
-        tapButton += 1
+        tapImageButton += 1
         soundEffects(volume: 0.1)
-        if tapButton >= 1 {
+        if tapImageButton >= 1 {
             imageB.isEnabled = false
         }
         
