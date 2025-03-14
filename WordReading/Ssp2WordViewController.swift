@@ -12,6 +12,7 @@ class Ssp2WordViewController: UIViewController {
     @IBOutlet weak var firstWord: UIButton!
     @IBOutlet weak var secondWord: UIButton!
     @IBOutlet weak var imageB: UIButton!
+    @IBOutlet weak var colorView: UIView!
     
     var csvArray: [String] = []
     var characterArray: [String] = []
@@ -46,7 +47,7 @@ class Ssp2WordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        colorView.isHidden = true
         // 最初の単語を表示
         showNextWord()
     }
@@ -101,7 +102,7 @@ class Ssp2WordViewController: UIViewController {
         // 初期表示
         DispatchQueue.main.async {
             // ボタンのタイトルをリセット
-
+            
             self.firstWord.isHidden = true
             self.secondWord.isHidden = true
             self.imageB.isHidden = true
@@ -239,6 +240,14 @@ class Ssp2WordViewController: UIViewController {
             self.showNextWord()
             self.imageB.isEnabled = true
             self.audioPlayer?.stop()
+            // colorViewをライトグレーに設定し、1秒間表示
+            self.colorView.backgroundColor = UIColor.systemGray6
+            self.colorView.isHidden = false
+            
+            // 1秒後にcolorViewを非表示にする
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.colorView.isHidden = true
+            }
         }
     }
     @IBAction func imageButton(_ sender: UIButton) {

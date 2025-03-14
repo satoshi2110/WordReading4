@@ -744,17 +744,26 @@
                                     <constraint firstItem="mbB-3S-xsE" firstAttribute="leading" secondItem="nnQ-sS-kyR" secondAttribute="leading" constant="20" id="xqq-0E-age"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOQ-I1-l5B">
+                                <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="u1E-bW-prS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uOQ-I1-l5B" secondAttribute="bottom" id="1ff-h3-apT"/>
                             <constraint firstItem="nnQ-sS-kyR" firstAttribute="centerX" secondItem="sS5-c9-aAI" secondAttribute="centerX" id="8xQ-8a-Uq6"/>
+                            <constraint firstItem="uOQ-I1-l5B" firstAttribute="top" secondItem="sS5-c9-aAI" secondAttribute="top" id="EHU-t4-1Ae"/>
+                            <constraint firstItem="uOQ-I1-l5B" firstAttribute="leading" secondItem="u1E-bW-prS" secondAttribute="leading" id="FV5-Zq-oam"/>
                             <constraint firstItem="nnQ-sS-kyR" firstAttribute="centerY" secondItem="sS5-c9-aAI" secondAttribute="centerY" id="FzZ-QJ-PXN"/>
                             <constraint firstItem="nnQ-sS-kyR" firstAttribute="centerY" secondItem="sS5-c9-aAI" secondAttribute="centerY" id="VDB-OX-rza"/>
+                            <constraint firstItem="uOQ-I1-l5B" firstAttribute="trailing" secondItem="u1E-bW-prS" secondAttribute="trailing" id="mbe-ze-ZDG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="q4W-PA-Vpy"/>
                     <connections>
+                        <outlet property="colorView" destination="uOQ-I1-l5B" id="b43-z7-oiT"/>
                         <outlet property="firstWord" destination="iPL-hK-50M" id="87H-yg-lwU"/>
                         <outlet property="fourthWord" destination="mbB-3S-xsE" id="8y0-Ba-z32"/>
                         <outlet property="imageB" destination="I1i-7F-FPK" id="sea-1l-gCx"/>
@@ -906,19 +915,30 @@
                                     <action selector="imageButton:" destination="jFz-Nm-OGD" eventType="touchUpInside" id="pud-XF-VXi"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YPe-jT-sU3">
+                                <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CON-ns-XUA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="oKV-lY-rVa" firstAttribute="centerY" secondItem="mjH-sy-2fG" secondAttribute="centerY" id="81O-b2-W2s"/>
                             <constraint firstItem="oKV-lY-rVa" firstAttribute="centerX" secondItem="mjH-sy-2fG" secondAttribute="centerX" id="Chi-lR-ZKI"/>
+                            <constraint firstAttribute="bottom" secondItem="YPe-jT-sU3" secondAttribute="bottom" id="IEC-Fi-4ZL"/>
+                            <constraint firstItem="YPe-jT-sU3" firstAttribute="top" secondItem="CON-ns-XUA" secondAttribute="top" id="KB1-hP-8gj"/>
+                            <constraint firstItem="YPe-jT-sU3" firstAttribute="bottom" secondItem="CON-ns-XUA" secondAttribute="bottom" id="LCh-U8-3W2"/>
                             <constraint firstItem="2rc-e1-H1N" firstAttribute="centerY" secondItem="mjH-sy-2fG" secondAttribute="centerY" id="WcU-0l-qgG"/>
+                            <constraint firstItem="YPe-jT-sU3" firstAttribute="leading" secondItem="CON-ns-XUA" secondAttribute="leading" id="ZLp-ns-kot"/>
                             <constraint firstItem="oKV-lY-rVa" firstAttribute="centerX" secondItem="mjH-sy-2fG" secondAttribute="centerX" id="c7R-pa-LhI"/>
                             <constraint firstItem="2rc-e1-H1N" firstAttribute="centerX" secondItem="mjH-sy-2fG" secondAttribute="centerX" id="fk4-nn-bM6"/>
+                            <constraint firstItem="YPe-jT-sU3" firstAttribute="trailing" secondItem="CON-ns-XUA" secondAttribute="trailing" id="gYO-jH-OcU"/>
                             <constraint firstItem="oKV-lY-rVa" firstAttribute="centerY" secondItem="mjH-sy-2fG" secondAttribute="centerY" id="oTZ-XL-VE6"/>
+                            <constraint firstItem="YPe-jT-sU3" firstAttribute="top" secondItem="mjH-sy-2fG" secondAttribute="top" id="tij-kM-eTp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorView" destination="YPe-jT-sU3" id="FJy-yi-eeV"/>
                         <outlet property="firstWord" destination="8mQ-OS-ULS" id="VfG-bs-xKn"/>
                         <outlet property="imageB" destination="2rc-e1-H1N" id="Jzi-4C-vn7"/>
                         <outlet property="secondWord" destination="FOV-86-zyS" id="Sbe-UY-yVB"/>
@@ -1052,10 +1072,18 @@
                                     <action selector="imageButton:" destination="B4D-b7-RlQ" eventType="touchUpInside" id="C2E-P2-dHg"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0F-4h-SbB">
+                                <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hoG-Yl-LfY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="v0F-4h-SbB" firstAttribute="trailing" secondItem="hoG-Yl-LfY" secondAttribute="trailing" id="0Bw-g5-Od7"/>
+                            <constraint firstAttribute="bottom" secondItem="v0F-4h-SbB" secondAttribute="bottom" id="2Wa-KS-ZGd"/>
+                            <constraint firstItem="v0F-4h-SbB" firstAttribute="leading" secondItem="hoG-Yl-LfY" secondAttribute="leading" id="8Kp-Cf-EuL"/>
+                            <constraint firstItem="v0F-4h-SbB" firstAttribute="top" secondItem="rkO-qb-lDS" secondAttribute="top" id="98Q-OB-0du"/>
                             <constraint firstItem="zw3-eP-eea" firstAttribute="centerX" secondItem="rkO-qb-lDS" secondAttribute="centerX" id="9Oh-FF-AkY"/>
                             <constraint firstItem="48s-S5-eb3" firstAttribute="centerX" secondItem="rkO-qb-lDS" secondAttribute="centerX" id="Ac0-FP-lOd"/>
                             <constraint firstItem="oaP-C9-Vm1" firstAttribute="centerX" secondItem="rkO-qb-lDS" secondAttribute="centerX" id="DbQ-fo-qvQ"/>
@@ -1071,6 +1099,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RhN-N5-QaM"/>
                     <connections>
+                        <outlet property="colorView" destination="v0F-4h-SbB" id="WWu-tM-FAZ"/>
                         <outlet property="firstWord" destination="gKV-sF-XS1" id="qYR-iK-Yau"/>
                         <outlet property="imageB" destination="48s-S5-eb3" id="hfI-I8-3EG"/>
                         <outlet property="secondWord" destination="zw3-eP-eea" id="R0g-KY-46J"/>

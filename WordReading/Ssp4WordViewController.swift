@@ -17,7 +17,7 @@ class Ssp4WordViewController: UIViewController {
     @IBOutlet weak var thirdWord: UIButton!
     @IBOutlet weak var fourthWord: UIButton!
     @IBOutlet weak var imageB: UIButton!
-    
+    @IBOutlet weak var colorView: UIView!
     
     var csvArray: [String] = []
     var characterArray: [String] = []
@@ -51,7 +51,7 @@ class Ssp4WordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        colorView.isHidden = true
         // 最初の単語を表示
         showNextWord()
     }
@@ -179,6 +179,16 @@ class Ssp4WordViewController: UIViewController {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5.0){
             self.showNextWord()
+            self.audioPlayer.stop()
+            
+            // colorViewをライトグレーに設定し、1秒間表示
+            self.colorView.backgroundColor = UIColor.systemGray6
+            self.colorView.isHidden = false
+            
+            // 1秒後にcolorViewを非表示にする
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.colorView.isHidden = true
+            }
         }
     }
     
